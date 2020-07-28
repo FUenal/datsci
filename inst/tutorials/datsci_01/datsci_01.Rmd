@@ -161,7 +161,7 @@ This tutorial focuses on the data analysis aspects of data science. We therefore
 
 ## Getting started with R and RStudio [(1)]{.alt}
 
-### 1. Why `r rproj()`
+### 1.1 Why `r rproj()`
 
 R is not a programming language like C or Java. It was not created by software engineers for software development. Instead, it was developed by statisticians as an interactive environment for data analysis. You can read the full history in the paper A Brief History of S5. The interactivity is an indispensable feature in data science because, as you will soon learn, the ability to quickly explore data is a necessity for success in this field. However, like in other programming languages, you can save your work as scripts that can be easily executed at any moment. These scripts serve as a record of the analysis you performed, a key feature that facilitates reproducible work. If you are an expert programmer, you should not expect `r rproj()` to follow the conventions you are used to since you will be disappointed. If you are patient, you will come to appreciate the unequal power of `r rproj()` when it comes to data analysis and, specifically, data visualization.
 
@@ -173,7 +173,7 @@ Other attractive features of R are:
 4. There is a large, growing, and active community of R users and, as a result, there are numerous resources for learning and asking questions^[https://stats.stackexchange.com/questions/138/free-resources-for-learning-r] ^[https://www.r-project.org/help.html] ^[https://stackoverflow.com/documentation/r/topics]. 
 5. It is easy for others to contribute add-ons which enables developers to share software implementations of new data science methodologies. This gives R users early access to the latest methods and to tools which are developed for a wide variety of disciplines, including ecology, molecular biology, social sciences, and geography, just to name a few examples. 
 
-### 1. The `r rproj()` console
+### 1.2 The `r rproj()` console
 
 Interactive data analysis usually occurs on the **R console** that executes commands as you type them. There are several ways to gain access to an R console. One way is to simply start R on your computer. The console looks something like this:
 
