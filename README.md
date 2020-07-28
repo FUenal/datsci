@@ -1,9 +1,3 @@
----
-output:
-  html_document: default
-  word_document: default
-  pdf_document: default
----
 <div style="float: right"><img src="./data-raw/images/datsci_101.png" width="150"></div>
 
 # datasci: Introduction to Data Science with R (Irizarry, 2020)
