@@ -1,0 +1,25 @@
+Package: datsci
+Type: Package
+Title: Interactive Tutorials and Data for "Introduction to Data Science with R"
+Version: 0.1.2
+Authors@R: person("Fatih", "Uenal", email = "fu212@cam.ac.uk", role = c("aut", "cre"))
+Maintainer: Fatih Uenal <fu212@cam.ac.uk>
+Description: Interactive 'R' tutorials and datasets for the textbook Irizarry (2020), "Introduction to Data Science. Data Analysis and Prediction Algorithms with R", <https://rafalab.github.io/dsbook/>.
+    Interactive tutorials cover basic workflows in 'R' and 'RStudio', data visualization, probability, inference and modeling, productivity tools, data wrangling, linear regression, 
+    and machine learning. 
+License: GPL-3
+Depends:
+  R (>= 4.0.0),
+  learnr (>= 0.10.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+Imports:
+    htmltools
+Suggests: 
+    knitr,
+    rmarkdown
+URL: http://rafalab.github.io/, https://github.com/fuenal/datsci
+BugReports: https://github.com/fuenal/datsci/issues
+
