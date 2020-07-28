@@ -8,7 +8,7 @@ output:
     css: ./css/datsci_style_future.css
 runtime: shiny_prerendered
 description: "R Basics (introduction, installing and running R and R Studio, functions and objects, packages and functions, style, data types, tidyverse, importing data)."
-bibliography: discovr_01.bib
+bibliography: datsci_01.bib
 ---
 <html lang="en">
 
