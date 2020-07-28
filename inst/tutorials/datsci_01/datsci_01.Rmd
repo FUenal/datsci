@@ -185,10 +185,18 @@ Interactive data analysis usually occurs on the **R console** that executes comm
 
 As a quick example, try using the console to calculate a 15% tip on a meal that cost $19.71:
 
-```{r, eval=FALSE}
-0.15 * 19.71  
-#> [1] 2.96
+```{r met_datar_2-setup}
+0.15 * 19.71 
 ```
+
+```{r met_datar_2, exercise=TRUE}
+0.15 * 19.71 
+```
+
+```{r met_datar_2-solution}
+0.15 * 19.71 
+```
+
 
 **Note that in this book, grey boxes are used to show R code typed into the R console. The symbol `#>` is used to denote what the R console outputs.**
 
