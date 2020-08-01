@@ -1,5 +1,5 @@
 ---
-title: "datsci: R Basics"
+title: "datsci: Introduction"
 author: "Rafael Irizarry & Fatih Uenal"
 output:
   learnr::tutorial:
@@ -7,7 +7,7 @@ output:
     theme: "united"
     css: ./css/datsci_style_future.css
 runtime: shiny_prerendered
-description: "R Basics (introduction, installing and running R and R Studio, functions and objects, packages and functions, style, data types, tidyverse, importing data)."
+description: "Introduction (introduction, installing and running R and R Studio)."
 bibliography: datsci_00.bib
 ---
 <html lang="en">
@@ -33,7 +33,7 @@ library(tibble)
 source("./www/discovr_helpers.R")
 ```
 
-# datsci: `r rproj()` Basics
+# datsci: Introduction
 
 ## Introduction
 
