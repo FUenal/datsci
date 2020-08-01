@@ -1,5 +1,5 @@
 ---
-title: "datsci: R Basics"
+title: "datsci_01: R Basics"
 author: "Rafael Irizarry & Fatih Uenal"
 output:
   learnr::tutorial:
@@ -33,317 +33,596 @@ library(tibble)
 source("./www/discovr_helpers.R")
 ```
 
-# datsci: `r rproj()` Basics
+# datsci_01: `r rproj()` Basics
 
-## Introduction
+## **Introduction and Welcome!**
 
 <div class="infobox">
-  <img src="./images/datsci_101 copy.png" alt="datsci package sticker." style="width:230px;height:130px;" class = "img_right">
   
-  **Usage:** This tutorial accompanies [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html). It contains material from the textbook which is offered under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/). You can use this tutorial for teaching and non-profit activities under the specified licence terms.
+  **Usage:** This tutorial accompanies [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html). It contains material from the textbook which is offered under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
   
 </div>
 
 ### Welcome to the `datsci` Data Science Course
 
-Hi Rafael, here I am showcasing some possibilities provided by the `learnr` package. Specifically, below you will find a coding example and a multiple choice quiz which we could integrate into this package to make it an interactive Data Science learning tutorial based on your textbook and your edX online course. Below I have also embedded a video of yours to showcase this possibility as well. I have also created the first Chapter of your dsbook (Getting started with R and RStudio) as an example for your to see a live version. Needless to say, formatting, grammar and other issues remain to be addressed. Also, I would create a nice Logo for the package. I hope that you like what you see and are supportive of this project!
+Welcome to *Data Science: `r rproj()` Basics*! We're excited to have you join us in this course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
+
+This is the first course in the Introduction to Data Science tutorial, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning.
+
+This course assumes you are comfortable with basic math, algebra and logical operations. You do not need to have coding experience as you will have ample opportunities in this course to practice your coding skills. In fact, for all assignments in `r rproj()` that allow you to program directly in a browser-based interface. You will not need to download any additional software other than `r rproj()` and RStudio and the `datsci` package.
+
+Using a combination of a guided introduction through short video lectures and more independent in-depth exploration, you will get to practice your new `r rproj()` skills on real-life applications.
+
+### In this course, you will:
+
+- Learn to read, extract, and create datasets in `r rproj()`
+- Learn to perform a variety of operations on datasets using `r rproj()`
+- Learn to write your own functions/sub-routines in `r rproj()`
+
+### Course overview
+
+**Section 1: `r rproj()` Basics, Functions, Data types**
+
+You will get started with `r rproj()`, learn about its functions and data types. 
+
+**Section 2: Vectors, Sorting**
+
+You will learn to operate on vectors and advanced functions such as sorting. 
+
+**Section 3: Indexing, Data Manipulation, Plots**
+
+You will learn to wrangle and visualize data.
+
+**Section 4: Programming Basics**
+
+You will learn to use general programming features like ‘if-else’, and ‘for loop’ commands, and write your own functions to perform various operations on datasets.
+
+## **Meet the Course Instructors**
+
+<div class="infobox">
+  <img src="./images/photo2015.jpg" alt="Prof Rafael Irizarry." style="width:200px;height:200px;" class = "img_right">
+  
+**Rafael Irizarry** is a Professor of Biostatistics and Computational Biology at the Dana-Farber Cancer Institute and a Professor of Biostatistics at Harvard Chan School of Public Health. He has been analyzing data, from sound signals to genomic measurements, for over 20 years.
+
+Professor Irizarry teaches a popular Data Science course at Harvard and has developed several online courses on data analysis that are offered by HarvardX. These online courses, divided into the Data Analysis for the Life Sciences series and Genomics Data Analysis series, have been completed by thousands of students and much of the material is included in a book with a freely available online version.
+
+Webpage: http://rafalab.github.io 
+
+<img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:200px;height:250px;" class = "img_right" >
+
+**Fatih Uenal** is a Postdoctoral Researcher at the University of Cambridge, Dept of Psychology. His research focuses on the psychology of racism, sexism, and anthropocentrism. He teaches this course at the University of Cambridge for social scientists interested in Data Science.
+
+Webpage: https://github.com/FUenal
+</div>
+
+
+## Essential Course Information
+
+### Course Syllabus
+
+The course syllabus contains a more comprehensive version of the information below - but if you don't read the syllabus, please read this!
+
+### Course Structure
+
+This is a self-paced course. You can work on it with your own timeline in mind. However, we suggest that you work on a section per week, and it will take you 2 - 4 hours per week. 
+
+Check the course home page for important dates. If you are interested in pursuing a Verified Certificate, you will need to upgrade before the date listed on the home page and finish all assignments before course close.
+
+### Grading
+
+Assignments in the course allow you to practice your coding skills using the DataCamp platform. R is a flexible programming language designed partly for readability and ease of programming.
+
+HarvardX has partnered with a platform called DataCamp to create programming assignments that you can do online. There is no need to install anything on your computer. You will be given a set of code to modify and run in your browser. You can take as many attempts as you need. When your code works correctly, you will be awarded points. You can also request hints, which will help you out, but hints decrease your point total. Remember that you can always go to the Discussion Board for help that doesn't cost points.
+
+### Passing Rate
+
+The passing rate is 70%. You must sign up for a Verified Certificate and earn a grade of 70% of higher in order to obtain a certificate for this course.
+
+## Pre-Course Survey
+
+Insert Survey Link here
+
+*If you cannot see the survey above, click this link to access it in a new window.*
+
+## **Section 1 Overview**
+
+Section 1 introduces you to `r rproj()` Basics, Functions and Datatypes.
+
+In Section 1, you will learn to:
+
+- Appreciate the rationale for data analysis using `r rproj()`
+- Define objects and perform basic arithmetic and logical operations
+- Use pre-defined functions to perform operations on objects
+- Distinguish between various data types
+
+There are 2 assignments that use the DataCamp platform for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 1.1 Motivation 
 
 ![](https://youtu.be/5Ewyh3BLjNk)
 
+## Getting Started
 
-#### Coding example
+![](https://youtu.be/oEoInaLaB2s)
 
-Let's try this out. In the code box below type
+## Installing `r rproj()` and R Studio
+
+Installing R
+
+If you want to install `r rproj()` to work on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). Note that CRAN makes several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
+
+- [Installing `r rproj()` on Windows](https://github.com/genomicsclass/windows#installing-r)
+- [Installing `r rproj()` on Mac](http://youtu.be/Icawuhf0Yqo)
+- [Installing `r rproj()` on Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/README)
+
+Installing RStudio
+
+RStudio is an integrated development environment (IDE). We highly recommend installing and using RStudio to edit and test your code. You can install RStudio through the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) is a great resource.  You need to install `r rproj()` first.
+
+## 1.2 Objects
+
+
+![](https://youtu.be/zjjQhwoLC-M)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.2.1 Objects](https://rafalab.github.io/dsbook/r-basics.html#objects).
+
+
+## 1.2 Functions
+
+
+![](https://youtu.be/wRr4hYuESeM)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.2.3 Objects](https://rafalab.github.io/dsbook/r-basics.html#functions).
+
+### Key Points
+
+1. Nested Functions: functions are evaluated from the inside out when you nest them 
+
+2. Help Function:
+
+    `help("log")`
+
+    `?log`
+
+3. Change natural log to log base 2
+
+    `log(8, base =2 )`
+
+    `log(8,2)`
+
+4. Variable names 
+
+    `solution_1 <- (-b + sqrt(b^2 - 4 * a * c)) / (2 * a)`
+
+    `solution_2 <- (-b - sqrt(b^2 - 4 * a * c)) / (2 * a)`
+
+### Code: Commenting your code
 
 ```{r, eval = FALSE}
-beatles <- c("John","Ringo","Paul", "George")
+# Code to compute solution to quadratic equation of the form ax^2 + bx + c
+
+# define the variables
+a <- 3 
+b <- 2
+c <- -1
+
+# now compute the solution
+(-b + sqrt(b^2 - 4 * a * c)) / (2 * a)
+(-b - sqrt(b^2 - 4 * a * c)) / (2 * a)
 ```
 
-and then click ![run code button](./images/learnr_run_code.png){height=1em}.
+## Assessment 1
 
-```{r met_data, exercise=TRUE}
+Insert assessment `r rproj()` Basics here
 
-```
+## 1.3 Data Types
 
-```{r met_data-solution}
-beatles <- c("John","Ringo","Paul", "George")
-```
 
-You should find that nothing happened, which will be disconcerting. That's because we told `r rproj()` to create the object [beatles]{.alt} but not to show it to us. So, the object [beatles]{.alt} has been created and stored in `r rproj()`’s memory and we can refer back to it, use it to do other things, change it, and view it. To view it we execute its name. So, let's ask to see the object [beatles]{.alt} that we have created by executing its name:
+![](https://youtu.be/Ozj60blUyzg)
 
-```{r met_data_2-setup}
-beatles <- c("John","Ringo","Paul", "George")
-```
 
-```{r met_data_2, exercise=TRUE}
+### Textbook link
 
-```
+The content is discussed within the [textbook section on the R basics - 2.4 Data Types](https://rafalab.github.io/dsbook/r-basics.html#data-types).
 
-```{r met_data_2-solution}
-beatles
-```
+### Key Points: 
 
-Notice that the contents of the object [beatles]{.alt} are displayed:
+**Function:**
 
-```{r, echo = FALSE}
-beatles <- c("John","Ringo","Paul", "George")
-beatles
-```
+`class()`: the type of an object (numeric, function)
 
-We can do other things with our newly created object too, but we'll save that fun for another time.
+**Data Frame:**
 
-```{r fun_quiz, echo=FALSE}
-learnr::quiz(
-  learnr::question("What is a function in R?",
-    learnr::answer("An instruction that typically creates an output from at least one input", correct = TRUE),
-    learnr::answer("A lady who loves to boogie to Parliament and Funkadelic", message = "No, that's a funk Sian."),
-    learnr::answer("Something created by R", message = "No, that's an object."),
-    learnr::answer("The weird arrow thing (`<-`)", message = "No, that's the assignment operator (`<-`)."),
-    correct = "Correct - well done!",
-    random_answer_order = TRUE,
-    allow_retry = T
-  ),
-  learnr::question("What is an argument in R?",
-    learnr::answer("An option that can be set within a function that controls what it does", correct = TRUE),
-    learnr::answer("When you tell R to do something and it throws an error message", message = "No, that's your life for the next few years."),
-    learnr::answer("An instruction that typically creates an output from at least one input", message = "No, that's a function"),
-    learnr::answer("The weird arrow thing (`<-`)", message = "No, that's the assignment operator (`<-`)."),
-    correct = "Correct - well done!",
-    random_answer_order = TRUE,
-    allow_retry = T
-  )
-)
+`class(murders)` 
 
-```
+`str(murders)`: shows the structure of the object “murders”
 
-### Intorduction to the `datsci` Data Science Course
+`head(murders)`: shows the first six lines of the data frame “murders”
 
-Hi, welcome to the **datsci** course. The demand for skilled data science practitioners in industry, academia, and government is rapidly growing. This book introduces concepts and skills that can help you tackle real-world data analysis challenges. It covers concepts from probability, statistical inference, linear regression, and machine learning. It also helps you develop skills such as `r rproj()` programming, data wrangling with **dplyr**, data visualization with ggplot2, algorithm building with **caret**, file organization with UNIX/Linux shell, version control with Git and GitHub, and reproducible document preparation with **knitr** and R markdown. The book is divided into six parts: `r rproj()`, **Data Visualization, Data Wrangling, Statistics with `r rproj()`, Machine Learning**, and **Productivity Tools**. Each part has several chapters meant to be presented as one lecture and includes dozens of exercises distributed across chapters.
+`murders$population`: population column under “murders” dataset
 
-### Case Studies
 
-Throughout the book, we use motivating case studies. In each case study, we try to realistically mimic a data scientist’s experience. For each of the concepts covered, we start by asking specific questions and answer these through data analysis. We learn the concepts as a means to answer the questions. Examples of the case studies included in the book are:
+**Numeric Vector: **
 
-| Case Study | Concept | 
-| ---- | ---| --- |
-| US murder rates by state |  R Basics |
-| Student heights | Statistical Summaries |
-| Trends in world health and economics | Data Visualization | 
-| The impact of vaccines on infectious disease rates | Data Visualization | 
-| The financial crisis of 2007-2008 | Probability |
-| Election forecasting | Statistical Inference |  
-| Reported student heights | Data Wrangling | 
-| Money Ball: Building a baseball team | Linear Regression |
-| MNIST: Image processing hand-written digits | Machine Learning |
-| Movie recommendation systems | Machine Learning | 
+Pop <- `(murders$population)`
 
-### Who will find this tutorial useful?
+`length(pop)` : number of vectors in the column population 
 
-This tutorial is meant to be an interactive version of the textbook for a first course in Data Science. No previous knowledge of R is necessary, although some experience with programming may be helpful. The statistical concepts used to answer the case study questions are only briefly introduced, so a Probability and Statistics textbook is highly recommended for in-depth understanding of these concepts. If you read and understand all the chapters and complete all the exercises, you will be well-positioned to perform basic data analysis tasks and you will be prepared to learn the more advanced concepts and skills needed to become an expert.
+`class(pop)`: numeric vectors 
 
-### What does this tutorial cover?
 
-We start by going over the **basics of** `r rproj()` and the **tidyverse**. You learn `r rproj()` throughout this tutorial, but in the first part we go over the building blocks needed to keep learning.
+**Characteric Vector:** 
 
-The growing availability of informative datasets and software tools has led to increased reliance on **data visualizations** in many fields. In the second part we demonstrate how to use **ggplot2** to generate graphs and describe important data visualization principles.
+`“a”`: character string 
 
-In the third part we demonstrate the importance of statistics in data analysis by answering case study questions using **probability, inference, and regression** with `r rproj()`.
+`class(murder$states)`
 
-The fourth part uses several examples to familiarize the reader with **data wrangling**. Among the specific skills we learn are web scraping, using regular expressions, and joining and reshaping data tables. We do this using **tidyverse** tools.
+**Logical vector:**
 
-In the fifth part we present several challenges that lead us to introduce **machine learning**. We learn to use the **caret** package to build prediction algorithms including K-nearest neighbors and random forests.
+Must be true or false 
 
-In the final part, we provide a brief introduction to the **productivity tools** we use on a day-to-day basis in data science projects. These are R Studio, UNIX/Linux shell, Git and GitHub, and **knitr** and R Markdown.
+`==` is a relational operator 
 
-### What is not covered by this tutorial?
+**Factor: **
 
-This tutorial focuses on the data analysis aspects of data science. We therefore do not cover aspects related to data management or engineering. Although `r rproj()` programming is an essential part of this tutorial, we do not teach more advanced computer science topics such as data structures, optimization, and algorithm theory. Similarly, we do not cover topics such as web services, interactive graphics, parallel computing, and data streaming processing. The statistical concepts are presented mainly as tools to solve problems and in-depth theoretical descriptions are not included in this tutorial.
+Useful to store categorical data 
 
-## Getting started with R and RStudio [(1)]{.alt}
+`levels(murders$region)`
+    
+    
+## Assessment 2
 
-### 1.1 Why `r rproj()`
+Insert assessment `r rproj()` Basics here
 
-R is not a programming language like C or Java. It was not created by software engineers for software development. Instead, it was developed by statisticians as an interactive environment for data analysis. You can read the full history in the paper A Brief History of S5. The interactivity is an indispensable feature in data science because, as you will soon learn, the ability to quickly explore data is a necessity for success in this field. However, like in other programming languages, you can save your work as scripts that can be easily executed at any moment. These scripts serve as a record of the analysis you performed, a key feature that facilitates reproducible work. If you are an expert programmer, you should not expect `r rproj()` to follow the conventions you are used to since you will be disappointed. If you are patient, you will come to appreciate the unequal power of `r rproj()` when it comes to data analysis and, specifically, data visualization.
+## **Section 2 Overview**
 
-Other attractive features of R are:
+Section 2 introduces you to vectors and functions such as sorting.
 
-1. R is free and open source^[https://opensource.org/history].
-2. It runs on all major platforms: Windows, Mac Os, UNIX/Linux.
-3. Scripts and data objects can be shared seamlessly across platforms.
-4. There is a large, growing, and active community of R users and, as a result, there are numerous resources for learning and asking questions^[https://stats.stackexchange.com/questions/138/free-resources-for-learning-r] ^[https://www.r-project.org/help.html] ^[https://stackoverflow.com/documentation/r/topics]. 
-5. It is easy for others to contribute add-ons which enables developers to share software implementations of new data science methodologies. This gives R users early access to the latest methods and to tools which are developed for a wide variety of disciplines, including ecology, molecular biology, social sciences, and geography, just to name a few examples. 
+In Section 2.1, you will: 
 
-### 1.2 The `r rproj()` console
+- Create numeric and character vectors. 
+- Name the columns of a vector. 
+- Generate numeric sequences. 
+- Access specific elements or parts of a vector.
+- Coerce data into different data types as needed. 
 
-Interactive data analysis usually occurs on the **R console** that executes commands as you type them. There are several ways to gain access to an R console. One way is to simply start R on your computer. The console looks something like this:
+In Section 2.2, you will: 
 
-<figure>
-<img src="./images/R_console copy.png" alt="R console." style="width:600px">
-<figcaption>Figure 1: R Console Display.</figcaption>
-</figure> 
+- Sort vectors in ascending and descending order. 
+- Extract the indices of the sorted elements from the original vector. 
+- Find the maximum and minimum elements, as well as their indices, in a vector. 
+- Rank the elements of a vector in increasing order. 
 
+In Section 2.3, you will: 
 
-As a quick example, try using the console to calculate a 15% tip on a meal that cost $19.71:
+- Perform arithmetic between a vector and a single number.
+- Perform arithmetic between two vectors of same length. 
 
-```{r met_datar_2-setup}
-0.15 * 19.71 
-```
+There are 3 assignments for you to practice your coding skills.
 
-```{r met_datar_2, exercise=TRUE}
-0.15 * 19.71 
-```
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-**Note that in this book, grey boxes are used to show R code typed into the R console. The symbol `#>` is used to denote what the R console outputs.**
+## 2.1 Vectors
 
-### 1.3 Scripts
 
-One of the great advantages of R over point-and-click analysis software is that you can save your work as scripts. You can edit and save these scripts using a text editor. The material in this book was developed using the interactive *integrated development environment* (IDE) RStudio^[https://www.rstudio.com/]. RStudio includes an editor with many R specific features, a console to execute your code, and other useful panes, including one to show figures.
+![](https://youtu.be/PPq0yY7CeX4)
 
-<figure>
-<img src="./images/RStudio copy.png" alt="R Studio" style="width:600px">
-<figcaption>Figure 1: R Studio.</figcaption>
-</figure> 
 
-Most web-based R consoles also provide a pane to edit scripts, but not all permit you to save the scripts for later use.
+### Textbook link
 
-All the R scripts used to generate this book can be found on GitHub^[https://github.com/rafalab/dsbook].
+The content is discussed within the [textbook section on the R basics - 2.6 Vectors](https://rafalab.github.io/dsbook/r-basics.html#vectors).
 
-### 1.4 RStudio {#rstudio}
+### Key Points:
 
-RStudio will be our launching pad for data science projects. It not only provides an editor for us to create and edit our scripts but also provides many other useful tools. In this section, we go over some of the basics.
+**Creating Vectors**
 
-### 1.4.1 The panes
+- Use the function c which stands for concatenate: c(...)
+- Use quotes so it’s character not variables 
 
-When you start RStudio for the first time, you will see three panes. The left pane shows the R console. On the right, the top pane includes tabs such as  *Environment* and *History*, while the bottom pane shows five tabs: *File*, *Plots*, *Packages*, *Help*, and *Viewer* (these tabs may change in new versions). You can click on each tab to move across the different features.
+country <- `c(“italy”, “canada”, “egypt”)` 
 
-<figure>
-<img src="./images/screenshot_30.png" alt="R Studio" style="width:600px">
-</figure> 
+**Names** 
 
-To start a new script, you can click on File, then New File, then R Script.
+codes <- `c(italy =380, canada = 124, egypt = 818)`
 
-<figure>
-<img src="./images/screenshot_31.png" alt="R Studio" style="width:600px">
-</figure> 
+OR
 
-This starts a new pane on the left and it is here where you can start writing your script.
+codes <- `c(380,124,818)`
 
-<figure>
-<img src="./images/screenshot_32.png" alt="R Studio" style="width:600px">
-</figure> 
+country <- `c(“italy”, “canada”, “egypt”)`
 
-### 1.4.2 Key bindings
+`names(codes)` <- country 
 
-Many tasks we perform with the mouse can be achieved with a combination of key strokes instead. These keyboard versions for performing tasks are referred to as *key bindings*. For example, we just showed how to use the mouse to start a new script, but you can also use a key binding: Ctrl+Shift+N on Windows and command+shift+N on the Mac. 
+**Sequences** 
 
-Although in this tutorial we often show how to use the mouse, **we highly recommend that you memorize key bindings for the operations you use most**. RStudio provides a useful cheat sheet with the most widely used commands. You can get it from RStudio directly:
+`seq(1,10)`  = 1:10: the default is to go in increments of 1
 
-<figure>
-<img src="./images/screenshot_33.png" alt="R Studio" style="width:600px">
-</figure> 
+`seq(1,10,2)` : increments of 2
 
-You might want to keep this handy so you can look up key-bindings when you find yourself performing repetitive point-and-clicking.
 
-### 1.4.3 Running commands while editing scripts
+**Subsetting** 
 
-There are many editors specifically made for coding. These are useful because color and indentation are automatically added to make code more readable. RStudio is one of these editors, and it was specifically developed for R. One of the main advantages provided by RStudio over other editors is that we can test our code easily as we edit our scripts. Below we show an example.
+`codes[2]`
 
-Let's start by opening a new script as we did before. A next step is to give the script a name. We can do this through the editor by saving the current new unnamed script. To do this, click on the save icon or use the key binding Ctrl+S on Windows and command+S on the Mac.  
+`codes[c(1,3)]` 
 
-When you ask for the document to be saved for the first time, RStudio will prompt you for a name. A good convention is to use a descriptive name, with lower case letters, no spaces, only hyphens to separate words, and then followed by the suffix *.R*. We will call this script *my-first-script.R*.
+`codes[1:2]`
 
-<figure>
-<img src="./images/screenshot_34.png" alt="R Studio" style="width:600px">
-</figure> 
+`codes[“Canada”]`
 
-Now we are ready to start editing our first script. The first lines of code in an R script are dedicated to loading the libraries we will use. Another useful RStudio feature is that once we type `library()` it starts auto-completing with libraries that we have installed. Note what happens when we type `library(ti)`:
+`codes[“egypt”,”italy”]`
+    
+## 2.1 Vector Coercion
 
-<figure>
-<img src="./images/screenshot_35.png" alt="R Studio" style="width:600px">
-</figure> 
 
-Another feature you may have noticed is that when you type `library(` the second parenthesis is automatically added. This will help you avoid one of the most common errors in coding: forgetting to close a parenthesis.
+![](https://youtu.be/T8fPnENqfMg)
 
-Now we can continue to write code. As an example, we will make a graph showing murder totals versus population totals by state. Once you are done writing the code needed to make this plot, you can try it out by *executing* the code. To do this, click on the *Run* button on the upper right side of the editing pane. You can also use the key binding: Ctrl+Shift+Enter on Windows or command+shift+return on the Mac.
 
-Once you run the code, you will see it appear in the R console and, in this case, the generated plot appears in the plots console. Note that the plot console has a useful interface that permits you to click back and forward across different plots, zoom in to the plot, or save the plots as files.
+### Textbook link
 
-<figure>
-<img src="./images/screenshot_36.png" alt="R Studio" style="width:600px">
-</figure> 
+The content is discussed within the [textbook section on the R basics - 2.7 Coercion](https://rafalab.github.io/dsbook/r-basics.html#coercion).
 
-To run one line at a time instead of the entire script, you can use Control-Enter on Windows and command-return on the Mac.
+### Key Points:
 
-### 1.4.4 Changing global options
+- When we put character string in the middle,  R converted numbers (1, 3) as character strings. 
 
-You can change the look and functionality of RStudio quite a bit. 
+x <- `c(1, "Canada",3 )`
 
-To change the global options you click on *Tools* then *Global Options....*
+- Turn numbber into characters
 
-As an example we show how to make a change that we *highly recommend*. This is to change the *Save workspace to .RData on exit* to *Never* and uncheck the *Restore .RData into workspace at start*. By default, when you exit R saves all the objects you have created into a file called .RData. This is done so that when you restart the session in the same folder, it will load these objects. We find that this causes confusion especially when we share code with colleagues and assume they have this .RData file. To change these options, make your *General* settings look like this:
+`as.character()`
 
-<figure>
-<img src="./images/screenshot_37.png" alt="R Studio" style="width:600px">
-</figure> 
+- Turn characters into number
 
-### 1.5 Installing R packages
+`as.numeric()`
+    
+## Assessment 3
 
-The functionality provided by a fresh install of R is only a small fraction of what is possible. In fact, we refer to what you get after your first install as *base R*. The extra functionality comes from add-ons available from developers. There are currently hundreds of these available from CRAN and many others shared via other repositories such as GitHub. However, because not everybody needs all available functionality, R instead makes different components available via _packages_. R makes it very easy to install packages from within R. For example, to install the __dslabs__ package, which we use to share datasets and code related to this book, you would type:
+Insert assessment `r rproj()` Basics here
 
-```{r,eval=FALSE}
-install.packages("dslabs")
-```
+## 2.2 Sorting
 
-In RStudio, you can navigate to the _Tools_ tab and select install packages. We can then load the package into our R sessions using the `library` function:
 
-```{r}
-library(dslabs)
-```
+![](https://youtu.be/C3rtpi6OIXo)
 
-As you go through this book, you will see that we load packages without installing them. This is because once you install a package, it remains installed and only needs to be loaded with `library`. The package remains loaded until we quit the R session. If you try to load a package and get an error, it probably means you need to
-install it first. 
 
-We can install more than one package at once by feeding a character vector to this function:
+### Textbook link
 
-```{r, eval=FALSE, echo=TRUE}
-install.packages(c("tidyverse", "dslabs"))
-```
+The content is discussed within the [textbook section on the R basics - 2.9 Sorting](https://rafalab.github.io/dsbook/r-basics.html#sorting).
 
-Note that installing __tidyverse__ actually installs several packages. This commonly occurs when a package has *dependencies*, or uses functions from other packages. When you load a package using `library`, you also load its dependencies.
+### Key Points
 
-Once packages are installed, you can load them into R and you do not need to install them again, unless you install a fresh version of R. Remember packages are installed in R not RStudio.
+- `sort(x)`: sort the original data 
 
-It is helpful to keep a list of all the packages you need for your work in a script because if you need to perform a fresh install of R, you can re-install all your packages by simply running a script.
 
-You can see all the packages you have installed using the following function:
+- `order(x)`: the index that puts the sorted vector x in order 
 
-```{r, eval=FALSE, echo=TRUE}
-installed.packages()
-```
 
+- `rank(x)`: rank the original vector 
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(out.width = NULL, out.extra = NULL)
-```
+Example: 
 
-### 1.6 Workflow
+x<- `c(31,4,15,92.65)`
 
-* The tutorials are self-contained (you practice code in code boxes). However, so you get practice at working in `r rstudio()` I strongly recommend that you create an `r rproj()` markdown file within an `r rstudio()` project and practice everything you do in the tutorial in the `r rproj()` markdown file, make notes on things that confused you or that you want to remember, and save it. Within this markdown file you will need to load the relevant packages and data. 
+`sort(x)` : sorted the original data
 
+Index <- `order(x)`
 
-## `r rproj()` Basics [(1)]{.alt}
+`x[index]` 
 
-### 2. `r rproj()` Basics
+- Abbreviations of states that ordered by murder total 
 
-## 3. `r rproj()` Programming basics [(1)]{.alt}
+Index <- `order(murders$total)`
 
-## 4. The tidyverse [(1)]{.alt}
+`murders$abb[index]`
 
-## 5. Importing data [(1)]{.alt}
+- Find state with largest number of murders
 
-### Acknowledgement
+i_max <- `which.max(murders$total)`
 
+`murders$state[i_max]`
+    
+## Assessment 4
 
-## References
+Insert assessment `r rproj()` Basics here
 
+## 2.3 Vector Arithmetic
 
+
+![](https://youtu.be/oGtW5tYgoeU)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.11 Vector Arithmetic](https://rafalab.github.io/dsbook/r-basics.html#vector-arithmetics).
+
+### Key Points:
+
+- States with highest murder rate
+
+Murder_rate <- `murders$total/murders$population*100000`
+
+`murders$state[order(murder_rate, decreasing = TRUE)]`
+    
+## Assessment 5
+
+Insert assessment `r rproj()` Basics here
+
+## Section 3 Overview
+
+Section 3 introduces to the `r rproj()`  commands and techniques that help you wrangle, analyze, and visualize data.
+
+In Section 3.1, you will:
+
+- Subset a vector based on properties of another vector. 
+- Use multiple logical operators to index vectors.
+- Extract the indices of vector elements satisfying one or more logical conditions. 
+- Extract the indices of vector elements matching with another vector.
+- Determine which elements in one vector are present in another vector. 
+
+In Section 3.2, you will:
+
+- Wrangle data tables using the functions in ‘dplyr’ package. 
+- Modify a data table by adding or changing columns. 
+- Subset rows in a data table.
+- Subset columns in a data table. 
+- Perform a series of operations using the pipe operator. 
+- Create data frames. 
+
+In Section 3.3, you will:
+
+- Plot data in scatter plots, box plots and histograms. 
+
+There are 3 assignments for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 3.1 Indexing
+
+
+![](https://youtu.be/OX-YbREKh1U)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.13 Indexing](https://rafalab.github.io/dsbook/r-basics.html#indexing).
+
+## 3.1 Indexing Functions
+
+
+![](https://youtu.be/3KRwrwPL_9o)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.13.2 Indexing](https://rafalab.github.io/dsbook/r-basics.html#logical-operators).
+
+## Assessment 6
+
+Insert assessment `r rproj()` Basics here
+
+## 3.2 Basic Data Wrangling
+
+
+![](https://youtu.be/bAEwIciE-68)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 4. The Tidyverse](https://rafalab.github.io/dsbook/tidyverse.html#tidy-data).
+
+## 3.2 Creating Data Frames
+
+
+![](https://youtu.be/Ti9QCiIozYQ)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.4.1 Data Frames](https://rafalab.github.io/dsbook/r-basics.html#data-frames).
+
+## Assessment 7
+
+Insert assessment `r rproj()` Basics here
+
+## 3.3 Basic Plots
+
+
+![](https://youtu.be/DarpAx_ie6E)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.15 Basic Plots](https://rafalab.github.io/dsbook/r-basics.html#basic-plots).
+
+## Assessment 8
+
+Insert assessment `r rproj()` Basics here
+
+## Section 4 Overview
+
+Section 4 introduces you to general programming features like 'if-else', and 'for loop' commands so that you can write your own functions to perform various operations on datasets.
+
+In Section 4.1, you will:
+
+- Understand some of the programming capabilities of `r rproj()`. 
+
+In Section 4.2, you will:
+
+- Use basic conditional expressions to perform different operations. 
+- Check if any or all elements of a logical vector are TRUE. 
+
+In Section 4.3, you will:
+
+- Define and call functions to perform various operations.
+- Pass arguments to functions, and return variables/objects from functions.
+
+In Section 4.4, you will:
+
+- Use ‘for’ loop to perform repeated operations. 
+- Articulate in-built functions of `r rproj()` that you could try for yourself. 
+
+There is one assignment for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 4.1 Introduction to Programming in `r rproj()`
+
+
+![](https://youtu.be/4MPsGEPVb6I)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3. Programming basics](https://rafalab.github.io/dsbook/programming-basics.html).
+
+## 4.2 Basic Conditionals
+
+
+![](https://youtu.be/D5NrxFi8QIs)
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.1 Conditional Expressions](https://rafalab.github.io/dsbook/programming-basics.html#conditionals).
+
+## 4.3 Basic Functions
+
+
+![](https://youtu.be/qTTws4uHPG0)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.2 Defining Functions](https://rafalab.github.io/dsbook/programming-basics.html#defining-functions).
+
+## 4.4 For Loops
+
+
+![](https://youtu.be/wE0VG4YhnYE)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.4 For Loops](https://rafalab.github.io/dsbook/programming-basics.html#for-loops).
+
+## 4.4 Other Functions
+
+
+![](https://youtu.be/awdWvsW5Fs0)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.5 Vecorization and Functionals](https://rafalab.github.io/dsbook/programming-basics.html#vectorization).
+
+## Assessment 9
+
+Insert assessment `r rproj()` Basics here

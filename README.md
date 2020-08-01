@@ -1,13 +1,13 @@
-<div style="float: right"><img src="./data-raw/images/datsci_101.png" width="150"></div>
+<div style="float: right"><img src="./data-raw/images/The Brain.png" width="150"></div>
 
-# datasci: Introduction to Data Science with R (Irizarry, 2020)
+# datsci: Introduction to Data Science with R (Irizarry, 2020)
 
 ***
 > **NOTE**: This package is incomplete but under active development. Check back here for updates/new tutorials.
 
 ***
 
-The `datasci` package contains resources for the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by Prof Rafael Irizarry. There are tutorials written using [learnr](https://rstudio.github.io/learnr/). Once a tutorial is running it's similar to  reading a book but with places where you can practice the <img src="./data-raw/images/r_logo.png" width="18"> code that you have just been taught. The `datasci` package is free and offered to support tutors and students using the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) who want to learn Data Science with <img src="./data-raw/images/r_logo.png" width="18">.
+The `datasci` package contains resources for the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by Prof Rafael Irizarry and is based on the associated edX course *HarvardX Professional Certificate in Data Science*. These are tutorials written using [learnr](https://rstudio.github.io/learnr/). Once a tutorial is running it's similar to  reading a book but with places where you can practice the <img src="./data-raw/images/r_logo.png" width="18"> code that you have just been taught. The `datasci` package is free and offered to support tutors and students using the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) who want to learn Data Science with <img src="./data-raw/images/r_logo.png" width="18">.
 
 ## Installing `datasci`
 
@@ -18,13 +18,13 @@ if(!require(remotes)){
   install.packages('remotes')
 }
 
-remotes::install_github("http://rafalab.github.io/pages/software.html")
+remotes::install_github("FUenal/datsci")
 ```
 
 If you are trying to install on a networked computer the install might fail (it's to do install.packages not liking UNC paths, which I'm not even going to pretend to understand). The solution is to specify the location of your <img src="./data-raw/images/r_logo.png" width="18"> library at the point of install. Most networks will map network locations to a drive name (for example, at my own University, users accounts are on the 'N' drive). Find the location of your <img src="./data-raw/images/r_logo.png" width="18"> library (e.g., `N:/Documents/R/win-library/3.5`), possibly executing `.libPaths()` to help you, and specify this location using the `lib` argument:
 
 ```
-remotes::install_github("http://rafalab.github.io/pages/software.html", lib = "N:/Documents/R/win-library/3.5")
+remotes::install_github("FUenal/datsci"), lib = "N:/Documents/R/win-library/3.5")
 ```
 
 ## Interactive tutorials
@@ -33,8 +33,9 @@ I recommend working through [this tutorial](https://rafalab.github.io/dsbook/get
 
 ### List of tutorials
 
+* **datsci_00**: Introduction to Data Science Course: Course structure, syllabus, grading, and workflow.
 * **datsci_01**: <img src="./data-raw/images/r_logo.png" width="18">  Basics: Build a foundation in R and learn how to wrangle, analyze, and visualize data.
-* **datsci_02**: Visualization: Learn basic data visualization principles and how to apply them using ggplot2.
+* **datsci_02**: Data Visualization: Learn basic data visualization principles and how to apply them using ggplot2.
 * **datsci_03**: Probability: Learn probability theory -- essential for a data scientist -- using a case study on the financial crisis of 2007-2008.
 * **datsci_04**: Inference and Modeling: Learn inference and modeling, two of the most widely used statistical tools in data analysis.
 * **datsci_05**: Productivity Tools: Keep your projects organized and produce reproducible reports using GitHub, git, Unix/Linux, and RStudio.
