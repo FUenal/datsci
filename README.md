@@ -7,7 +7,7 @@
 
 ***
 
-The `datasci` package contains resources for the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by Prof Rafael Irizarry and is based on the associated edX course *HarvardX Professional Certificate in Data Science*. These are tutorials written using [learnr](https://rstudio.github.io/learnr/). Once a tutorial is running it's similar to  reading a book but with places where you can practice the <img src="./data-raw/images/r_logo.png" width="18"> code that you have just been taught. The `datasci` package is free and offered to support tutors and students using the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) who want to learn Data Science with <img src="./data-raw/images/r_logo.png" width="18">.
+The `datasci` package contains resources for the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by Prof Rafael Irizarry and is based on the associated edX course *HarvardX Professional Certificate in Data Science*. These are tutorials written using [learnr](https://rstudio.github.io/learnr/). Once a tutorial is running it's similar to  reading a book but with places where you can practice the <img src="./data-raw/images/r_logo.png" width="18"> code that you have just been taught. The `datasci` package is free and offered to support tutors and students who want to learn Data Science with <img src="./data-raw/images/r_logo.png" width="18"> using the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/).
 
 ## Installing `datasci`
 

@@ -83,7 +83,7 @@ You will see examples of **ggplot2** and **dplyr** in action with the Gapminder 
 
 You will learn general principles to guide you in developing effective data visualizations.
 
-## **Meet the Course Instructor**
+## **Meet the Course Instructors**
 
 <div class="infobox">
   <img src="./images/photo2015.jpg" alt="Prof Rafael Irizarry." style="width:200px;height:200px;" class = "img_right">
@@ -94,6 +94,11 @@ Professor Irizarry teaches a popular Data Science course at Harvard and has deve
 
 Webpage: http://rafalab.github.io 
 
+<img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_right" >
+
+**Fatih Uenal** is a Postdoctoral Researcher at the University of Cambridge, Dept of Psychology. His research focuses on the psychology of racism, sexism, and anthropocentrism. He developed this interactive tutorial using the `learnr` package and teaches this course at the University of Cambridge for social scientists interested in Data Science. 
+
+Webpage: https://github.com/FUenal
 </div>
 
 
