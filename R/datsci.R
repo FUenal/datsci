@@ -30,6 +30,7 @@
 #' learnr::run_tutorial("datsci_02", package = "datsci")
 #' ```
 #'
+#' * **datsci_00**: Introduction to Data Science Course: Course structure, syllabus, grading, and workflow.
 #' * **datsci_01**: R Basics: Build a foundation in R and learn how to wrangle, analyze, and visualize data.
 #' * **datsci_02**: Visualization: Learn basic data visualization principles and how to apply them using ggplot2.
 #' * **datsci_03**: Probability: Learn probability theory -- essential for a data scientist -- using a case study on the financial crisis of 2007-2008.
