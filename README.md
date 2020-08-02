@@ -3,7 +3,8 @@
 # datsci: Introduction to Data Science with R (Irizarry, 2020)
 
 ***
-> **NOTE**: This package is incomplete but under active development. Check back here for updates/new tutorials.
+> **NOTE**: This interactive tutorial contains materials from the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/) and the associated edX course *HarvardX Professional Certificate in Data Science*. The textbook is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). The content of this package will be slightly modified to accommodate a more European audience (datasets and excersises).
+This package is incomplete but under active development. Check back here for updates/new tutorials. 
 
 ***
 
