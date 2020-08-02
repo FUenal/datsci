@@ -5,7 +5,7 @@ output:
   learnr::tutorial:
     progressive: false
     theme: "lumen"
-    css: ./css/datsci_style_future.css
+    css: ./css/datsci_style.css
 runtime: shiny_prerendered
 description: "Introduction (introduction, installing and running R and R Studio)."
 bibliography: datsci_00.bib

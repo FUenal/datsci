@@ -204,7 +204,7 @@ a:hover, a:focus {
 /*------- Solution / Hint buttons -------*/
 .tutorial-exercise-input .btn-tutorial-solution {
     margin-left: 15px;
-    background-color: #2C5577;
+    background-color: #4E84C4;
     color: white;
     font-family: 'Jaldi', sans-serif;
     font-size: 13px;
@@ -218,7 +218,7 @@ a:hover, a:focus {
     padding: 8px 14px;
     font-size: 14px;
     background-color: #E8EAE5;
-    border-bottom: 1px solid #2C5577;
+    border-bottom: 1px solid #4E84C4;
     border-radius: 5px 5px 0 0;
     color: #3F3F3F;
     text-shadow: none;
@@ -229,7 +229,7 @@ a:hover, a:focus {
 
 .btn-primary, .btn-success, .btn-info, .btn-xs, .btn-default {
     color: white;
-    background-color: #2C5577;
+    background-color: #4E84C4;
     background-image: none;
     border: 0;
     font-size: 15px;
@@ -238,7 +238,7 @@ a:hover, a:focus {
 
 /*------- Buttons when hovering -------*/
 .btn-default:hover, btn-success:hover, btn-info:hover, btn-primary:hover {
-  background-color: #136CB9;
+  background-color: #A51C30;
   color: white;
 }
 
@@ -298,7 +298,7 @@ a:hover, a:focus {
   border: 2px solid #136CB9;
   background-color: #136CB9;
   background-color: rgba(19, 108, 185, 0.1);
-  color: #2C5577;
+  color: #4E84C4;
 }
 
 .warning {

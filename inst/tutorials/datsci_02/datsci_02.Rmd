@@ -5,7 +5,7 @@ output:
   learnr::tutorial:
     progressive: false
     theme: "lumen"
-    css: ./css/datsci_style_future copy.css
+    css: ./css/datsci_style.css
 runtime: shiny_prerendered
 description: "Data Visualization: Learn basic data visualization principles and how to apply them using ggplot2."
 bibliography: datsci_02.bib

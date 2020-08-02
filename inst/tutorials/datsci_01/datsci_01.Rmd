@@ -5,7 +5,7 @@ output:
   learnr::tutorial:
     progressive: false
     theme: "lumen"
-    css: ./css/datsci_style_future copy.css
+    css: ./css/datsci_style.css
 runtime: shiny_prerendered
 description: "R Basics (introduction, installing and running R and R Studio, functions and objects, packages and functions, style, data types, tidyverse, importing data)."
 bibliography: datsci_01.bib
@@ -45,7 +45,7 @@ source("./www/discovr_helpers.R")
 
 ### Welcome to the `datsci` Data Science Course
 
-Welcome to *Data Science: `r rproj()` Basics*! We're excited to have you join us in this course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
+We're excited to have you join us in this *Data Science: `r rproj()` Basics* course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
 
 This is the first course in the Introduction to Data Science tutorial, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning.
 
