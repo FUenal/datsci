@@ -4,7 +4,7 @@ author: "Rafael Irizarry & Fatih Uenal"
 output:
   learnr::tutorial:
     progressive: false
-    theme: "united"
+    theme: "lumen"
     css: ./css/datsci_style_future.css
 runtime: shiny_prerendered
 description: "Introduction (introduction, installing and running R and R Studio)."
@@ -38,13 +38,11 @@ source("./www/discovr_helpers.R")
 ## Introduction
 
 <div class="infobox">
-  <img src="./images/datsci_101 copy.png" alt="datsci package sticker." style="width:230px;height:130px;" class = "img_right">
-  
   **Usage:** This tutorial accompanies [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html). It contains material from the textbook which is offered under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). You can use this tutorial for teaching and non-profit activities under the specified licence terms.
   
 </div>
 
-### Intorduction to the `datsci` Data Science Course
+### Introduction to the `datsci` Data Science Course
 
 Hi, welcome to the **datsci** course. The demand for skilled data science practitioners in industry, academia, and government is rapidly growing. This tutorial introduces concepts and skills that can help you tackle real-world data analysis challenges. It covers concepts from probability, statistical inference, linear regression, and machine learning. It also helps you develop skills such as `r rproj()` programming, data wrangling with **dplyr**, data visualization with ggplot2, algorithm building with **caret**, file organization with UNIX/Linux shell, version control with Git and GitHub, and reproducible document preparation with **knitr** and R markdown. The book is divided into six parts: `r rproj()` Basics, **Data Visualization, Data Wrangling, Statistics with `r rproj()`, Machine Learning**, and **Productivity Tools**. Each part has several modules meant to be presented as one lecture and includes dozens of exercises distributed across modules
 

@@ -4,8 +4,8 @@ author: "Rafael Irizarry & Fatih Uenal"
 output:
   learnr::tutorial:
     progressive: false
-    theme: "united"
-    css: ./css/datsci_style_future.css
+    theme: "lumen"
+    css: ./css/datsci_style_future copy.css
 runtime: shiny_prerendered
 description: "Data Visualization: Learn basic data visualization principles and how to apply them using ggplot2."
 bibliography: datsci_02.bib
@@ -33,9 +33,9 @@ library(tibble)
 source("./www/discovr_helpers.R")
 ```
 
-# **datsci_02: Data Visualization**
+# datsci_02: Data Visualization
 
-## **Introduction and Welcome!**
+## Introduction and Welcome!
 
 <div class="infobox">
   
@@ -63,27 +63,27 @@ The growing availability of informative datasets and software tools has led to i
 
 ### Course overview
 
-**Section 1: Introduction to Data Visualization and Distributions**
+Section 1: Introduction to Data Visualization and Distributions
 
-You will get started with data visualization and distributions in `r rproj()`.
+- You will get started with data visualization and distributions in `r rproj()`.
 
-**Section 2: Introduction to ggplot2**
+Section 2: Introduction to ggplot2
 
-You will learn how to use the **ggplot2** package to create plots. 
+- You will learn how to use the **ggplot2** package to create plots. 
 
-**Section 3: Summarizing with dplyr**
+Section 3: Summarizing with dplyr
 
-You will learn how to summarize data using the **dplyr** package.
+- You will learn how to summarize data using the **dplyr** package.
 
-**Section 4: Gapminder**
+Section 4: Gapminder
 
-You will see examples of **ggplot2** and **dplyr** in action with the Gapminder dataset.
+- You will see examples of **ggplot2** and **dplyr** in action with the Gapminder dataset.
 
-**Section 5: Data Visualization Principles**
+Section 5: Data Visualization Principles
 
-You will learn general principles to guide you in developing effective data visualizations.
+- You will learn general principles to guide you in developing effective data visualizations.
 
-## **Meet the Course Instructor**
+## Meet the Course Instructor
 
 <div class="infobox">
   <img src="./images/photo2015.jpg" alt="Prof Rafael Irizarry." style="width:200px;height:200px;" class = "img_right">
@@ -125,7 +125,7 @@ Insert Survey Link here
 
 *If you cannot see the survey above, click this link to access it in a new window.*
 
-## **Section 1 Overview**
+## Section 1 Overview
 
 Section 1 introduces you to Data Visualization and Distributions.
 
@@ -141,7 +141,7 @@ There are 5 assignments that use the DataCamp platform for you to practice your 
 
 We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-## **1.1 Introduction to Data Visualization**
+## 1.1 Introduction to Data Visualization
 
 
 ![](https://youtu.be/QCZGm37zSBg)
@@ -166,7 +166,7 @@ data(murders)
 head(murders)
 ```
 
-## **Introduction to Distributions**
+## Introduction to Distributions
 
 
 ![](https://youtu.be/JscMP_peDNY)
@@ -182,7 +182,7 @@ The content is discussed within the [textbook section - 8. Visualizing data dist
 - We will learn ways to visualize and analyze distributions in the upcoming videos.
 - In some cases, data can be summarized by a two-number summary: the average and standard deviation. We will learn to use data visualization to determine when that is appropriate.
 
-## **Data Types**
+## Data Types
 
 
 ![](https://youtu.be/gPWWvseASWc)
@@ -201,11 +201,11 @@ The content is discussed within the [textbook section - 8.1 Variable types](http
     - Continuous variables can take any value.
     - Discrete variables are limited to sets of specific values.
 
-## **Assessment 1.1: Data Types**
+## 1.1 Assessment: Data Types
 
 Insert assessment here
 
-## **1.2 Describe Heights to ET**
+## 1.2 Describe Heights to ET
 
 
 ![](https://youtu.be/DmF5mUIx2aA)
@@ -243,7 +243,7 @@ data(heights)
 prop.table(table(heights$sex))
 ```
 
-## **Cumulative Distribution Function**
+## Cumulative Distribution Function
 
 Every continuous distribution has a cumulative distribution function (CDF). The CDF defines the proportion of the data below a given value 𝑎 for all values of 𝑎:
     
@@ -299,7 +299,7 @@ To define the proportion of values between 𝑎 and 𝑏, we compute:
     
 Note that the CDF can help compute probabilities. The probability of observing a randomly chosen value between 𝑎 and 𝑏 is equal to the proportion of values between 𝑎 and 𝑏, which we compute with the CDF.
 
-## **1.2 Smooth Density Plots**
+## 1.2 Smooth Density Plots
 
 
 ![](https://youtu.be/6PyoTN0F-Ys)
@@ -321,11 +321,11 @@ The content is discussed within the [textbook section - 8.6 Smoothed density](ht
 
 Note that the choice of binwidth has a determinative effect on shape. There is no "correct" choice for binwidth, and you can sometimes gain insights into the data by experimenting with binwidths.
 
-## **Assessment 1.2: Distributions**
+## 1.2 Assessment: Distributions
 
 Insert assessment here
 
-## **1.2 Normal Distribution**
+## 1.2 Normal Distribution
 
 
 ![](https://youtu.be/qhWFObCfyCI)
@@ -405,7 +405,7 @@ mean(abs(z) < 2)
 
 The built-in R function `sd()` calculates the standard deviation, but it divides by `length(x)-1` instead of `length(x)`. When the length of the list is large, this difference is negligible and you can use the built-in `sd()` function. Otherwise, you should compute 𝜎 by hand. For this course series, assume that you should use the `sd()` function unless you are told not to do so.
 
-## **1.2 Normal Distribution: Standard Units and Z-scores**
+## 1.2 Normal Distribution: Standard Units and Z-scores
 
 ### Standard units
 
@@ -499,7 +499,7 @@ The probability distribution function for the normal distribution is defined suc
 
 - We will learn how to compute these exact probabilities in a later section, as well as probabilities for other intervals.
 
-## **1.2 The Normal CDF and pnorm**
+## 1.2 The Normal CDF and pnorm
 
 
 ![](https://youtu.be/qjD0DDvW-y8)
@@ -556,11 +556,11 @@ mean(x <= 70.9) - mean(x <= 70.1)
 pnorm(70.9, mean(x), sd(x)) - pnorm(70.1, mean(x), sd(x))
 ```
 
-## **Assessment 1.2: Normal distribution**
+## 1.2 Assessment: Normal distribution
 
 Insert assessment here
 
-## **1.3 Definition of quantiles**
+## 1.3 Definition of quantiles
 
 ### Definition of quantiles
 
@@ -618,7 +618,7 @@ percentiles[names(percentiles) == "25%"]
 percentiles[names(percentiles) == "75%"]
 ```
 
-## **1.3 Finding quantiles with qnorm**
+## 1.3 Finding quantiles with qnorm
 
 ### Definition of qnorm
 
@@ -663,7 +663,7 @@ theoretical_quantiles <- qnorm(p, 69, 3)
 
 Theoretical quantiles can be compared to sample quantiles determined with the quantile function in order to evaluate whether the sample follows a normal distribution.
 
-## **1.3 Quantile-Quantile Plots**
+## 1.3 Quantile-Quantile Plots
 
 
 ![](https://youtu.be/qjD0DDvW-y8)
@@ -712,7 +712,7 @@ plot(theoretical_quantiles, observed_quantiles)
 abline(0,1)
 ```
 
-## **1.3 Percentiles**
+## 1.3 Percentiles
 
 
 ![](https://youtu.be/rdbv0tNPRBo)
@@ -728,7 +728,7 @@ The content is discussed within the [textbook section - 8.11 Percentiles](https:
 - The 50th percentile is also known as the *median*.
 - The *quartiles* are the 25th, 50th and 75th percentiles.
 
-## **1.3 Boxplots**
+## 1.3 Boxplots
 
 
 ![](https://youtu.be/XGFpmDYHQd0)
@@ -746,11 +746,11 @@ The content is discussed within the [textbook section - 8.12 Boxplots](https://r
 - Boxplots are particularly useful when comparing multiple distributions.
 - We discuss outliers in a later video.
 
-## **Assessment 1.3: Quantiles, percentiles, and boxplots**
+## 1.3 Assessment: Quantiles, percentiles, and boxplots
 
 Insert assessment here
 
-## **1.4 Distribution of Female Heights**
+## 1.4 Distribution of Female Heights
 
 
 ![](https://youtu.be/vddLEqC-UYw)
@@ -765,11 +765,11 @@ The content is discussed within the [textbook section - 8.14 Case study: describ
 - If a distribution is not normal, it cannot be summarized with only the mean and standard deviation. Provide a histogram, smooth density or boxplot instead.
 - A plot can force us to see unexpected results that make us question the quality or implications of our data.
 
-## **Assessment 1.4: Robust Summaries with Outliers**
+## 1.4 Assessment: Robust Summaries with Outliers
 
 Insert assessment here
 
-## **Section 2 Overview**
+## Section 2 Overview
 
 In Section 2, you will learn how to create data visualizations in `r rproj()` using the **ggplot2** package.
 
@@ -787,7 +787,7 @@ Note that it can be hard to memorize all of the functions and arguments used by 
 
 We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-## **2. ggplot2**
+## 2. ggplot2
 
 
 ![](https://youtu.be/hPz5BfoCKG4)
@@ -806,7 +806,7 @@ We recommend you keep a copy of the [ggplot2 cheat sheet](https://rstudio.com/wp
 - **ggplot2** uses a *grammar of graphics* to break plots into building blocks that have intuitive syntax, making it easy to create relatively complex and aesthetically pleasing plots with relatively simple and readable code.
 - **ggplot2** is designed to work exclusively with tidy data (rows are observations and columns are variables).
 
-## **2.1 Graph Components**
+## 2.1 Graph Components
 
 
 ![](https://youtu.be/R1_ozJg8_I0)
@@ -835,7 +835,7 @@ library(dslabs)
 data(murders)
 ```
 
-## **2.1 Creating a New Plot**
+## 2.1 Creating a New Plot
 
 
 ![](https://youtu.be/62baxgWvTRU)
@@ -872,7 +872,7 @@ print(p)    # this is equivalent to simply typing p
 p
 ```
 
-## **2.2 Layers**
+## 2.2 Layers
 
 
 ![](https://youtu.be/KLbmNpK__-M)
@@ -927,7 +927,7 @@ p_test <- p + geom_text(aes(population/10^6, total, label = abb))
 p_test <- p + geom_text(aes(population/10^6, total), label = abb)
 ```
 
-## **2.2 Tinkering**
+## 2.2 Tinkering
 
 
 ![](https://youtu.be/hug0MY7FSOo)
@@ -969,7 +969,7 @@ p + geom_point(size = 3) +
     geom_text(aes(x = 10, y = 800, label = "Hello there!"))
 ```
 
-## **2.2 Scales, Labels, and Colors**
+## 2.2 Scales, Labels, and Colors
 
 
 ![](https://youtu.be/rjeLtJxePuY)
@@ -1070,7 +1070,7 @@ p +
 p <- p + scale_color_discrete(name = "Region")    # capitalize legend title
 ```
 
-## **2.2 Add-on Packages**
+## 2.2 Add-on Packages
 
 
 ![](https://youtu.be/nQ3dMbSbeRY)
@@ -1132,7 +1132,7 @@ murders %>%
     theme_economist()
 ```
 
-## **2.2 Other Examples**
+## 2.2 Other Examples
 
 
 ![](https://youtu.be/eq4UBgFX6FM)
@@ -1221,11 +1221,11 @@ library(gridExtra)
 grid.arrange(p1, p2, p3, ncol = 3)
 ```
 
-## **Assessment 2.2: Introduction to ggplot2**
+## 2.2 Assessment: Introduction to ggplot2
 
 Insert assessment here
 
-## **Section 3 Overview**
+## Section 3 Overview
 
 Section 3 introduces you to summarizing with **dplyr**.
 
@@ -1241,7 +1241,7 @@ There is 1 assignments that use the DataCamp platform for you to practice your c
 
 We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-## **3. dplyr**
+## 3. dplyr
 
 
 ![](https://youtu.be/PEcAhPjP2ns)
@@ -1288,7 +1288,7 @@ heights %>%
     summarize(range = quantile(height, c(0, 0.5, 1)))
 ```
 
-## **3.1 The Dot Placeholder**
+## 3.1 The Dot Placeholder
 
 
 ![](https://youtu.be/0LdOq4HsInA)
@@ -1331,7 +1331,7 @@ us_murder_rate <- murders %>%
     .$rate
 ```
 
-## **3.1 Group By**
+## 3.1 Group By
 
 
 ![](https://youtu.be/6jZMsvjJh4c)
@@ -1370,7 +1370,7 @@ murders %>%
     summarize(median_rate = median(murder_rate))
 ```
 
-## **3.1 Sorting Data Tables**
+## 3.1 Sorting Data Tables
 
 
 ![](https://youtu.be/ZCs2dtCWgMM)
@@ -1418,11 +1418,11 @@ murders %>% top_n(10, murder_rate)
 murders %>% arrange(desc(murder_rate)) %>% top_n(10)
 ```
 
-## **Assessment 3.1: Summarizing with dplyr**
+## 3.1 Assessment: Summarizing with dplyr
 
 Insert assessment here
 
-## **Section 4 Overview**
+## Section 4 Overview
 
 In Section 4, you will look at a case study involving data from the Gapminder Foundation about trends in world health and economics.
 
@@ -1437,7 +1437,7 @@ There is 1 assignments that use the DataCamp platform for you to practice your c
 
 We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-## **4.1 Case Study: Trends in World Health and Economics**
+## 4.1 Case Study: Trends in World Health and Economics
 
 
 ![](https://youtu.be/PrkgZIEzJs8)
@@ -1462,7 +1462,7 @@ You can also find more information and raw data (in addition to what we analyze 
     - Is it still fair to consider the world as divided into the West and the developing world?
     - Has income inequality across countries worsened over the last 40 years?
 
-## **4.1 Gapminder Dataset**
+## 4.1 Gapminder Dataset
 
 
 ![](https://youtu.be/kX3KYHJgGEM)
@@ -1491,7 +1491,7 @@ gapminder %>%
     select(country, infant_mortality)
 ```
 
-## **4.1 Life Expectancy and Fertility Rates**
+## 4.1 Life Expectancy and Fertility Rates
 
 
 ![](https://youtu.be/Po_xV1jxFuQ)
@@ -1524,7 +1524,7 @@ filter(gapminder, year == 1962) %>%
     geom_point()
 ```
 
-## **4.2 Faceting**
+## 4.2 Faceting
 
 
 ![](https://youtu.be/o8fgBHwwTCk)
@@ -1567,7 +1567,7 @@ gapminder %>%
     facet_wrap(~year)
 ```
 
-## **4.2 Time Series Plots**
+## 4.2 Time Series Plots
 
 
 ![](https://youtu.be/Xex06OQfQMQ)
@@ -1633,7 +1633,7 @@ gapminder %>% filter(country %in% countries) %>%
     theme(legend.position = "none")
 ```
 
-## **4.2 Transformations**
+## 4.2 Transformations
 
 
 ![](https://youtu.be/pBrthkK0qYk)
@@ -1685,7 +1685,7 @@ gapminder %>%
     scale_x_continuous(trans = "log2")
 ```
 
-## **4.2 Stratify and Boxplot**
+## 4.2 Stratify and Boxplot
 
 
 ![](https://youtu.be/XOaDnfrB-WM)
@@ -1758,7 +1758,7 @@ p + scale_y_continuous(trans = "log2")
 p + scale_y_continuous(trans = "log2") + geom_point(show.legend = FALSE)
 ```
 
-## **4.2 Comparing Distributions**
+## 4.2 Comparing Distributions
 
 
 ![](https://youtu.be/Cn3Ew_EoDbw)
@@ -1842,7 +1842,7 @@ p <- gapminder %>%
  p + geom_boxplot(aes(region, dollars_per_day, fill = factor(year)))
 ```
 
-## **4.2 Density Plots**
+## 4.2 Density Plots
 
 
 ![](https://youtu.be/cQZN1R8nrls)
@@ -1930,7 +1930,7 @@ gapminder %>%
     geom_density(alpha = 0.2, bw = 0.75, position = "stack") + facet_grid(year ~ .)
 ```
 
-## **4.2 Ecological Fallacy**
+## 4.2 Ecological Fallacy
 
 
 ![](https://youtu.be/tvztsLd8IT4)
@@ -1993,11 +1993,11 @@ surv_income %>% ggplot(aes(income, infant_survival_rate, label = group, color = 
     geom_label(size = 3, show.legend = FALSE) 
 ```
 
-## **Assessment 4.2: Exploring the Gapminder Dataset**
+## 4.2 Assessment: Exploring the Gapminder Dataset
 
 Insert assessment here
 
-## **Section 5 Overview**
+## Section 5 Overview
 
 Section 5 covers some general principles that can serve as guides for effective data visualization.
 
@@ -2013,7 +2013,7 @@ There are 3 assignments that use the DataCamp platform for you to practice your 
 
 We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
 
-## **5.1 Introduction to Data Visualization Principles**
+## 5.1 Introduction to Data Visualization Principles
 
 
 ![](https://youtu.be/y2o9VP-Enjw)
@@ -2029,7 +2029,7 @@ This video corresponds to the [textbook section - 10 Data visualization principl
 - We show examples of plot styles to avoid, discuss how to improve them, and use these examples to explain research-based principles for effective visualization.
 - When choosing a visualization approach, keep your goal and audience in mind.
 
-## **5.1 Encoding Data Using Visual Cues**
+## 5.1 Encoding Data Using Visual Cues
 
 
 ![](https://youtu.be/AFIew70n_xs)
@@ -2048,7 +2048,7 @@ You can learn more about barplots in [the textbook section - 8.16.1 Barplots](ht
 - Pie charts represent visual cues as both angles and area, while donut charts use only area. Humans are not good at visually quantifying angles and are even worse at quantifying area. Therefore pie and donut charts should be avoided - use a bar plot instead. If you must make a pie chart, include percentages as labels.
 - Bar plots represent visual cues as position and length. Humans are good at visually quantifying linear measures, making bar plots a strong alternative to pie or donut charts.
 
-## **5.1 Know When to Include Zero**
+## 5.1 Know When to Include Zero
 
 
 ![](https://youtu.be/SzJaN4B8RBk)
@@ -2063,7 +2063,7 @@ This video corresponds to the [textbook section - 10.2 Know when to include 0](h
 - When using bar plots, always start at 0. It is deceptive not to start at 0 because bar plots imply length is proportional to the quantity displayed. Cutting off the y-axis can make differences look bigger than they actually are.
 - When using position rather than length, it is not necessary to include 0 (scatterplot, dot plot, boxplot).
 
-## **5.1 Do Not Distort Quantities**
+## 5.1 Do Not Distort Quantities
 
 
 ![](https://youtu.be/4k-34-IYcEc)
@@ -2078,7 +2078,7 @@ This video corresponds to the [textbook section - 10.3 Do not distort quantities
 - Make sure your visualizations encode the correct quantities.
 - For example, if you are using a plot that relies on circle area, make sure the area (rather than the radius) is proportional to the quantity.
 
-## **5.1 Order by a Meaningful Value**
+## 5.1 Order by a Meaningful Value
 
 
 ![](https://youtu.be/re2OXlfE1SQ)
@@ -2093,11 +2093,11 @@ This video corresponds to the [textbook section - 10.4 Order categories by a mea
 - It is easiest to visually extract information from a plot when categories are ordered by a meaningful value. The exact value on which to order will depend on your data and the message you wish to convey with your plot.
 - The default ordering for categories is alphabetical if the categories are strings or by factor level if factors. However, we rarely want alphabetical order.
 
-## **Assessment 5.1: Data Visualization Principles, Part 1**
+## 5.1 Assessment: Data Visualization Principles, Part 1
 
 Insert assessment here
 
-## **5.2 Show the Data**
+## 5.2 Show the Data
 
 
 ![](https://youtu.be/re2OXlfE1SQ)
@@ -2125,7 +2125,7 @@ heights %>% ggplot(aes(sex, height)) + geom_point()
 heights %>% ggplot(aes(sex, height)) + geom_jitter(width = 0.1, alpha = 0.2)
 ```
 
-## **5.2 Ease Comparisons: Use Common Axes**
+## 5.2 Ease Comparisons: Use Common Axes
 
 
 ![](https://youtu.be/ZdsMrH6VvYo)
@@ -2142,7 +2142,7 @@ This video corresponds to the [textbook section - 10.6 Ease comparisons and 10.6
 - Align plots vertically to see horizontal changes. Align plots horizontally to see vertical changes.
 - Bar plots are useful for showing one number but not useful for showing distributions.
 
-## **5.2 Consider Transformations**
+## 5.2 Consider Transformations
 
 
 ![](https://youtu.be/_VVUgRd9ZBA)
@@ -2158,7 +2158,7 @@ This video corresponds to the [textbook section - 10.6.3 Consider transformation
 - The log transformation is useful for data with multiplicative changes. The logistic transformation is useful for fold changes in odds. The square root transformation is useful for count data.
 - We learned how to apply transformations earlier in the course.
 
-## **5.2 Ease Comparisons: Compared Visual Cues Should Be Adjacent**
+## 5.2 Ease Comparisons: Compared Visual Cues Should Be Adjacent
 
 
 ![](https://youtu.be/P8Way-uFb38)
@@ -2189,11 +2189,11 @@ p1 <- data.frame(x = 1:8, y = 1:8, col = as.character(1:8)) %>%
 p1 + scale_color_manual(values = color_blind_friendly_cols)
 ```
 
-## **Assessment 5.2: Data Visualization Principles, Part 2**
+## 5.2 Assessment: Data Visualization Principles, Part 2
 
 Insert assessment here
 
-## **5.3 Slope Charts**
+## 5.3 Slope Charts
 
 
 ![](https://youtu.be/1RtxbECaHsE)
@@ -2251,7 +2251,7 @@ dat %>%
     ylab("Difference between 2015 and 2010")
 ```
 
-## **5.3 Encoding a Third Variable**
+## 5.3 Encoding a Third Variable
 
 
 ![](https://youtu.be/YkSEeOHYtxU)
@@ -2266,7 +2266,7 @@ This video corresponds to the [textbook section - 10.9 Encoding a third variable
 - Encode a categorical third variable on a scatterplot using color hue or shape. Use the `shape` argument to control shape.
 - Encode a continuous third variable on a using color intensity or size.
 
-## **5.3 Case Study: Vaccines**
+## 5.3 Case Study: Vaccines
 
 
 ![](https://youtu.be/av-9WQ65MH8)
@@ -2343,7 +2343,7 @@ dat %>%
     geom_vline(xintercept = 1963, col = "blue")
 ```
 
-## **5.3 Avoid Pseudo and Gratuitous 3D Plots**
+## 5.3 Avoid Pseudo and Gratuitous 3D Plots
 
 
 ![](https://youtu.be/ChcTOhbeLFU)
@@ -2357,7 +2357,7 @@ This video corresponds to the [textbook section - 10.10 Avoid pseudo-three-dimen
 
 In general, pseudo-3D plots and gratuitous 3D plots only add confusion. Use regular 2D plots instead.
 
-## **5.3 Avoid Too Many Significant Digits**
+## 5.3 Avoid Too Many Significant Digits
 
 
 ![](https://youtu.be/CXHaT0j9L4I)
@@ -2373,22 +2373,22 @@ This video corresponds to the [textbook section - 10.11 Avoid too many significa
 - Reduce the number of significant digits globally by setting an option. For example, `options(digits = 3)` will cause all future computations that session to have 3 significant digits.
 - Reduce the number of digits locally using `round()` or `signif()`.
 
-## **Assessment 5.3: Data Visualization Principles, Part 3**
+## 5.3 Assessment: Data Visualization Principles, Part 3
 
 Insert assessment here
 
-## **Assessment: Titanic Survival**
+## Assessment: Titanic Survival
 
 Insert assessment here (Titanic Survival Exercises)
 
-## **Assessment: Properties of Stars**
+## Assessment: Properties of Stars
 
 Insert assessment here (Properties of Stars Exercises)
 
-## **Assessment Part 1: Climate Change Exercises**
+## Assessment Part 1: Climate Change Exercises
 
 Insert assessment here (Climate Change Exercises: Questions 1-7)
 
-## **Assessment Part 2: Climate Change Exercises**
+## Assessment Part 2: Climate Change Exercises
 
 Insert assessment here (Climate Change Exercises: Questions 8-12)
