@@ -995,7 +995,7 @@ This video corresponds to the following:
 
 ### Code: Log-scale the x- and y-axis
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define p
 library(tidyverse)
 library(dslabs)
@@ -1017,7 +1017,7 @@ p + geom_point(size = 3) +
 
 ### Code: Add labels and title
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 p + geom_point(size = 3) +
     geom_text(nudge_x = 0.075) +
     scale_x_log10() +
@@ -1029,7 +1029,7 @@ p + geom_point(size = 3) +
 
 ### Code: Change color of the points
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # redefine p to be everything except the points layer
 p <- murders %>%
     ggplot(aes(population/10^6, total, label = abb)) +
@@ -1049,7 +1049,7 @@ p + geom_point(aes(col = region), size = 3)
 
 ### Code: Add a line with average murder rate
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 r <- murders %>%
     summarize(rate = sum(total) / sum(population) * 10^6) %>%
     pull(rate)
@@ -1066,7 +1066,7 @@ p +
 
 ### Code: Change legend title
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 p <- p + scale_color_discrete(name = "Region")    # capitalize legend title
 ```
 
@@ -1091,7 +1091,7 @@ This video corresponds to the following:
 
 ### Code: Adding themes
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define p
 library(dslabs)
 ds_theme_set()
@@ -1104,7 +1104,7 @@ p + theme_fivethirtyeight()    # style of the FiveThirtyEight website
 
 ### Code: Putting it all together to assemble the plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # load libraries
 library(tidyverse)
 library(ggrepel)

@@ -960,13 +960,14 @@ p &lt;- murders %&gt;% ggplot(aes(population/10^6, total, label = abb))
 p + geom_point(size = 3) +
     geom_text(nudge_x = 0.05) +
     scale_x_continuous(trans = &quot;log10&quot;) +
-    scale_y_continuous(trans = &quot;log10&quot;)
-    
-# efficient log scaling of the axes
+    scale_y_continuous(trans = &quot;log10&quot;)</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-25-1.png" width="624" /></p>
+<pre class="r"><code># efficient log scaling of the axes
 p + geom_point(size = 3) +
     geom_text(nudge_x = 0.075) +
     scale_x_log10() +
     scale_y_log10()</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-25-2.png" width="624" /></p>
 </div>
 <div id="section-code-add-labels-and-title" class="section level3">
 <h3>Code: Add labels and title</h3>
@@ -977,6 +978,7 @@ p + geom_point(size = 3) +
     xlab(&quot;Population in millions (log scale)&quot;) +
     ylab(&quot;Total number of murders (log scale)&quot;) +
     ggtitle(&quot;US Gun Murders in 2010&quot;)</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-26-1.png" width="624" /></p>
 </div>
 <div id="section-code-change-color-of-the-points" class="section level3">
 <h3>Code: Change color of the points</h3>
@@ -991,10 +993,11 @@ p &lt;- murders %&gt;%
     ggtitle(&quot;US Gun Murders in 2010&quot;)
     
 # make all points blue
-p + geom_point(size = 3, color = &quot;blue&quot;)
-
-# color points by region
+p + geom_point(size = 3, color = &quot;blue&quot;)</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-27-1.png" width="624" /></p>
+<pre class="r"><code># color points by region
 p + geom_point(aes(col = region), size = 3)</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-27-2.png" width="624" /></p>
 </div>
 <div id="section-code-add-a-line-with-average-murder-rate" class="section level3">
 <h3>Code: Add a line with average murder rate</h3>
@@ -1004,12 +1007,13 @@ p + geom_point(aes(col = region), size = 3)</code></pre>
     
 # basic line with average murder rate for the country
 p + geom_point(aes(col = region), size = 3) +
-    geom_abline(intercept = log10(r))    # slope is default of 1
-    
-# change line to dashed and dark grey, line under points
+    geom_abline(intercept = log10(r))    # slope is default of 1</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-28-1.png" width="624" /></p>
+<pre class="r"><code># change line to dashed and dark grey, line under points
 p + 
     geom_abline(intercept = log10(r), lty = 2, color = &quot;darkgrey&quot;) +
     geom_point(aes(col = region), size = 3)</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-28-2.png" width="624" /></p>
 </div>
 <div id="section-code-change-legend-title" class="section level3">
 <h3>Code: Change legend title</h3>
@@ -1043,8 +1047,10 @@ ds_theme_set()
 
 # themes from ggthemes
 library(ggthemes)
-p + theme_economist()    # style of the Economist magazine
-p + theme_fivethirtyeight()    # style of the FiveThirtyEight website</code></pre>
+p + theme_economist()    # style of the Economist magazine</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-30-1.png" width="624" /></p>
+<pre class="r"><code>p + theme_fivethirtyeight()    # style of the FiveThirtyEight website</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-30-2.png" width="624" /></p>
 </div>
 <div id="section-code-putting-it-all-together-to-assemble-the-plot" class="section level3">
 <h3>Code: Putting it all together to assemble the plot</h3>
@@ -1073,6 +1079,7 @@ murders %&gt;%
     ggtitle(&quot;US Gun Murders in 2010&quot;) +
     scale_color_discrete(name = &quot;Region&quot;) +
     theme_economist()</code></pre>
+<p><img src="datsci_02_files/figure-html/unnamed-chunk-31-1.png" width="624" /></p>
 </div>
 </div>
 <div id="section-other-examples" class="section level2">
@@ -2294,7 +2301,7 @@ session$onSessionEnded(function() {
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65]}},"value":[{"type":"character","attributes":{},"value":["backports","base","colorspace","compiler","crayon","datasets","digest","dplyr","ellipsis","evaluate","fastmap","forcats","generics","ggplot2","glue","graphics","grDevices","grid","gtable","hms","htmltools","htmlwidgets","httpuv","httr","jsonlite","kableExtra","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","rstudioapi","rvest","scales","shiny","stats","stringi","stringr","tibble","tidyselect","tools","utils","vctrs","viridisLite","webshot","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.1.8","4.0.2","1.4-1","4.0.2","1.3.4","4.0.2","0.6.25","1.0.0","0.3.1","0.14","1.0.1","0.5.0","0.0.2","3.3.2","1.4.1","4.0.2","4.0.2","4.0.2","0.3.0","0.5.3","0.5.0","1.5.1","1.5.4","1.4.2","1.7.0","1.1.0","1.29","1.1.0.1","0.10.1","0.2.0","1.7.9","1.5","1.1","4.0.2","0.9","0.5.0","1.4.6","2.0.3","1.1.1","0.3.4","2.4.1","1.0.5","1.3.1","0.4.7","2.3","1.3-2","0.11","0.3.6","1.1.1","1.5.0","4.0.2","1.4.6","1.4.0","3.0.3","1.1.0","4.0.2","4.0.2","0.3.2","0.3.0","0.5.2","2.2.0","0.16","1.3.2","1.8-4","2.2.1"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","blob","broom","cellranger","cli","colorspace","compiler","crayon","datasets","DBI","dbplyr","digest","dplyr","dslabs","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","ggplot2","ggrepel","ggthemes","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jsonlite","kableExtra","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","modelr","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","utils","vctrs","viridisLite","webshot","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.8","4.0.2","1.2.1","0.7.0","1.1.0","2.0.2","1.4-1","4.0.2","1.3.4","4.0.2","1.1.0","1.4.4","0.6.25","1.0.0","0.7.3","0.3.1","0.14","0.4.1","2.0.3","1.0.1","0.5.0","1.4.2","0.0.2","3.3.2","0.8.2","4.2.0","1.4.1","4.0.2","4.0.2","4.0.2","0.3.0","2.3.1","0.5.3","0.5.0","1.5.1","1.5.4","1.4.2","1.7.0","1.1.0","1.29","1.1.0.1","0.10.1","0.2.0","1.7.9","1.5","1.1","4.0.2","0.9","0.1.8","0.5.0","1.4.6","2.0.3","1.1.1","0.3.4","2.4.1","1.0.5","1.3.1","1.3.1","0.3.0","0.4.7","2.3","1.3-2","0.11","0.3.6","1.1.1","1.5.0","4.0.2","1.4.6","1.4.0","3.0.3","1.1.0","1.1.0","1.3.0","4.0.2","4.0.2","0.3.2","0.3.0","0.5.2","2.2.0","0.16","1.3.2","1.8-4","2.2.1"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>
