@@ -522,7 +522,7 @@ The content is discussed within the [textbook section - 13 Probability](https://
 
 Given male heights x:
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(tidyverse)
 library(dslabs)
 data(heights)
@@ -531,7 +531,7 @@ x <- heights %>% filter(sex=="Male") %>% pull(height)
 
 We can estimate the probability that a male is taller than 70.5 inches with:
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 1 - pnorm(70.5, mean(x), sd(x))
 ```
 
@@ -900,7 +900,7 @@ This video corresponds to the following:
 
 ### Code: Adding layers to a plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(tidyverse)
 library(dslabs)
 data(murders)
@@ -950,7 +950,7 @@ This video corresponds to the following:
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # change the size of the points
 p + geom_point(aes(population/10^6, total), size = 3) +
     geom_text(aes(population/10^6, total, label = abb))
@@ -1157,7 +1157,7 @@ This video corresponds to the following:
 
 ### Code: Histograms in ggplot2
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # load heights data
 library(tidyverse)
 library(dslabs)
@@ -1180,14 +1180,14 @@ p + geom_histogram(binwidth = 1, fill = "blue", col = "black") +
 
 ### Code: Smooth density plots in ggplot2
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 p + geom_density()
 p + geom_density(fill = "blue")
 ```
 
 ### Code: Quantile-quantile plots in ggplot2
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # basic QQ-plot
 p <- heights %>% filter(sex == "Male") %>%
     ggplot(aes(sample = height))
@@ -1209,7 +1209,7 @@ heights %>%
 
 ### Code: Grids of plots with the gridExtra package
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define plots p1, p2, p3
 p <- heights %>% filter(sex == "Male") %>% ggplot(aes(x = height))
 p1 <- p + geom_histogram(binwidth = 1, fill = "blue", col = "black")
@@ -1511,7 +1511,11 @@ This video corresponds to the [textbook section - 9.2 Scatterplots](https://rafa
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+# load data
+library(dslabs)
+data(gapminder)
+
 # basic scatterplot of life expectancy versus fertility
 ds_theme_set()    # set plot theme
 filter(gapminder, year == 1962) %>%
@@ -1544,7 +1548,11 @@ This video corresponds to the [textbook section - 9.3 Faceting](https://rafalab.
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+# load data
+library(dslabs)
+data(gapminder)
+
 # facet by continent and year
 filter(gapminder, year %in% c(1962, 2012)) %>%
     ggplot(aes(fertility, life_expectancy, col = continent)) +
@@ -1587,7 +1595,11 @@ This video corresponds to the [textbook section - 9.4 Time series plots](https:/
 
 ### Code: Single time series
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+# load data
+library(dslabs)
+data(gapminder)
+
 # scatterplot of US fertility by year
 gapminder %>%
     filter(country == "United States") %>%
@@ -1603,7 +1615,7 @@ gapminder %>%
 
 ### Code: Multiple time series
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # line plot fertility time series for two countries- only one line (incorrect)
 countries <- c("South Korea", "Germany")
 gapminder %>% filter(country %in% countries) %>%
@@ -1623,7 +1635,7 @@ gapminder %>% filter(country %in% countries) %>%
 
 ### Code: Adding text labels to a plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # life expectancy time series - lines colored by country and labeled, no legend
 labels <- data.frame(country = countries, x = c(1975, 1965), y = c(60, 72))
 gapminder %>% filter(country %in% countries) %>%
@@ -1659,7 +1671,11 @@ This video corresponds to the following:
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+# load data
+library(dslabs)
+data(gapminder)
+
 # add dollars per day variable
 gapminder <- gapminder %>%
     mutate(dollars_per_day = gdp/population/365)
@@ -1705,7 +1721,11 @@ Note that many boxplots from the video are instead dot plots in the textbook and
 
 ### Code: Boxplot of GDP by region
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+# load data
+library(dslabs)
+data(gapminder)
+
 # add dollars per day variable
 gapminder <- gapminder %>%
     mutate(dollars_per_day = gdp/population/365)
@@ -1740,7 +1760,7 @@ levels(fac)
 
 ### Code: Enhanced boxplot ordered by median income, scaled, and showing data
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # reorder by median income and color by continent
 p <- gapminder %>%
     filter(year == past_year & !is.na(gdp)) %>%
@@ -1776,7 +1796,7 @@ This video corresponds to the [textbook section - 9.7.3 Example: 1970 versus 201
 
 ### Code: Histogram of income in West versus developing world, 1970 and 2010
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # add dollars per day variable and define past year
 gapminder <- gapminder %>%
     mutate(dollars_per_day = gdp/population/365)
@@ -1807,7 +1827,7 @@ gapminder %>%
 
 ### Code: Income distribution of West versus developing world, only countries with data 
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define countries that have data available in both years
 country_list_1 <- gapminder %>%
     filter(year == past_year & !is.na(dollars_per_day)) %>% .$country
@@ -1827,7 +1847,7 @@ gapminder %>%
 
 ### Code: Boxplots of income in West versus developing world, 1970 and 2010
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 p <- gapminder %>%
     filter(year %in% c(past_year, present_year) & country %in% country_list) %>%
     mutate(region = reorder(region, dollars_per_day, FUN = median)) %>%
@@ -1866,7 +1886,7 @@ This video corresponds to the following sections:
 
 ### Code: Faceted smooth density plots
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # see the code below the previous video for variable definitions
 
 # smooth density plots - area under each curve adds to 1
@@ -1886,7 +1906,7 @@ p + geom_density(alpha = 0.2, bw = 0.75) + facet_grid(year ~ .)
 
 ### Code: Add new region groups with case_when
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define countries that have data available in both years
 # add group as a factor, grouping regions
 gapminder <- gapminder %>%
@@ -1904,7 +1924,7 @@ gapminder <- gapminder %>%
 
 ### Code: Stacked density plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # note you must redefine p with the new gapminder object first
 p <- gapminder %>%
   filter(year %in% c(past_year, present_year) & country %in% country_list) %>%
@@ -1918,7 +1938,7 @@ p + geom_density(alpha = 0.2, bw = 0.75, position = "stack") +
 
 ### Code: Weighted stacked density plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # weighted stacked density plot
 gapminder %>%
     filter(year %in% c(past_year, present_year) & country %in% country_list) %>%
@@ -1960,7 +1980,7 @@ This video corresponds to the [textbook section - 9.8 The ecological fallacy and
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # define gapminder
 library(tidyverse)
 library(dslabs)
@@ -2117,7 +2137,7 @@ This video corresponds to the [textbook section - 10.5 Show the data](https://ra
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # dot plot showing the data
 heights %>% ggplot(aes(sex, height)) + geom_point()
 
@@ -2180,7 +2200,7 @@ This video corresponds to the following:
 
 ### Code
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 color_blind_friendly_cols <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 p1 <- data.frame(x = 1:8, y = 1:8, col = as.character(1:8)) %>%
@@ -2211,7 +2231,7 @@ This video corresponds to the [textbook section - 10.8 Plots for two variables](
 
 ### Code: Slope chart
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(tidyverse)
 library(dslabs)
 data(gapminder)
@@ -2236,7 +2256,7 @@ dat %>%
 
 ### Code: Bland-Altman plot
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(ggrepel)
 dat %>%
     mutate(year = paste0("life_expectancy_", year)) %>%
@@ -2286,7 +2306,7 @@ Information on color palettes can be found in the [textbook section - 10.9 Encod
 
 ### Code: Tile plot of measles rate by year and state
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # import data and inspect
 library(tidyverse)
 library(dslabs)
@@ -2321,7 +2341,7 @@ dat %>% ggplot(aes(year, state, fill=rate)) +
 
 ### Code: Line plot of measles rate by year and state
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 # compute US average measles rate by year
 avg <- us_contagious_diseases %>%
     filter(disease == the_disease) %>% group_by(year) %>%
