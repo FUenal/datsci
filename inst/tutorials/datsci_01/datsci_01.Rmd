@@ -1,0 +1,623 @@
+---
+title: "datsci_01: R Basics"
+author: "Rafael Irizarry & Fatih Uenal"
+output:
+  learnr::tutorial:
+    progressive: false
+    theme: "lumen"
+    css: ./css/datsci_style.css
+runtime: shiny_prerendered
+description: "R Basics (introduction, installing and running R and R Studio, functions and objects, packages and functions, style, data types, tidyverse, importing data)."
+bibliography: datsci_01.bib
+---
+<html lang="en">
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+
+library(learnr) #necessary to render tutorial correctly
+
+library(forcats)
+library(ggplot2)
+library(htmltools)
+library(kableExtra)
+library(lubridate)
+library(magrittr)
+library(tibble)
+
+
+source("./www/discovr_helpers.R")
+```
+
+# datsci_01: `r rproj()` Basics
+
+## Introduction and Welcome!
+
+<div class="infobox">
+  
+  **Usage:** This tutorial accompanies [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html). It contains material from the textbook which is offered under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
+  
+</div>
+
+### Welcome to the `datsci` Data Science Course
+
+We're excited to have you join us in this *Data Science: `r rproj()` Basics* course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
+
+This is the first course in the Introduction to Data Science tutorial, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning.
+
+This course assumes you are comfortable with basic math, algebra and logical operations. You do not need to have coding experience as you will have ample opportunities in this course to practice your coding skills. In fact, for all assignments in `r rproj()` that allow you to program directly in a browser-based interface. You will not need to download any additional software other than `r rproj()` and RStudio and the `datsci` package.
+
+Using a combination of a guided introduction through short video lectures and more independent in-depth exploration, you will get to practice your new `r rproj()` skills on real-life applications.
+
+### In this course, you will:
+
+- Learn to read, extract, and create datasets in `r rproj()`
+- Learn to perform a variety of operations on datasets using `r rproj()`
+- Learn to write your own functions/sub-routines in `r rproj()`
+
+### Course overview
+
+Section 1: `r rproj()` Basics, Functions, Data types
+
+- You will get started with `r rproj()`, learn about its functions and data types. 
+
+Section 2: Vectors, Sorting
+
+- You will learn to operate on vectors and advanced functions such as sorting. 
+
+Section 3: Indexing, Data Manipulation, Plots
+
+- You will learn to wrangle and visualize data.
+
+Section 4: Programming Basics
+
+- You will learn to use general programming features like ‘if-else’, and ‘for loop’ commands, and write your own functions to perform various operations on datasets.
+
+## Meet the Course Instructor
+
+<div class="infobox">
+  <img src="./images/photo2015.jpg" alt="Prof Rafael Irizarry." style="width:200px;height:200px;" class = "img_right">
+  
+**Rafael Irizarry** is a Professor of Biostatistics and Computational Biology at the Dana-Farber Cancer Institute and a Professor of Biostatistics at Harvard Chan School of Public Health. He has been analyzing data, from sound signals to genomic measurements, for over 20 years.
+
+Professor Irizarry teaches a popular Data Science course at Harvard and has developed several online courses on data analysis that are offered by HarvardX. These online courses, divided into the Data Analysis for the Life Sciences series and Genomics Data Analysis series, have been completed by thousands of students and much of the material is included in a book with a freely available online version.
+
+Webpage: http://rafalab.github.io 
+
+</div>
+
+
+## Essential Course Information
+
+### Course Syllabus
+
+The course syllabus contains a more comprehensive version of the information below - but if you don't read the syllabus, please read this!
+
+### Course Structure
+
+This is a self-paced course. You can work on it with your own timeline in mind. However, we suggest that you work on a section per week, and it will take you 2 - 4 hours per week. 
+
+Check the course home page for important dates. If you are interested in pursuing a Verified Certificate, you will need to upgrade before the date listed on the home page and finish all assignments before course close.
+
+### Grading
+
+Assignments in the course allow you to practice your coding skills using the DataCamp platform. R is a flexible programming language designed partly for readability and ease of programming.
+
+HarvardX has partnered with a platform called DataCamp to create programming assignments that you can do online. There is no need to install anything on your computer. You will be given a set of code to modify and run in your browser. You can take as many attempts as you need. When your code works correctly, you will be awarded points. You can also request hints, which will help you out, but hints decrease your point total. Remember that you can always go to the Discussion Board for help that doesn't cost points.
+
+### Passing Rate
+
+The passing rate is 70%. You must sign up for a Verified Certificate and earn a grade of 70% of higher in order to obtain a certificate for this course.
+
+## Pre-Course Survey
+
+Insert Survey Link here
+
+*If you cannot see the survey above, click this link to access it in a new window.*
+
+## Section 1 Overview
+
+Section 1 introduces you to `r rproj()` Basics, Functions and Datatypes.
+
+In Section 1, you will learn to:
+
+- Appreciate the rationale for data analysis using `r rproj()`
+- Define objects and perform basic arithmetic and logical operations
+- Use pre-defined functions to perform operations on objects
+- Distinguish between various data types
+
+There are 2 assignments that use the DataCamp platform for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 1.1 Motivation 
+
+![](https://youtu.be/5Ewyh3BLjNk)
+
+## Getting Started
+
+![](https://youtu.be/oEoInaLaB2s)
+
+## Installing `r rproj()` and R Studio
+
+Installing R
+
+If you want to install `r rproj()` to work on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). Note that CRAN makes several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
+
+- [Installing `r rproj()` on Windows](https://github.com/genomicsclass/windows#installing-r)
+- [Installing `r rproj()` on Mac](http://youtu.be/Icawuhf0Yqo)
+- [Installing `r rproj()` on Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/README)
+
+Installing RStudio
+
+RStudio is an integrated development environment (IDE). We highly recommend installing and using RStudio to edit and test your code. You can install RStudio through the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) is a great resource.  You need to install `r rproj()` first.
+
+## 1.2 Objects
+
+
+![](https://youtu.be/zjjQhwoLC-M)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.2.1 Objects](https://rafalab.github.io/dsbook/r-basics.html#objects).
+
+
+## 1.2 Functions
+
+
+![](https://youtu.be/wRr4hYuESeM)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.2.3 Objects](https://rafalab.github.io/dsbook/r-basics.html#functions).
+
+### Key Points
+
+1. Nested Functions: functions are evaluated from the inside out when you nest them 
+
+2. Help Function:
+
+    `help("log")`
+
+    `?log`
+
+3. Change natural log to log base 2
+
+    `log(8, base =2 )`
+
+    `log(8,2)`
+
+4. Variable names 
+
+    `solution_1 <- (-b + sqrt(b^2 - 4 * a * c)) / (2 * a)`
+
+    `solution_2 <- (-b - sqrt(b^2 - 4 * a * c)) / (2 * a)`
+
+### Code: Commenting your code
+
+```{r, eval = FALSE}
+# Code to compute solution to quadratic equation of the form ax^2 + bx + c
+
+# define the variables
+a <- 3 
+b <- 2
+c <- -1
+
+# now compute the solution
+(-b + sqrt(b^2 - 4 * a * c)) / (2 * a)
+(-b - sqrt(b^2 - 4 * a * c)) / (2 * a)
+```
+
+## Assessment 1
+
+Insert assessment `r rproj()` Basics here
+
+## 1.3 Data Types
+
+
+![](https://youtu.be/Ozj60blUyzg)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.4 Data Types](https://rafalab.github.io/dsbook/r-basics.html#data-types).
+
+### Key Points: 
+
+**Function:**
+
+`class()`: the type of an object (numeric, function)
+
+**Data Frame:**
+
+`class(murders)` 
+
+`str(murders)`: shows the structure of the object “murders”
+
+`head(murders)`: shows the first six lines of the data frame “murders”
+
+`murders$population`: population column under “murders” dataset
+
+
+**Numeric Vector: **
+
+Pop <- `(murders$population)`
+
+`length(pop)` : number of vectors in the column population 
+
+`class(pop)`: numeric vectors 
+
+
+**Characteric Vector:** 
+
+`“a”`: character string 
+
+`class(murder$states)`
+
+**Logical vector:**
+
+Must be true or false 
+
+`==` is a relational operator 
+
+**Factor: **
+
+Useful to store categorical data 
+
+`levels(murders$region)`
+    
+    
+## Assessment 2
+
+Insert assessment `r rproj()` Basics here
+
+## Section 2 Overview
+
+Section 2 introduces you to vectors and functions such as sorting.
+
+In Section 2.1, you will: 
+
+- Create numeric and character vectors. 
+- Name the columns of a vector. 
+- Generate numeric sequences. 
+- Access specific elements or parts of a vector.
+- Coerce data into different data types as needed. 
+
+In Section 2.2, you will: 
+
+- Sort vectors in ascending and descending order. 
+- Extract the indices of the sorted elements from the original vector. 
+- Find the maximum and minimum elements, as well as their indices, in a vector. 
+- Rank the elements of a vector in increasing order. 
+
+In Section 2.3, you will: 
+
+- Perform arithmetic between a vector and a single number.
+- Perform arithmetic between two vectors of same length. 
+
+There are 3 assignments for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 2.1 Vectors
+
+
+![](https://youtu.be/PPq0yY7CeX4)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.6 Vectors](https://rafalab.github.io/dsbook/r-basics.html#vectors).
+
+### Key Points:
+
+**Creating Vectors**
+
+- Use the function c which stands for concatenate: c(...)
+- Use quotes so it’s character not variables 
+
+country <- `c(“italy”, “canada”, “egypt”)` 
+
+**Names** 
+
+codes <- `c(italy =380, canada = 124, egypt = 818)`
+
+OR
+
+codes <- `c(380,124,818)`
+
+country <- `c(“italy”, “canada”, “egypt”)`
+
+`names(codes)` <- country 
+
+**Sequences** 
+
+`seq(1,10)`  = 1:10: the default is to go in increments of 1
+
+`seq(1,10,2)` : increments of 2
+
+
+**Subsetting** 
+
+`codes[2]`
+
+`codes[c(1,3)]` 
+
+`codes[1:2]`
+
+`codes[“Canada”]`
+
+`codes[“egypt”,”italy”]`
+    
+## 2.1 Vector Coercion
+
+
+![](https://youtu.be/T8fPnENqfMg)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.7 Coercion](https://rafalab.github.io/dsbook/r-basics.html#coercion).
+
+### Key Points:
+
+- When we put character string in the middle,  R converted numbers (1, 3) as character strings. 
+
+x <- `c(1, "Canada",3 )`
+
+- Turn numbber into characters
+
+`as.character()`
+
+- Turn characters into number
+
+`as.numeric()`
+    
+## Assessment 3
+
+Insert assessment `r rproj()` Basics here
+
+## 2.2 Sorting
+
+
+![](https://youtu.be/C3rtpi6OIXo)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.9 Sorting](https://rafalab.github.io/dsbook/r-basics.html#sorting).
+
+### Key Points
+
+- `sort(x)`: sort the original data 
+
+
+- `order(x)`: the index that puts the sorted vector x in order 
+
+
+- `rank(x)`: rank the original vector 
+
+Example: 
+
+x<- `c(31,4,15,92.65)`
+
+`sort(x)` : sorted the original data
+
+Index <- `order(x)`
+
+`x[index]` 
+
+- Abbreviations of states that ordered by murder total 
+
+Index <- `order(murders$total)`
+
+`murders$abb[index]`
+
+- Find state with largest number of murders
+
+i_max <- `which.max(murders$total)`
+
+`murders$state[i_max]`
+    
+## Assessment 4
+
+Insert assessment `r rproj()` Basics here
+
+## 2.3 Vector Arithmetic
+
+
+![](https://youtu.be/oGtW5tYgoeU)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.11 Vector Arithmetic](https://rafalab.github.io/dsbook/r-basics.html#vector-arithmetics).
+
+### Key Points:
+
+- States with highest murder rate
+
+Murder_rate <- `murders$total/murders$population*100000`
+
+`murders$state[order(murder_rate, decreasing = TRUE)]`
+    
+## Assessment 5
+
+Insert assessment `r rproj()` Basics here
+
+## Section 3 Overview
+
+Section 3 introduces to the `r rproj()`  commands and techniques that help you wrangle, analyze, and visualize data.
+
+In Section 3.1, you will:
+
+- Subset a vector based on properties of another vector. 
+- Use multiple logical operators to index vectors.
+- Extract the indices of vector elements satisfying one or more logical conditions. 
+- Extract the indices of vector elements matching with another vector.
+- Determine which elements in one vector are present in another vector. 
+
+In Section 3.2, you will:
+
+- Wrangle data tables using the functions in ‘dplyr’ package. 
+- Modify a data table by adding or changing columns. 
+- Subset rows in a data table.
+- Subset columns in a data table. 
+- Perform a series of operations using the pipe operator. 
+- Create data frames. 
+
+In Section 3.3, you will:
+
+- Plot data in scatter plots, box plots and histograms. 
+
+There are 3 assignments for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 3.1 Indexing
+
+
+![](https://youtu.be/OX-YbREKh1U)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.13 Indexing](https://rafalab.github.io/dsbook/r-basics.html#indexing).
+
+## 3.1 Indexing Functions
+
+
+![](https://youtu.be/3KRwrwPL_9o)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.13.2 Indexing](https://rafalab.github.io/dsbook/r-basics.html#logical-operators).
+
+## Assessment 6
+
+Insert assessment `r rproj()` Basics here
+
+## 3.2 Basic Data Wrangling
+
+
+![](https://youtu.be/bAEwIciE-68)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 4. The Tidyverse](https://rafalab.github.io/dsbook/tidyverse.html#tidy-data).
+
+## 3.2 Creating Data Frames
+
+
+![](https://youtu.be/Ti9QCiIozYQ)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.4.1 Data Frames](https://rafalab.github.io/dsbook/r-basics.html#data-frames).
+
+## Assessment 7
+
+Insert assessment `r rproj()` Basics here
+
+## 3.3 Basic Plots
+
+
+![](https://youtu.be/DarpAx_ie6E)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section on the R basics - 2.15 Basic Plots](https://rafalab.github.io/dsbook/r-basics.html#basic-plots).
+
+## Assessment 8
+
+Insert assessment `r rproj()` Basics here
+
+## Section 4 Overview
+
+Section 4 introduces you to general programming features like 'if-else', and 'for loop' commands so that you can write your own functions to perform various operations on datasets.
+
+In Section 4.1, you will:
+
+- Understand some of the programming capabilities of `r rproj()`. 
+
+In Section 4.2, you will:
+
+- Use basic conditional expressions to perform different operations. 
+- Check if any or all elements of a logical vector are TRUE. 
+
+In Section 4.3, you will:
+
+- Define and call functions to perform various operations.
+- Pass arguments to functions, and return variables/objects from functions.
+
+In Section 4.4, you will:
+
+- Use ‘for’ loop to perform repeated operations. 
+- Articulate in-built functions of `r rproj()` that you could try for yourself. 
+
+There is one assignment for you to practice your coding skills.
+
+We encourage you to use `r rproj()` to interactively test out your answers and further your learning.
+
+## 4.1 Introduction to Programming in `r rproj()`
+
+
+![](https://youtu.be/4MPsGEPVb6I)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3. Programming basics](https://rafalab.github.io/dsbook/programming-basics.html).
+
+## 4.2 Basic Conditionals
+
+
+![](https://youtu.be/D5NrxFi8QIs)
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.1 Conditional Expressions](https://rafalab.github.io/dsbook/programming-basics.html#conditionals).
+
+## 4.3 Basic Functions
+
+
+![](https://youtu.be/qTTws4uHPG0)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.2 Defining Functions](https://rafalab.github.io/dsbook/programming-basics.html#defining-functions).
+
+## 4.4 For Loops
+
+
+![](https://youtu.be/wE0VG4YhnYE)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.4 For Loops](https://rafalab.github.io/dsbook/programming-basics.html#for-loops).
+
+## 4.4 Other Functions
+
+
+![](https://youtu.be/awdWvsW5Fs0)
+
+
+### Textbook link
+
+The content is discussed within the [textbook section - 3.5 Vecorization and Functionals](https://rafalab.github.io/dsbook/programming-basics.html#vectorization).
+
+## Assessment 9
+
+Insert assessment `r rproj()` Basics here
