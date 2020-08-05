@@ -30,7 +30,7 @@ library(magrittr)
 library(tibble)
 
 
-source("./www/discovr_helpers.R")
+source("./www/datsci_helpers.R")
 ```
 
 # datsci_02: Data Visualization
