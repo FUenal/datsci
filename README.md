@@ -56,7 +56,7 @@ library(datsci)
 
 A list of tutorials appears in this pane. Scroll through them and click on the <img src="./data-raw/images/start_tutorial.png" width="64"> button to run the tutorial:
 
-<img src="./data-raw/images/run_tutorial_pane_datsci.png" width="700">
+<img src="./data-raw/images/run_tutorial_pane_datsci.png" width="900">
 
 Alternatively, to run a particular tutorial from the console execute:
 
