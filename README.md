@@ -1,6 +1,6 @@
 <div style="float: right"><img src="./data-raw/images/The Brain.png" width="150"></div>
 
-# datsci: Introduction to Data Science with R (Irizarry, 2020)
+# datsci: Introduction to Data Science with R 
 
 ***
 > **NOTES**: This interactive tutorial contains materials from the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/) and follows the outline of the associated edX course *HarvardX Professional Certificate in Data Science*. The textbook is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). The content of this package will be slightly modified and thus deviate from the original textbook materials (datasets and excersises).
