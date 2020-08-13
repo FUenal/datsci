@@ -348,6 +348,23 @@ We also do not cover interactive graphics, a topic that is too advanced for this
 - [https://d3js.org/](https://d3js.org/)
 
 
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Plots of data easily communicate information that is difficult to extract from tables of raw values.
+- Data visualization is a key component of exploratory data analysis (EDA), in which the properties of data are explored through visualization and summarization techniques.
+- Data visualization can help discover biases, systematic errors, mistakes and other unexpected problems in data before those data are incorporated into potentially flawed analysis.
+- This course covers the basics of data visualization and EDA in R using the ggplot2 package and motivating examples from world health, economics and infectious disease.
+
+</div>
+
+
 ### 1.1.2 Introduction to Distributions
 
 <div class="infobox">
@@ -366,7 +383,22 @@ In this module, we first discuss properties of a variety of distributions and ho
 
 ---
 
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The most basic statistical summary of a list of objects is its distribution.
+- We will learn ways to visualize and analyze distributions in the upcoming videos.
+- In some cases, data can be summarized by a two-number summary: the average and standard deviation. We will learn to use data visualization to determine when that is appropriate.
+
+</div>
+
+
 ### 1.1.3 Data Types
+
 
 We will be working with two types of variables: categorical and numeric. Each can be divided into two other groups: categorical can be ordinal or not, whereas numerical variables can be discrete or continuous.
 
@@ -376,13 +408,31 @@ Examples of numerical data are population sizes, murder rates, and heights. Some
 
 Keep in mind that discrete numeric data can be considered ordinal. Although this is technically true, we usually reserve the term ordinal data for variables belonging to a small number of different groups, with each group having many members. In contrast, when we have many groups with few cases in each group, we typically refer to them as discrete numerical variables. So, for example, the number of packs of cigarettes a person smokes a day, rounded to the closest pack, would be considered ordinal, while the actual number of cigarettes would be considered a numerical variable. But, indeed, there are examples that can be considered both numerical and ordinal when it comes to visualizing data.
 
---- 
+
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Categorical data are variables that are defined by a small number of groups.
+    - Ordinal categorical data have an inherent order to the categories (mild/medium/hot, for example).
+    - Non-ordinal categorical data have no order to the categories.
+- Numerical data take a variety of numeric values.
+    - Continuous variables can take any value.
+    - Discrete variables are limited to sets of specific values.
+
+</div>
+
 
 ### 1.1 Assessment: Data Types
 
 Insert assessment here
 
---- 
+
 
 ### 1.2 Describe Heights to ET
 
@@ -434,7 +484,32 @@ murders %>% group_by(region) %>%
 
 This particular plot simply shows us four numbers, one for each category. We usually use barplots to display a few numbers. Although this particular plot does not provide much more insight than a frequency table itself, it is a first example of how we convert a vector into a plot that succinctly summarizes all the information in the vector. When the data is numerical, the task of displaying distributions is more challenging.  
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- A distribution is a function or description that shows the possible values of a variable and how often those values occur.
+
+- For categorical variables, the distribution describes the proportions of each category.
+
+- A *frequency table* is the simplest way to show a categorical distribution. Use `prop.table()` to convert a table of counts to a frequency table. Barplots display the distribution of categorical variables and are a way to visualize the information in frequency tables.
+
+- For continuous numerical data, reporting the frequency of each unique entry is not an effective summary as many or most values are unique. Instead, a distribution function is required.
+
+- The *cumulative distribution function (CDF)* is a function that reports the proportion of data below a value 𝑎 for all values of 𝑎: 𝐹(𝑎)=Pr(𝑥≤𝑎).
+
+- The proportion of observations between any two values 𝑎 and 𝑏 can be computed from the CDF as 𝐹(𝑏)−𝐹(𝑎).
+
+- A *histogram* divides data into non-overlapping bins of the same size and plots the counts of number of values that fall in that interval.
+
+</div>
+
 
 ### 1.2.2 Cumulative distribution functions 
 
@@ -703,7 +778,27 @@ heights %>%
 
 With the right argument, `ggplot` automatically shades the intersecting region with a different color. We will show examples of __ggplot2__ code for densities in Section \@ref(gapminder) as well as Section \@ref(other-geometries).
 
---- 
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- *Smooth density plots* can be thought of as histograms where the bin width is extremely or infinitely small. The smoothing function makes estimates of the true continuous trend of the data given the available sample of data points.
+- The degree of smoothness can be controlled by an argument in the plotting function. (We will learn functions for plotting later.)
+- While the histogram is an assumption-free summary, the smooth density plot is shaped by assumptions and choices you make as a data analyst.
+- The y-axis is scaled so that the area under the density curve sums to 1. This means that interpreting values on the y-axis is not straightforward. To determine the proportion of data in between two values, compute the area under the smooth density curve in the region between those values.
+- An advantage of smooth densities over histograms is that densities are easier to compare visually.
+
+- A further note on histograms
+
+Note that the choice of binwidth has a determinative effect on shape. There is no "correct" choice for binwidth, and you can sometimes gain insights into the data by experimenting with binwidths.
+
+</div>
+
 
 ### 1.2 Assessment: Distributions
 
@@ -782,6 +877,28 @@ The normal distribution does appear to be quite a good approximation here. We no
 
 
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The normal distribution:
+    - Is centered around one value, the *mean*
+    - Is symmetric around the mean
+    - Is defined completely by its mean (𝜇) and standard deviation ( 𝜎 )
+    - Always has the same proportion of observations within a given distance of the mean (for example, 95% within 2 𝜎)
+- The standard deviation is the average distance between a value and the mean value.
+- Calculate the mean using the `mean()` function.
+- Calculate the standard deviation using the `sd()` function or manually. 
+- Compute standard units with the `scale()` function.
+- **Important**: to calculate the proportion of values that meet a certain condition, use the `mean()` function on a logical vector. Because `TRUE` is converted to 1 and `FALSE` is converted to 0, taking the mean of this vector yields the proportion of `TRUE`.
+
+</div>
+
+
 
 ### 1.2.7 Normal Distribution: Standard Units and Z-scores
 
@@ -938,13 +1055,31 @@ pnorm(70.9, m, s) - pnorm(70.1, m, s)
 
 In general, we call this situation _discretization_. Although the true height distribution is continuous, the reported heights tend to be more common at discrete values, in this case, due to rounding. As long as we are aware of how to deal with this reality, the normal approximation can still be a very useful tool.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The normal distribution has a mathematically defined CDF which can be computed in R with the function `pnorm()`.
+- `pnorm(a, avg, s)` gives the value of the cumulative distribution function 𝐹(𝑎) for the normal distribution defined by average `avg` and standard deviation `s`.
+- We say that a random quantity is normally distributed with average avg and standard deviation s if the approximation `pnorm(a, avg, s)` holds for all values of a.
+- If we are willing to use the normal approximation for height, we can estimate the distribution simply from the mean and standard deviation of our values.
+- If we treat the height data as discrete rather than categorical, we see that the data are not very useful because integer values are more common than expected due to rounding. This is called *discretization*.
+- With rounded data, the normal approximation is particularly useful when computing probabilities of intervals of length 1 that include exactly one integer.
+
+</div>
+
 
 ### 1.2 Assessment: Normal distribution
 
 Insert assessment here
 
----
+
 
 ### 1.3.1 Definition of quantiles
 
@@ -958,7 +1093,7 @@ Given a dataset data and desired quantile `q`, you can find the `q`th quantile o
 quantile(data,q)
 ```
 
-#### Percentiles
+#### **Percentiles**
 
 *Percentiles* are the quantiles that divide a dataset into 100 intervals each with 1% probability. You can determine all percentiles of a dataset `data` like this:
 
@@ -973,7 +1108,7 @@ quantile(data, p)
 
 The `summary()` function returns the minimum, quartiles and maximum of a vector.
 
-#### Examples
+#### **Examples**
 
 Load the heights dataset from the **dslabs** package:
 
@@ -1002,11 +1137,11 @@ percentiles[names(percentiles) == "25%"]
 percentiles[names(percentiles) == "75%"]
 ```
 
----
+
 
 ### 1.3.2 Finding quantiles with qnorm
 
-#### Definition of qnorm
+#### **Definition of qnorm**
 
 The `qnorm()` function gives the theoretical value of a quantile with probability `p` of observing a value equal to or less than that quantile value given a normal distribution with mean `mu` and standard deviation `sigma`:
 
@@ -1022,7 +1157,7 @@ qnorm(p)
 
 Recall that quantiles are defined such that `p` is the probability of a random observation less than or equal to the quantile.
 
-#### Relation to pnorm
+#### **Relation to pnorm**
 
 The `pnorm()` function gives the probability that a value from a standard normal distribution will be less than or equal to a z-score value z. Consider:
 
@@ -1036,7 +1171,7 @@ The result of `pnorm()` is the quantile. Note that:
 
 `pnorm(qnorm(0.025))` = 0.025
 
-#### Theoretical quantiles
+#### **Theoretical quantiles**
 
 You can use `qnorm()` to determine the *theoretical quantiles* of a dataset: that is, the theoretical value of quantiles assuming that a dataset follows a normal distribution. Run the `qnorm()` function with the desired probabilities p, mean mu and standard deviation sigma. 
 
@@ -1141,7 +1276,26 @@ heights %>% filter(sex == "Male") %>%
 
 While for the illustration above we used 20 quantiles, the default from the `geom_qq` function is to use as many quantiles as data points.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Quantile-quantile plots, or QQ-plots, are used to check whether distributions are well-approximated by a normal distribution.
+- Given a proportion *p*, the quantile *q* is the value such that the proportion of values in the data below *q* is *p*.
+- In a QQ-plot, the sample quantiles in the observed data are compared to the theoretical quantiles expected from the normal distribution. If the data are well-approximated by the normal distribution, then the points on the QQ-plot will fall near the identity line (sample = theoretical).
+- Calculate sample quantiles (observed quantiles) using the `quantile()` function.
+- Calculate theoretical quantiles with the `qnorm()` function. `qnorm()` will calculate quantiles for the standard normal distribution (μ = 0,σ = 1) by default, but it can calculate quantiles for any normal distribution given `mean()` and `sd()` arguments. We will learn more about `qnorm()` in the probability course.
+- Note that we will learn alternate ways to make QQ-plots with less code later in the series.
+
+
+</div>
+
 
 ### 1.3.4 Percentiles
 
@@ -1161,7 +1315,23 @@ For the normal distribution the _median_ and average are the same, but this is g
 
 Another special case that receives a name are the _quartiles_, which are obtained when setting $p=0.25,0.50$, and $0.75$. 
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- *Percentiles* are the quantiles obtained when defining 𝑝 as 0.01,0.02,...,0.99. They summarize the values at which a certain percent of the observations are equal to or less than that value.
+- The 50th percentile is also known as the *median*.
+- The *quartiles* are the 25th, 50th and 75th percentiles.
+
+
+</div>
+
 
 ### 1.3.5 Boxplots
 
@@ -1209,7 +1379,26 @@ From just this simple plot, we know that the median is about 2.5, that the distr
 
 We discuss how to make boxplots in Section \@ref(other-geometries).
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- When data do not follow a normal distribution and cannot be succinctly summarized by only the mean and standard deviation, an alternative is to report a five-number summary: range (ignoring outliers) and the quartiles (25th, 50th, 75th percentile).
+- In a *boxplot*, the box is defined by the 25th and 75th percentiles and the median is a horizontal line through the box. The whiskers show the range excluding outliers, and outliers are plotted separately as individual points.
+- The *interquartile* range is the distance between the 25th and 75th percentiles.
+- Boxplots are particularly useful when comparing multiple distributions.
+- We discuss outliers in a later video.
+
+
+</div>
+
+
 
 ### 1.3 Assessment: Quantiles, percentiles, and boxplots
 
@@ -1223,7 +1412,7 @@ In data analysis we often divide observations into groups based on the values of
 
 Stratification is common in data visualization because we are often interested in how the distribution of variables differs across different subgroups. We will see several examples throughout this part of the book. We will revisit the concept of stratification when we learn regression in Chapter \@ref(regression) and in the Machine Learning part of the book.
 
----
+
 
 ### 1.4 Distribution of Female Heights
 
@@ -1277,7 +1466,22 @@ heights %>% filter(sex == "Female") %>%
 
 Because these are reported heights, a possibility is that the student meant to enter `5'1"`, `5'2"`, `5'3"` or `5'5"`. 
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- If a distribution is not normal, it cannot be summarized with only the mean and standard deviation. Provide a histogram, smooth density or boxplot instead.
+- A plot can force us to see unexpected results that make us question the quality or implications of our data.
+
+
+</div>
+
 
 ### 1.4 Assessment: Robust Summaries with Outliers
 
@@ -1337,7 +1541,24 @@ One limitation is that __ggplot2__ is designed to work exclusively with data tab
 
 To use __ggplot2__  you will have to learn several functions and arguments. These are hard to memorize, so we highly recommend you have the ggplot2 cheat sheet  handy. You can get a copy here: [https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) or simply perform an internet search for "ggplot2 cheat sheet".
 
---- 
+
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Throughout the series, we will create plots with the **ggplot2** package. **ggplot2** is part of the **tidyverse** suite of packages, which you can load with `library(tidyverse)`.
+- Note that you can also load **ggplot2** alone using the command `library(ggplot2)`, instead of loading the entire **tidyverse**.
+- **ggplot2** uses a *grammar of graphics* to break plots into building blocks that have intuitive syntax, making it easy to create relatively complex and aesthetically pleasing plots with relatively simple and readable code.
+- **ggplot2** is designed to work exclusively with tidy data (rows are observations and columns are variables).
+
+
+</div>
+
 
 ### 2.1.2 Graph Components
 
@@ -1396,7 +1617,28 @@ library(dslabs)
 data(murders)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Plots in **ggplot2** consist of 3 main components:
+    - Data: The dataset being summarized
+    - Geometry: The type of plot (scatterplot, boxplot, barplot, histogram, qqplot, smooth density, etc.)
+    - Aesthetic mapping: Variables mapped to visual cues, such as x-axis and y-axis values and color
+- There are additional components:
+    - Scale
+    - Labels, Title, Legend
+    - Theme/Style
+
+
+</div>
+
 
 ### 2.1.3 Creating a New Plot
 
@@ -1433,7 +1675,26 @@ print(p)
 p
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- You can associate a dataset x with a ggplot object with any of the 3 commands:
+    - `ggplot(data = x)`
+    - `ggplot(x)`
+    - `%>% ggplot()`
+- You can assign a ggplot object to a variable. If the object is not assigned to a variable, it will automatically be displayed.
+- You can display a ggplot object assigned to a variable by printing that variable.
+
+
+</div>
+
 
 ### 2.2.1 Layers
 
@@ -1549,7 +1810,29 @@ p_test <- p + geom_text(aes(population/10^6, total), label = abb)
 
 will give you an error since `abb` is not found because it is outside of the `aes` function. The layer `geom_text` does not know where to find `abb` since it is a column name and not a global variable.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- In **ggplot2**, graphs are created by adding *layers* to the ggplot object:
+  DATA %>% ggplot() + LAYER_1 + LAYER_2 + ... + LAYER_N
+- The *geometry layer* defines the plot type and takes the format geom_X where X is the plot type.
+- *Aesthetic mappings* describe how properties of the data connect with features of the graph (axis position, color, size, etc.) Define aesthetic mappings with the aes() function.
+- `aes()` uses variable names from the object component (for example, total rather than ``murders$total``).
+- `geom_point()` creates a scatterplot and requires x and y aesthetic mappings. 
+- `geom_text()` and `geom_label()` add text to a scatterplot and require x, y, and label aesthetic mappings.
+- To determine which aesthetic mappings are required for a geometry, read the help file for that geometry.
+- You can add layers with different aesthetic mappings to the same graph.
+
+
+</div>
+
 
 ### 2.2.2 Tinkering
 
@@ -1616,7 +1899,23 @@ p + geom_point(size = 3) +
 
 Clearly, the second call to `geom_text` does not use `population` and `total`.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- You can modify arguments to geometry functions other than `aes()` and the data. Additional arguments can be found in the documentation for each geometry.
+- These arguments are not aesthetic mappings: they affect all data points the same way.
+- Global *aesthetic mappings* apply to all geometries and can be defined when you initially call `ggplot()`. All the geometries added as layers will default to this mapping. Local aesthetic mappings add additional information or override the default mappings.
+
+
+</div>
+
 
 ### 2.2.3 Scales, Labels, and Colors
 
@@ -1741,7 +2040,26 @@ For example, we can make changes to the legend via the `scale_color_discrete` fu
 p <- p + scale_color_discrete(name = "Region") 
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Convert the x-axis to log scale with `scale_x_continuous(trans = "log10")` or `scale_x_log10()`. Similar functions exist for the y-axis.
+- Add axis titles with `xlab()` and `ylab()` functions. Add a plot title with the `ggtitle()` function.
+- Add a color mapping that colors points by a variable by defining the `col` argument within `aes()`. To color all points the same way, define `col` outside of `aes()`.
+- Add a line with the `geom_abline()` geometry. `geom_abline()` takes arguments "slope" (default = 1) and intercept (default = 0). Change the color with `col` or `color` and line type with `lty`.
+- Placing the line layer after the point layer will overlay the line on top of the points. To overlay points on the line, place the line layer before the point layer.
+- There are many additional ways to tweak your graph that can be found in the **ggplot2** documentation, cheat sheet, or on the internet. For example, you can change the legend title with `scale_color_discrete()`.
+
+
+</div>
+
 
 ### 2.2.4 Add-on Packages
 
@@ -1805,7 +2123,23 @@ murders %>% ggplot(aes(population/10^6, total, label = abb)) +
 ds_theme_set()
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The style of a ggplot graph can be changed using the `theme()` function.
+- The **ggthemes** package adds additional themes.
+- The **ggrepel** package includes a geometry that repels text labels, ensuring they do not overlap with each other: `geom_text_repel()`.
+
+
+</div>
+
 
 ### 2.2.6 Other Examples
 
@@ -1959,13 +2293,32 @@ p2 <- qplot(x,y)
 grid.arrange(p1, p2, ncol = 2)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- `geom_histogram()` creates a histogram. Use the binwidth argument to change the width of bins, the `fill` argument to change the bar fill color, and the `col` argument to change bar outline color.
+- `geom_density()` creates smooth density plots. Change the fill color of the plot with the `fill` argument.
+- `geom_qq()` creates a quantile-quantile plot. This geometry requires the sample argument. By default, the data are compared to a standard normal distribution with a mean of 0 and standard deviation of 1. This can be changed with the `dparams` argument, or the sample data can be scaled.
+- Plots can be arranged adjacent to each other using the `grid.arrange()` function from the **gridExtra** package. First, create the plots and save them to objects (p1, p2, ...). Then pass the plot objects to `grid.arrange().`
+
+
+</div>
+
+
 
 ### 2.2 Assessment: Introduction to ggplot2
 
 Insert assessment here
 
----
+
+
 
 ## Section 3: Summarizing with dplyr 
 
@@ -2107,7 +2460,23 @@ which is now a numeric:
 class(us_murder_rate)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- `summarize()` from the **dplyr/tidyverse** package computes summary statistics from the data frame. It returns a data frame whose column names are defined within the function call.
+- `summarize()` can compute any summary function that operates on vectors and returns a single value, but it cannot operate on functions that return multiple values.
+- Like most **dplyr** functions, `summarize()` is aware of variable names within data frames and can use them directly.
+
+
+</div>
+
 
 ### 3.1.2 The Dot Placeholder
 
@@ -2148,7 +2517,23 @@ rates <-   filter(murders, region == "South") %>%
 median(rates)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- `summarize()` from the **dplyr/tidyverse** package computes summary statistics from the data frame. It returns a data frame whose column names are defined within the function call.
+- `summarize()` can compute any summary function that operates on vectors and returns a single value, but it cannot operate on functions that return multiple values.
+- Like most **dplyr** functions, `summarize()` is aware of variable names within data frames and can use them directly.
+
+
+</div>
+
 
 ### 3.1.3 Group By
 
@@ -2186,7 +2571,23 @@ murders %>%
   summarize(median_rate = median(rate))
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The `group_by()` function from **dplyr** converts a data frame to a grouped data frame, creating groups using one or more variables.
+- `summarize()` and some other **dplyr** functions will behave differently on grouped data frames.
+- Using `summarize()` on a grouped data frame computes the summary statistics for each of the separate groups.
+
+
+</div>
+
 
 ### 3.1.4 Sorting Data Tables
 
@@ -2243,13 +2644,30 @@ murders %>% top_n(5, rate)
 Note that rows are not sorted by `rate`, only filtered. If we want to sort, we need to use `arrange`.
 Note that if the third argument is left blank, `top_n` filters by the last column.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The `arrange()` function from **dplyr** sorts a data frame by a given column.
+- By default, `arrange()` sorts in ascending order (lowest to highest). To instead sort in descending order, use the function `desc()` inside of `arrange()`.
+- You can `arrange()` by multiple levels: within equivalent values of the first level, observations are sorted by the second level, and so on.
+- The `top_n()` function shows the top results ranked by a given variable, but the results are not ordered. You can combine `top_n()` with `arrange()` to return the top results in order.
+
+
+</div>
+
 
 ### 3.1 Assessment: Summarizing with dplyr
 
 Insert assessment here
 
----
+
 
 ## Section 4: Gapminder
 
@@ -2349,7 +2767,22 @@ if(knitr::is_html_output()){
 
 We see that the European countries on this list have higher child mortality rates: Poland has a higher rate than South Korea, and Russia has a higher rate than Malaysia. We also see that Pakistan has a much higher rate than Vietnam, and South Africa has a much higher rate than Thailand. It turns out that when Hans Rosling gave this quiz to educated groups of people, the average score was less than 2.5 out of 5, worse than what they would have obtained had they guessed randomly. This implies that more than ignorant, we are misinformed. In this chapter we see how data visualization helps inform us.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- A selection of world health and economics statistics from the Gapminder project can be found in the **dslabs** package as `data(gapminder)`.
+- Most people have misconceptions about world health and economics, which can be addressed by considering real data.
+
+
+</div>
+
 
 ### 4.1.3 Life Expectancy and Fertility Rates
 
@@ -2380,7 +2813,25 @@ filter(gapminder, year == 1962) %>%
 
 In 1962, "the West versus developing world" view was grounded in some reality. Is this still the case 50 years later?
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- A prevalent worldview is that the world is divided into two groups of countries:
+    - Western world: high life expectancy, low fertility rate
+    - Developing world: lower life expectancy, higher fertility rate
+- Gapminder data can be used to evaluate the validity of this view.
+- A scatterplot of life expectancy versus fertility rate in 1962 suggests that this viewpoint was grounded in reality 50 years ago. Is it still the case today?
+
+
+</div>
+
 
 ### 4.2.1 Faceting
 
@@ -2436,7 +2887,25 @@ filter(gapminder, year%in%c(1962, 2012)) %>%
 
 In the plot above, we have to pay special attention to the range to notice that the plot on the right has a larger life expectancy. 
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Faceting makes multiple side-by-side plots stratified by some variable. This is a way to ease comparisons.
+- The `facet_grid()` function allows faceting by up to two variables, with rows faceted by one variable and columns faceted by the other variable. To facet by only one variable, use the dot operator as the other variable.
+- The `facet_wrap()` function facets by one variable and automatically wraps the series of plots so they have readable dimensions.
+- Faceting keeps the axes fixed across all plots, easing comparisons between plots.
+- The data suggest that the developing versus Western world view no longer makes sense in 2012.
+
+
+</div>
+
 
 ### 4.2.2 Time Series Plots
 
@@ -2517,7 +2986,24 @@ gapminder %>%
 
 The plot clearly shows how an improvement in life expectancy followed the drops in fertility rates. In 1960, Germans lived 15 years longer than South Koreans, although by 2010 the gap is completely closed. It exemplifies the improvement that many non-western countries have achieved in the last 40 years.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Time series plots have time on the x-axis and a variable of interest on the y-axis.
+- The `geom_line()` geometry connects adjacent data points to form a continuous line. A line plot is appropriate when points are regularly spaced, densely packed and from a single data series.
+- You can plot multiple lines on the same graph. Remember to group or color by a variable so that the lines are plotted independently.
+- Labeling is usually preferred over legends. However, legends are easier to make and appear by default. Add a label with `geom_text()`, specifying the coordinates where the label should appear on the graph.
+
+
+</div>
+
 
 ### 4.2.3 Transformations
 
@@ -2664,7 +3150,27 @@ gapminder <- gapminder %>%
 
 In the next section we demonstrate how to visualize and compare distributions across groups.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- We use GDP data to compute income in US dollars per day, adjusted for inflation.
+- Log transformations convert multiplicative changes into additive changes.
+- Common transformations are the log base 2 transformation and the log base 10 transformation. The choice of base depends on the range of the data. The natural log is not recommended for visualization because it is difficult to interpret.
+- The mode of a distribution is the value with the highest frequency. The mode of a normal distribution is the average. A distribution can have multiple local modes.
+- There are two ways to use log transformations in plots: transform the data before plotting or transform the axes of the plot. Log scales have the advantage of showing the original values as axis labels, while log transformed values ease interpretation of intermediate values between labels.
+- Scale the x-axis using `scale_x_continuous()` or `scale_x_log10()` layers in **ggplot2**. Similar functions exist for the y-axis.
+- In 1970, income distribution is bimodal, consistent with the dichotomous Western versus developing worldview.
+
+
+</div>
+
 
 ### 4.2.4 Stratify and Boxplot
 
@@ -2730,7 +3236,24 @@ p + geom_density_ridges(jittered_points = TRUE,
                         point_alpha = 1, alpha = 0.7)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Make boxplots stratified by a categorical variable using the `geom_boxplot()` geometry.
+- Rotate axis labels by changing the theme through `element_text()`. You can change the angle and justification of the text labels.
+- Consider ordering your factors by a meaningful value with the `reorder()` function, which changes the order of factor levels based on a related numeric vector. This is a way to ease comparisons.
+- Show the data by adding data points to the boxplot with a `geom_point()` layer. This adds information beyond the five-number summary to your plot, but too many data points it can obfuscate your message.
+
+
+</div>
+
 
 ### 4.2.5 Comparing Distributions
 
@@ -2882,7 +3405,23 @@ gapminder %>%
 
 This makes it appear as if there are the same number of countries in each group. To change this, we will need to learn to access computed variables with `geom_density` function.
 
--- 
+
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Use `intersect()` to find the overlap between two vectors.
+- To make boxplots where grouped variables are adjacaent, color the boxplot by a factor instead of faceting by that factor. This is a way to ease comparisons.
+- The data suggest that the income gap between rich and poor countries has narrowed, not expanded.
+
+
+</div>
+
 
 ### 4.2.6 Density Plots
 
@@ -2974,7 +3513,24 @@ gapminder %>%
 
 This particular figure shows very clearly how the income distribution gap is closing with most of the poor remaining in Sub-Saharan Africa.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Change the y-axis of density plots to variable counts using `..count..` as the y argument.
+- The `case_when()` function defines a factor whose levels are defined by a variety of logical operations to group data.
+- Plot stacked density plots using `position="stack"`.
+- Define a weight aesthetic mapping to change the relative weights of density plots - for example, this allows weighting of plots by population rather than number of countries.
+
+
+</div>
+
 
 ### 4.2.7 Ecological Fallacy
 
@@ -3051,13 +3607,41 @@ gapminder %>% filter(year %in% present_year & !is.na(gdp) & !is.na(infant_mortal
 
 Specifically, we see that there is a large amount of variability. We see that countries from the same regions can be quite different and that countries with the same income can have different survival rates. For example, while on average Sub-Saharan Africa had the worse health and economic outcomes, there is wide variability within that group. Mauritius and Botswana are doing better than Angola and Sierra Leone, with Mauritius comparable to Western countries.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- The `breaks` argument allows us to set the location of the axis labels and tick marks.
+- The *logistic* or *logit transformation* is defined as:
+
+<center>
+  
+<figure>
+<img src="./images/pic8.png" alt="R Studio" style="width:150px">
+</figure> 
+
+</center>
+
+- ... or the log of odds. This scale is useful for highlighting differences near 0 or near 1 and converts fold changes into constant increases.
+
+- The *ecological fallacy* is assuming that conclusions made from the average of a group apply to all members of that group.
+
+
+</div>
+
+
 
 ### 4.2 Assessment: Exploring the Gapminder Dataset
 
 Insert assessment here
 
----
+
 
 ## Section 5: Data Visualization Principles 
 
@@ -3102,7 +3686,23 @@ library(dslabs)
 library(gridExtra)
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- We aim to provide some general guidelines for effective data visualization.
+- We show examples of plot styles to avoid, discuss how to improve them, and use these examples to explain research-based principles for effective visualization.
+- When choosing a visualization approach, keep your goal and audience in mind.
+
+
+</div>
+
 
 ### 5.2 Encoding Data Using Visual Cues
 
@@ -3200,7 +3800,24 @@ annotate(geom = "text",
 
 In general, when displaying quantities, position and length are preferred over angles and/or area. Brightness and color are even harder to quantify than angles. But, as we will see later, they are sometimes useful when more than two dimensions must be displayed at once.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Visual cues for encoding data include position, length, angle, area, brightness and color hue.
+- Position and length are the preferred way to display quantities, followed by angles, which are preferred over area. Brightness and color are even harder to quantify but can sometimes be useful.
+- Pie charts represent visual cues as both angles and area, while donut charts use only area. Humans are not good at visually quantifying angles and are even worse at quantifying area. Therefore pie and donut charts should be avoided - use a bar plot instead. If you must make a pie chart, include percentages as labels.
+- Bar plots represent visual cues as position and length. Humans are good at visually quantifying linear measures, making bar plots a strong alternative to pie or donut charts.
+
+
+</div>
+
 
 ### 5.3 Know When to Include Zero
 
@@ -3283,6 +3900,23 @@ grid.arrange(p2, p1, ncol = 2)
 Note that in the plot on the left, which includes 0, the space between 0 and 43 adds no information and makes it harder to compare the between and within group variability.
 
 
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- When using bar plots, always start at 0. It is deceptive not to start at 0 because bar plots imply length is proportional to the quantity displayed. Cutting off the y-axis can make differences look bigger than they actually are.
+- When using position rather than length, it is not necessary to include 0 (scatterplot, dot plot, boxplot).
+
+
+</div>
+
+
+
 ### 5.4 Do Not Distort Quantities
 
 During President Barack Obama’s 2011 State of the Union Address, the following chart was used to compare the US GDP to the GDP of four competing nations:
@@ -3322,6 +3956,24 @@ gdp_data %>%
   geom_bar(stat = "identity", width = 0.5) + 
   ylab("GDP in trillions of US dollars")
 ```
+
+
+---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Make sure your visualizations encode the correct quantities.
+- For example, if you are using a plot that relies on circle area, make sure the area (rather than the radius) is proportional to the quantity.
+
+
+</div>
+
+
 
 ### 5.5 Order by a Meaningful Value
 
@@ -3392,7 +4044,23 @@ grid.arrange(p1, p2, nrow=1)
 
 The first orders the regions alphabetically, while the second orders them by the group's median.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- It is easiest to visually extract information from a plot when categories are ordered by a meaningful value. The exact value on which to order will depend on your data and the message you wish to convey with your plot.
+- The default ordering for categories is alphabetical if the categories are strings or by factor level if factors. However, we rarely want alphabetical order.
+
+
+</div>
+
+
 
 ### 5.1 Assessment: Data Visualization Principles, Part 1
 
@@ -3441,7 +4109,24 @@ heights %>%
 
 Now we start getting a sense that, on average, males are taller than females. We also note dark horizontal bands of points, demonstrating that many report values that are rounded to the nearest integer.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- A dynamite plot - a bar graph of group averages with error bars denoting standard errors - provides almost no information about a distribution.
+- By showing the data, you provide viewers extra information about distributions.
+- Jitter is adding a small random shift to each point in order to minimize the number of overlapping points. To add jitter, use the `geom_jitter()` geometry instead of `geom_point()`. (See example below.)
+- Alpha blending is making points somewhat transparent, helping visualize the density of overlapping points. Add an `alpha` argument to the geometry.
+
+
+</div>
+
 
 ### 5.7 Ease Comparisons: Use common axes
 
@@ -3513,7 +4198,23 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 Notice how much more we learn from the two plots on the right. Barplots are useful for showing one number, but not very useful when we want to describe distributions.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Ease comparisons by keeping axes the same when comparing data across multiple plots.
+- Align plots vertically to see horizontal changes. Align plots horizontally to see vertical changes.
+- Bar plots are useful for showing one number but not useful for showing distributions.
+
+
+</div>
+
 
 ### 5.8 Consider Transformations
 
@@ -3562,7 +4263,23 @@ With the new plot, we realize that countries in Africa actually have a larger me
 
 Other transformations you should consider are the logistic transformation (`logit`), useful to better see fold changes in odds, and the square root transformation (`sqrt`), useful for count data.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Use transformations when warranted to ease visual interpretation.
+- The log transformation is useful for data with multiplicative changes. The logistic transformation is useful for fold changes in odds. The square root transformation is useful for count data.
+- We learned how to apply transformations earlier in the course.
+
+
+</div>
+
 
 ### 5.8.1 Compared Visual Cues Should Be Adjacent
 
@@ -3647,13 +4364,29 @@ p1 + scale_color_manual(values=color_blind_friendly_cols)
 
 There are several resources that can help you select colors, for example this one: [http://bconnelly.net/2013/10/creating-colorblind-friendly-figures/](http://bconnelly.net/2013/10/creating-colorblind-friendly-figures/). 
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- When two groups are to be compared, it is optimal to place them adjacent in the plot.
+- Use color to encode groups to be compared.
+- Consider using a color blind friendly palette like the one in this video.
+
+
+</div>
+
 
 ### 5.2 Assessment: Data Visualization Principles, Part 2
 
 Insert assessment here
 
----
+
 
 ### 5.9 Plots for two variables
 
@@ -3739,7 +4472,23 @@ dat %>%
 
 Here, by simply looking at the y-axis, we quickly see which countries have shown the most improvement. We also get an idea of the overall value from the x-axis.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+-  Consider using a slope chart or Bland-Altman plot when comparing one variable at two different time points, especially for a small number of observations.
+- Slope charts use angle to encode change. Use `geom_line()` to create slope charts. It is useful when comparing a small number of observations.
+- The Bland-Altman plot (Tukey mean difference plot, MA plot) graphs the difference between conditions on the y-axis and the mean between conditions on the x-axis. It is more appropriate for large numbers of observations than slope charts.
+
+
+</div>
+
 
 ### 5.10 Encoding a Third Variable
 
@@ -3826,7 +4575,22 @@ rafalib::mypar()
 display.brewer.all(type="div")
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Encode a categorical third variable on a scatterplot using color hue or shape. Use the `shape` argument to control shape.
+- Encode a continuous third variable on a using color intensity or size.
+
+
+</div>
+
 
 ### 5.11 Case Study: Vaccines
 
@@ -3927,7 +4691,24 @@ dat %>%
 
 In theory, we could use color to represent the categorical value state, but it is hard to pick 50 distinct colors.
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- Vaccines save millions of lives, but misinformation has led some to question the safety of vaccines. The data support vaccines as safe and effective. We visualize data about measles incidence in order to demonstrate the impact of vaccination programs on disease rate.
+- The **RColorBrewer** package offers several color palettes. Sequential color palettes are best suited for data that span from high to low. Diverging color palettes are best suited for data that are centered and diverge towards high or low values.
+- The `geom_tile()` geometry creates a grid of colored tiles.
+- Position and length are stronger cues than color for numeric values, but color can be appropriate sometimes.
+
+
+</div>
+
 
 ### 5.12 Avoid Pseudo and Gratuitous 3D Plots
 
@@ -3983,7 +4764,21 @@ Pseudo-3D is sometimes used completely gratuitously: plots are made to look 3D e
   
 (Images courtesy of Karl Broman)
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+In general, pseudo-3D plots and gratuitous 3D plots only add confusion. Use regular 2D plots instead.
+
+
+</div>
+
 
 ### 5.13 Avoid Too Many Significant Digits
 
@@ -4047,7 +4842,23 @@ if(knitr::is_html_output()){
 }
 ```
 
+
 ---
+
+<div class="infobox">
+   <img src="./images/The Brain.png" alt="The Brain Logo." style="width:50px;height:50px;" class = "img_left">
+  
+**Key points:** 
+
+---
+
+- In tables, avoid using too many significant digits. Too many digits can distract from the meaning of your data.
+- Reduce the number of significant digits globally by setting an option. For example, `options(digits = 3)` will cause all future computations that session to have 3 significant digits.
+- Reduce the number of digits locally using `round()` or `signif()`.
+
+
+</div>
+
 
 ### 5.14 Know your audience
 
@@ -4055,7 +4866,7 @@ Graphs can be used for 1) our own exploratory data analysis, 2) to convey a mess
 
 As a simple example, consider that for your own exploration it may be more useful to log-transform data and then plot it. However, for a general audience that is unfamiliar with converting logged values back to the original measurements, using a log-scale for the axis instead of log-transformed values will be much easier to digest.
 
----
+
 
 ### 5.3 Assessment: Data Visualization Principles, Part 3
 
