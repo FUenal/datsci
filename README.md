@@ -9,7 +9,7 @@
 
 ### Welcome to the interactive Data Science Introduction package: `datsci`! 
 
-The demand for skilled data science practitioners in industry, academia, and government is rapidly growing. The [Harvard Business Review has called the Data Science Profession “The sexiest Job of the 21st Century”](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century). 
+The demand for skilled data science practitioners in industry, academia, and government is rapidly growing. The Harvard Business Review has called the Data Science Profession [“The sexiest Job of the 21st Century”](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century). 
 
 This interactive course introduces concepts and skills that can help you tackle real-world data analysis challenges. The course covers concepts such as inference, probability, regression, and machine learning and helps you develop an essential skill set that includes <img src="./data-raw/images/r_logo.png" width="18"> programming, data wrangling with dplyr, data visualization with ggplot2, file organization with Unix/Linux, version control with git and GitHub, and reproducible document preparation with <img src="./data-raw/images/rstudio_logo.png" width="48">.
 
