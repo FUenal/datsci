@@ -107,6 +107,7 @@ See the book or data descriptions for more details. This is a list of available 
 
 ### Chapter code
 
+
 Although I recommend working through the interactive solutions, each book Chapter has online code and a downloadable R Markdown file available from [dsbook](https://github.com/datasciencelabs).
 
 
