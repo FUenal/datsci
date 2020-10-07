@@ -96,7 +96,7 @@ The name of each tutorial is in bold in the list above. Once the command to run 
 
 ### Suggested workflow
 
-The course is created such that each module builds on the previous ones. Thus, we recommend you work your way through the entire series. If you already possess a beginners or intermediate level of <img src="./data-raw/images/r_logo.png" width="18"> programming, you will quickly work through the first three modules and can use them as a refresher for your existing skills. To get the best learning effect, we recommend that you run the analyses from the modules in a separate file (for example a RMarkdown file) and take notes while doing so. This approach will enable you to take notes and replicate the coding examples yourself. 
+The course is created such that each module builds on the previous ones. Thus, we recommend you work your way through the entire series. If you already possess a beginners or intermediate level of <img src="./data-raw/images/r_logo.png" width="18"> programming, you will quickly work through the first three modules and can use them as a refresher for your existing skills. To get the best learning effect, we recommend that you run the analyses from the modules in a separate file (for example a RMarkdown file) and take notes while doing so. This approach will enable you to take notes and replicate the coding examples yourself.  
 
 ### Datasets
 
