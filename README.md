@@ -103,13 +103,12 @@ The course is created such that each module builds on the previous ones. Thus, w
 See the book or data descriptions for more details. This is a list of available datasets within the package. Raw CSV files are available from the book's website.
 
 * **HistData**: Galton’s data on the heights of parents and their children from his historic research on heredity. For details execute `?HistData`.
-* **murders**: Data that contains demographic infos across US States. For details execute `?murdes`.
-
-### Chapter code
+* **murders**: Data that contains demographic infos across US States. For details execute `?murders`.
 
 
-Although I recommend working through the interactive solutions, each book Chapter has online code and a downloadable R Markdown file available from [dsbook](https://github.com/datasciencelabs).
+### Acknowledgement
 
+I am extremely grateful to [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) for his support and encouragement to create this interactive tutorial which is based on his freely available textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/). The textbook has been developed as the basis for the associated edX Course Series *HarvardX Professional Certificate in Data Science* and this tutorial follows the structure of this online course. I'm further very grateful to [Andy Field](https://profiles.sussex.ac.uk/p9846-andy-field) for his generous permission to use his `discovr` package as a basis for the development of this tutorial. Thanks to his amazing `discovr` package I also indirectly benefited from the work of [Allison Horst](https://www.allisonhorst.com/) and her very informative blog post on [styling learnr tutorials with CSS](https://education.rstudio.com/blog/2020/05/learnr-for-remote/) as well as her CSS template file which I adapted here. 
 
 ***
 > **NOTES**: This interactive tutorial contains materials from the textbook [Introduction to Data Science](https://rafalab.github.io/dsbook/) by [Prof Rafael Irizarry](http://rafalab.github.io/) and follows the structure of the associated edX course *HarvardX Professional Certificate in Data Science*. The textbook is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). The content of this package will be slightly modified and thus deviate from the original textbook materials (datasets and excersises).
