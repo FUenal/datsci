@@ -50,7 +50,7 @@ Hi, welcome to the **datsci** course. The demand for skilled data science practi
 
 ### Case Studies
 
-Throughout the book, we use motivating case studies. In each case study, we try to realistically mimic a data scientist’s experience. For each of the concepts covered, we start by asking specific questions and answer these through data analysis. We learn the concepts as a means to answer the questions. Examples of the case studies included in the tutorial are:
+Throughout the course, we use motivating case studies. In each case study, we try to realistically mimic a data scientist’s experience. For each of the concepts covered, we start by asking specific questions and answer these through data analysis. We learn the concepts as a means to answer the questions. Examples of the case studies included in the tutorial are:
 
 | Case Study | Concept | 
 | ---- | ---| --- |
@@ -110,11 +110,15 @@ R is not a programming language like C or Java. It was not created by software e
 
 Other attractive features of R are:
 
-1. R is free and [open source](https://opensource.org/history).
-2. It runs on all major platforms: Windows, Mac Os, UNIX/Linux.
-3. Scripts and data objects can be shared seamlessly across platforms.
-4. There is a large, growing, and active community of R users and, as a result, there are numerous resources for learning and asking questions [here](https://stats.stackexchange.com/questions/138/free-resources-for-learning-r) [here](https://www.r-project.org/help.html), and [here](https://stackoverflow.com/documentation/r/topics). 
-5. It is easy for others to contribute add-ons which enables developers to share software implementations of new data science methodologies. This gives R users early access to the latest methods and to tools which are developed for a wide variety of disciplines, including ecology, molecular biology, social sciences, and geography, just to name a few examples. 
+1\. R is free and [open source](https://opensource.org/history).
+
+2\. It runs on all major platforms: Windows, Mac Os, UNIX/Linux.
+
+3\. Scripts and data objects can be shared seamlessly across platforms.
+
+4\. There is a large, growing, and active community of R users and, as a result, there are numerous resources for learning and asking questions [here](https://stats.stackexchange.com/questions/138/free-resources-for-learning-r) [here](https://www.r-project.org/help.html), and [here](https://stackoverflow.com/documentation/r/topics). 
+
+5\. It is easy for others to contribute add-ons which enables developers to share software implementations of new data science methodologies. This gives R users early access to the latest methods and to tools which are developed for a wide variety of disciplines, including ecology, molecular biology, social sciences, and geography, just to name a few examples. 
 
 ### 1.2 The `r rproj()` console
 
@@ -143,11 +147,11 @@ As a quick example, try using the console to calculate a 15% tip on a meal that 
 0.15 * 19.71 
 ```
 
-Note that in this book, grey boxes are used to show R code typed into the R console. The symbol `#>` is used to denote what the R console outputs.
+Note that in this course, grey boxes are used to show R code typed into the R console. The symbol `#>` is used to denote what the R console outputs.
 
 ### 1.3 Scripts
 
-One of the great advantages of R over point-and-click analysis software is that you can save your work as scripts. You can edit and save these scripts using a text editor. The material in this book was developed using the interactive *integrated development environment* (IDE) [RStudio](https://www.rstudio.com/). RStudio includes an editor with many R specific features, a console to execute your code, and other useful panes, including one to show figures.
+One of the great advantages of R over point-and-click analysis software is that you can save your work as scripts. You can edit and save these scripts using a text editor. The material in this course was developed using the interactive *integrated development environment* (IDE) [RStudio](https://www.rstudio.com/). RStudio includes an editor with many R specific features, a console to execute your code, and other useful panes, including one to show figures.
 
 
 <center>
@@ -166,7 +170,7 @@ Most web-based R consoles also provide a pane to edit scripts, but not all permi
 
 All the R scripts used to generate this book can be found on [GitHub](https://github.com/rafalab/dsbook).
 
-### 1.4 RStudio {#rstudio}
+### 1.4 RStudio
 
 RStudio will be our launching pad for data science projects. It not only provides an editor for us to create and edit our scripts but also provides many other useful tools. In this section, we go over some of the basics.
 
@@ -311,7 +315,7 @@ As an example we show how to make a change that we *highly recommend*. This is t
 
 ### 1.5 Installing R packages
 
-The functionality provided by a fresh install of R is only a small fraction of what is possible. In fact, we refer to what you get after your first install as *base R*. The extra functionality comes from add-ons available from developers. There are currently hundreds of these available from CRAN and many others shared via other repositories such as GitHub. However, because not everybody needs all available functionality, R instead makes different components available via _packages_. R makes it very easy to install packages from within R. For example, to install the __dslabs__ package, which we use to share datasets and code related to this book, you would type:
+The functionality provided by a fresh install of R is only a small fraction of what is possible. In fact, we refer to what you get after your first install as *base R*. The extra functionality comes from add-ons available from developers. There are currently hundreds of these available from CRAN and many others shared via other repositories such as GitHub. However, because not everybody needs all available functionality, R instead makes different components available via _packages_. R makes it very easy to install packages from within R. For example, to install the __dslabs__ package, which we use to share datasets and code related to this course, you would type:
 
 ```{r,eval=FALSE}
 install.packages("dslabs")
@@ -323,7 +327,7 @@ In RStudio, you can navigate to the _Tools_ tab and select install packages. We 
 library(dslabs)
 ```
 
-As you go through this book, you will see that we load packages without installing them. This is because once you install a package, it remains installed and only needs to be loaded with `library`. The package remains loaded until we quit the R session. If you try to load a package and get an error, it probably means you need to
+As you go through this course, you will see that we load packages without installing them. This is because once you install a package, it remains installed and only needs to be loaded with `library`. The package remains loaded until we quit the R session. If you try to load a package and get an error, it probably means you need to
 install it first. 
 
 We can install more than one package at once by feeding a character vector to this function:

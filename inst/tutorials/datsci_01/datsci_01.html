@@ -270,7 +270,7 @@ $(document).ready(function () {
 <p><img src="datsci_01_files/figure-html/us-murders-by-state-map-1.png" width="624" /></p>
 </center>
 <p>California, for example, has a larger population than Canada, and 20 US states have populations larger than that of Norway. In some respects, the variability across states in the US is akin to the variability across countries in Europe. Furthermore, although not included in the charts above, the murder rates in Lithuania, Ukraine, and Russia are higher than 4 per 100,000. So perhaps the news reports that worried you are too superficial. You have options of where to live and want to determine the safety of each particular state. We will gain some insights by examining data related to gun homicides in the US during 2010 using R.</p>
-<p>Before we get started with our example, we need to cover logistics as well as some of the very basic building blocks that are required to gain more advanced R skills. Be aware that the usefulness of some of these building blocks may not be immediately obvious, but later in the book you will appreciate having mastered these skills.</p>
+<p>Before we get started with our example, we need to cover logistics as well as some of the very basic building blocks that are required to gain more advanced R skills. Be aware that the usefulness of some of these building blocks may not be immediately obvious, but later in the course you will appreciate having mastered these skills.</p>
 <hr />
 </div>
 <div id="section-the-very-basics" class="section level3">
@@ -303,12 +303,10 @@ c &lt;- -1</code></pre>
 <h3>1.2.2 The workspace</h3>
 <p>As we define objects in the console, we are actually changing the <em>workspace</em>. You can see all the variables saved in your workspace by typing:</p>
 <pre class="r"><code>ls()</code></pre>
-<pre><code>##  [1] &quot;a&quot;                      &quot;alien&quot;                  &quot;b&quot;                     
-##  [4] &quot;bmu&quot;                    &quot;bug&quot;                    &quot;c&quot;                     
-##  [7] &quot;cat_space&quot;              &quot;dput_to_string&quot;         &quot;h_col&quot;                 
-## [10] &quot;knit_print.fontawesome&quot; &quot;murders&quot;                &quot;robot&quot;                 
-## [13] &quot;rproj&quot;                  &quot;rstudio&quot;                &quot;set_svg&quot;               
-## [16] &quot;set_svg_props&quot;          &quot;user_astronaut&quot;         &quot;user_visor&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot;                      &quot;b&quot;                      &quot;c&quot;                     
+##  [4] &quot;dput_to_string&quot;         &quot;h_col&quot;                  &quot;knit_print.fontawesome&quot;
+##  [7] &quot;murders&quot;                &quot;rproj&quot;                  &quot;rstudio&quot;               
+## [10] &quot;set_svg&quot;                &quot;set_svg_props&quot;</code></pre>
 <p>In RStudio, the <em>Environment</em> tab shows the values:</p>
 <center>
 <figure>
@@ -522,7 +520,7 @@ z</code></pre>
 <pre class="r"><code>levels(murders$region)</code></pre>
 <pre><code>## [1] &quot;Northeast&quot;     &quot;South&quot;         &quot;North Central&quot; &quot;West&quot;</code></pre>
 <p>In the background, R stores these <em>levels</em> as integers and keeps a map to keep track of the labels. This is more memory efficient than storing all the characters.</p>
-<p>Note that the levels have an order that is different from the order of appearance in the factor object. The default in R is for the levels to follow alphabetical order. However, often we want the levels to follow a different order. You can specify an order through the <code>levels</code> argument when creating the factor with the <code>factor</code> function. For example, in the murders dataset regions are ordered from east to west. The function <code>reorder</code> lets us change the order of the levels of a factor variable based on a summary computed on a numeric vector. We will demonstrate this with a simple example, and will see more advanced ones in the Data Visualization part of the book.</p>
+<p>Note that the levels have an order that is different from the order of appearance in the factor object. The default in R is for the levels to follow alphabetical order. However, often we want the levels to follow a different order. You can specify an order through the <code>levels</code> argument when creating the factor with the <code>factor</code> function. For example, in the murders dataset regions are ordered from east to west. The function <code>reorder</code> lets us change the order of the levels of a factor variable based on a summary computed on a numeric vector. We will demonstrate this with a simple example, and will see more advanced ones in the Data Visualization part of the course</p>
 <p>Suppose we want the levels of the region by the total number of murders rather than alphabetical order. If there are values associated with each level, we can use the <code>reorder</code> and specify a data summary to determine the order. The following code takes the sum of the total murders in each region, and reorders the factor following these sums.</p>
 <pre class="r"><code>region &lt;- murders$region
 value &lt;- murders$total
@@ -573,7 +571,7 @@ levels(region)</code></pre>
 <div id="section-matrices" class="section level3">
 <h3>1.4.7 Matrices</h3>
 <p>Matrices are another type of object that are common in R. Matrices are similar to data frames in that they are two-dimensional: they have rows and columns. However, like numeric, character and logical vectors, entries in matrices have to be all the same type. For this reason data frames are much more useful for storing data, since we can have characters, factors, and numbers in them.</p>
-<p>Yet matrices have a major advantage over data frames: we can perform matrix algebra operations, a powerful type of mathematical technique. We do not describe these operations in this book, but much of what happens in the background when you perform a data analysis involves matrices. We cover matrices in more detail in Chapter @ref(matrix-algebra) but describe them briefly here since some of the functions we will learn return matrices.</p>
+<p>Yet matrices have a major advantage over data frames: we can perform matrix algebra operations, a powerful type of mathematical technique. We do not describe these operations in this course, but much of what happens in the background when you perform a data analysis involves matrices. We cover matrices in more detail in the textbook <a href="https://rafalab.github.io/dsbook/r-basics.html#matrices">(Section - 2.4.7 Matrices)</a> but describe them briefly here since some of the functions we will learn return matrices.</p>
 <p>We can define a matrix using the <code>matrix</code> function. We need to specify the number of rows and columns.</p>
 <pre class="r"><code>mat &lt;- matrix(1:12, 4, 3)
 mat</code></pre>
@@ -1119,7 +1117,7 @@ ind</code></pre>
 <p>If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function <code>%in%</code>. Let’s imagine you are not sure if Boston, Dakota, and Washington are states. You can find out like this:</p>
 <pre class="r"><code>c(&quot;Boston&quot;, &quot;Dakota&quot;, &quot;Washington&quot;) %in% murders$state</code></pre>
 <pre><code>## [1] FALSE FALSE  TRUE</code></pre>
-<p>Note that we will be using <code>%in%</code> often throughout the book.</p>
+<p>Note that we will be using <code>%in%</code> often throughout the course.</p>
 <p><strong>Advanced</strong>: There is a connection between <code>match</code> and <code>%in%</code> through <code>which</code>. To see this, notice that the following two lines produce the same index (although in different order):</p>
 <pre class="r"><code>match(c(&quot;New York&quot;, &quot;Florida&quot;, &quot;Texas&quot;), murders$state)</code></pre>
 <pre><code>## [1] 33 10 44</code></pre>
@@ -1140,10 +1138,10 @@ ind</code></pre>
 </div>
 <div id="section-the-tidyverse" class="section level3">
 <h3>3.2.1 The tidyverse</h3>
-<p>Up to now we have been manipulating vectors by reordering and subsetting them through indexing. However, once we start more advanced analyses, the preferred unit for data storage is not the vector but the data frame. In this chapter we learn to work directly with data frames, which greatly facilitate the organization of information. We will be using data frames for the majority of this book. We will focus on a specific data format referred to as <em>tidy</em> and on specific collection of packages that are particularly helpful for working with <em>tidy</em> data referred to as the <em>tidyverse</em>.</p>
+<p>Up to now we have been manipulating vectors by reordering and subsetting them through indexing. However, once we start more advanced analyses, the preferred unit for data storage is not the vector but the data frame. In this chapter we learn to work directly with data frames, which greatly facilitate the organization of information. We will be using data frames for the majority of this course We will focus on a specific data format referred to as <em>tidy</em> and on specific collection of packages that are particularly helpful for working with <em>tidy</em> data referred to as the <em>tidyverse</em>.</p>
 <p>We can load all the tidyverse packages at once by installing and loading the <strong>tidyverse</strong> package:</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<p>We will learn how to implement the tidyverse approach throughout the book, but before delving into the details, in this course we introduce some of the most widely used tidyverse functionality, starting with the <strong>dplyr</strong> package for manipulating data frames and the <strong>purrr</strong> package for working with functions. Note that the tidyverse also includes a graphing package, <strong>ggplot2</strong>, which we introduce later in the module on <strong>ggplot2</strong> in the Data Visualization part of the tutorial; the <strong>readr</strong> package discussed in tutorial on importing-data; and many others. In this module, we first introduce the concept of <em>tidy data</em> and then demonstrate how we use the tidyverse to work with data frames in this format.</p>
+<p>We will learn how to implement the tidyverse approach throughout the course, but before delving into the details, in this course we introduce some of the most widely used tidyverse functionality, starting with the <strong>dplyr</strong> package for manipulating data frames and the <strong>purrr</strong> package for working with functions. Note that the tidyverse also includes a graphing package, <strong>ggplot2</strong>, which we introduce later in the module on <strong>ggplot2</strong> in the Data Visualization part of the tutorial; the <strong>readr</strong> package discussed in tutorial on importing-data; and many others. In this module, we first introduce the concept of <em>tidy data</em> and then demonstrate how we use the tidyverse to work with data frames in this format.</p>
 <hr />
 </div>
 <div id="section-tidy-data" class="section level3">
@@ -1167,8 +1165,8 @@ ind</code></pre>
 {"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["1960"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["1961"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["1962"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Germany","2":"2.41","3":"2.44","4":"2.47"},{"1":"South Korea","2":"6.16","3":"5.99","4":"5.79"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p>The same information is provided, but there are two important differences in the format: 1) each row includes several observations and 2) one of the variables, year, is stored in the header. For the tidyverse packages to be optimally used, data need to be reshaped into <code>tidy</code> format, which you will learn to do in the Data Wrangling part of the book. Until then, we will use example datasets that are already in tidy format.</p>
-<p>Although not immediately obvious, as you go through the book you will start to appreciate the advantages of working in a framework in which functions use tidy formats for both inputs and outputs. You will see how this permits the data analyst to focus on more important aspects of the analysis rather than the format of the data.</p>
+<p>The same information is provided, but there are two important differences in the format: 1) each row includes several observations and 2) one of the variables, year, is stored in the header. For the tidyverse packages to be optimally used, data need to be reshaped into <code>tidy</code> format, which you will learn to do in the Data Wrangling part of the course Until then, we will use example datasets that are already in tidy format.</p>
+<p>Although not immediately obvious, as you go through the course you will start to appreciate the advantages of working in a framework in which functions use tidy formats for both inputs and outputs. You will see how this permits the data analyst to focus on more important aspects of the analysis rather than the format of the data.</p>
 <hr />
 </div>
 <div id="section-manipulating-data-frames" class="section level3">
@@ -1274,7 +1272,7 @@ plot(x, y)</code></pre>
 </div>
 <div id="section-hist" class="section level3">
 <h3>3.3.2 <code>hist</code></h3>
-<p>We will describe histograms as they relate to distributions in the Data Visualization part of the book. Here we will simply note that histograms are a powerful graphical summary of a list of numbers that gives you a general overview of the types of values you have. We can make a histogram of our murder rates by simply typing:</p>
+<p>We will describe histograms as they relate to distributions in the Data Visualization part of the course Here we will simply note that histograms are a powerful graphical summary of a list of numbers that gives you a general overview of the types of values you have. We can make a histogram of our murder rates by simply typing:</p>
 <pre class="r"><code>x &lt;- with(murders, total / population * 100000)
 hist(x)</code></pre>
 <p><img src="datsci_01_files/figure-html/r-base-hist-1.png" width="60%" /></p>
@@ -1284,7 +1282,7 @@ hist(x)</code></pre>
 </div>
 <div id="section-boxplot" class="section level3">
 <h3>3.3.3 <code>boxplot</code></h3>
-<p>Boxplots will also be described in the Data Visualization part of the book. They provide a more terse summary than histograms, but they are easier to stack with other boxplots. For example, here we can use them to compare the different regions:</p>
+<p>Boxplots will also be described in the Data Visualization part of the course They provide a more terse summary than histograms, but they are easier to stack with other boxplots. For example, here we can use them to compare the different regions:</p>
 <pre class="r"><code>murders$rate &lt;- with(murders, total / population * 100000)
 boxplot(rate~region, data = murders)</code></pre>
 <p><img src="datsci_01_files/figure-html/r-base-boxplot-1.png" width="60%" /></p>
@@ -1335,7 +1333,7 @@ image(x)</code></pre>
 <p><strong>Textbook link</strong> The contents are discussed within the <a href="https://rafalab.github.io/dsbook/programming-basics.html">textbook section - 3. Programming basics</a>.</p>
 </div>
 <hr />
-<p>We teach R because it greatly facilitates data analysis, the main topic of this book. By coding in R, we can efficiently perform exploratory data analysis, build data analysis pipelines, and prepare data visualization to communicate results. However, R is not just a data analysis environment but a programming language. Advanced R programmers can develop complex packages and even improve R itself, but we do not cover advanced programming in this book. Nonetheless, in this section, we introduce three key programming concepts: conditional expressions, for-loops, and functions. These are not just key building blocks for advanced programming, but are sometimes useful during data analysis. We also note that there are several functions that are widely used to program in R but that we will not cover in this book. These include <code>split</code>, <code>cut</code>, <code>do.call</code>, and <code>Reduce</code>, as well as the <strong>data.table</strong> package. These are worth learning if you plan to become an expert R programmer.</p>
+<p>We teach R because it greatly facilitates data analysis, the main topic of this course By coding in R, we can efficiently perform exploratory data analysis, build data analysis pipelines, and prepare data visualization to communicate results. However, R is not just a data analysis environment but a programming language. Advanced R programmers can develop complex packages and even improve R itself, but we do not cover advanced programming in this course. Nonetheless, in this section, we introduce three key programming concepts: conditional expressions, for-loops, and functions. These are not just key building blocks for advanced programming, but are sometimes useful during data analysis. We also note that there are several functions that are widely used to program in R but that we will not cover in this course. These include <code>split</code>, <code>cut</code>, <code>do.call</code>, and <code>Reduce</code>, as well as the <strong>data.table</strong> package. These are worth learning if you plan to become an expert R programmer.</p>
 </div>
 <div id="section-section-4.2-basic-conditionals" class="section level3">
 <h3>Section 4.2: Basic Conditionals</h3>
@@ -1582,7 +1580,7 @@ sapply(x, sqrt)</code></pre>
 <p>Each element of <code>x</code> is passed on to the function <code>sqrt</code> and the result is returned. These results are concatenated. In this case, the result is a vector of the same length as the original <code>x</code>. This implies that the for-loop above can be written as follows:</p>
 <pre class="r"><code>n &lt;- 1:25
 s_n &lt;- sapply(n, compute_s_n)</code></pre>
-<p>Other functionals are <code>apply</code>, <code>lapply</code>, <code>tapply</code>, <code>mapply</code>, <code>vapply</code>, and <code>replicate</code>. We mostly use <code>sapply</code>, <code>apply</code>, and <code>replicate</code> in this book, but we recommend familiarizing yourselves with the others as they can be very useful.</p>
+<p>Other functionals are <code>apply</code>, <code>lapply</code>, <code>tapply</code>, <code>mapply</code>, <code>vapply</code>, and <code>replicate</code>. We mostly use <code>sapply</code>, <code>apply</code>, and <code>replicate</code> in this course, but we recommend familiarizing yourselves with the others as they can be very useful.</p>
 <hr />
 </div>
 <div id="section-assessment-9" class="section level3">

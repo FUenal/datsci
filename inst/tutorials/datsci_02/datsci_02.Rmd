@@ -50,9 +50,9 @@ We're excited to have you join us in this course, which is designed to teach you
 
 This is the second in a series of courses in the Introduction to Data Science program. The courses in the program are designed to prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. If you need a refresher of some basic `r rproj()`, check out *Data Science: R Basics*, the first course in this series.
 
-This course assumes you are comfortable with basic math, algebra, and logical operations. We have partnered with DataCamp for some assignments in `r rproj()` that allow you to program directly in a browser-based interface. You will further have access to additional exercises to be completed on your local installation of `r rproj()`.
+This course assumes you are comfortable with basic math, algebra, and logical operations. We have some assignments in `r rproj()` that allow you to program directly in a browser-based interface. You will further have access to additional exercises to be completed on your local installation of `r rproj()`.
 
-Using a combination of a guided introduction through short video lectures and more independent in-depth exploration, you will get to practice your new `r rproj()` skills on real-life applications.
+Using a combination of a guided introduction lectures and more independent in-depth exploration, you will get to practice your new `r rproj()` skills on real-life applications.
 
 The growing availability of informative datasets and software tools has led to increased reliance on data visualizations across many industries, academia, and government. Data visualization provides a powerful way to communicate data-driven findings, motivate analyses, or detect flaws. In this course, you will learn the basics of data visualization and exploratory data analysis. We will use three motivating examples and ggplot2, a data visualization package for the statistical programming language `r rproj()`, to code. To learn the very basics, we will start with a somewhat artificial example: heights reported by students. Then we will explore two case studies related to world health and economics and another in infectious disease trends in the United States. It is also important to note that mistakes, biases, systematic errors, and other unexpected problems often lead to data that should be handled with care. The fact that it can be difficult or impossible to notice an error just from the reported results makes data visualization particularly important. This course will explore how failure to discover these problems often leads to flawed analyses and false discoveries.
 
@@ -84,7 +84,7 @@ The growing availability of informative datasets and software tools has led to i
 
 - You will learn general principles to guide you in developing effective data visualizations.
 
-### Meet the Course Instructor
+### Course Instructor
 
 <div class="infobox">
   <img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_left" >
@@ -101,7 +101,7 @@ Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
 #### **Course Objectives**
 
-“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., ANOVA, correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, automated data curation, and machine learning. 
+“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing,and machine learning. 
 
 At the end of this course you will be able to:
 
@@ -391,7 +391,9 @@ In this module, we first discuss properties of a variety of distributions and ho
 ---
 
 - The most basic statistical summary of a list of objects is its distribution.
-- We will learn ways to visualize and analyze distributions in the upcoming videos.
+
+- We will learn ways to visualize and analyze distributions in the upcoming sections.
+
 - In some cases, data can be summarized by a two-number summary: the average and standard deviation. We will learn to use data visualization to determine when that is appropriate.
 
 </div>
@@ -502,9 +504,9 @@ This particular plot simply shows us four numbers, one for each category. We usu
 
 - For continuous numerical data, reporting the frequency of each unique entry is not an effective summary as many or most values are unique. Instead, a distribution function is required.
 
-- The *cumulative distribution function (CDF)* is a function that reports the proportion of data below a value 𝑎 for all values of 𝑎: 𝐹(𝑎)=Pr(𝑥≤𝑎).
+- The *cumulative distribution function (CDF)* is a function that reports the proportion of data below a value 𝑎 for all values of a: $F(a)=\mbox{Pr}(x \leq a)$.
 
-- The proportion of observations between any two values 𝑎 and 𝑏 can be computed from the CDF as 𝐹(𝑏)−𝐹(𝑎).
+- The proportion of observations between any two values 𝑎 and 𝑏 can be computed from the CDF as $F(b) - F(a)$.
 
 - A *histogram* divides data into non-overlapping bins of the same size and plots the counts of number of values that fall in that interval.
 
@@ -532,8 +534,7 @@ heights %>% filter(sex=="Male") %>% ggplot(aes(height)) +
 
 </center>
 
-Similar to what the frequency table does for categorical data, the CDF
-defines the distribution for numerical data. From the plot, we can see that `r round(ecdf(heights$height[heights$sex=="Male"])(66)*100)`% of the values are below 65, since $F(66)=$ `r ecdf(heights$height[heights$sex=="Male"])(66)`, or that `r round(ecdf(heights$height[heights$sex=="Male"])(72)*100)`% of the values are below 72, since $F(72)=$ `r ecdf(heights$height[heights$sex=="Male"])(72)`, 
+Similar to what the frequency table does for categorical data, the CDF defines the distribution for numerical data. From the plot, we can see that `r round(ecdf(heights$height[heights$sex=="Male"])(66)*100)`% of the values are below 65, since $F(66)=$ `r ecdf(heights$height[heights$sex=="Male"])(66)`, or that `r round(ecdf(heights$height[heights$sex=="Male"])(72)*100)`% of the values are below 72, since $F(72)=$ `r ecdf(heights$height[heights$sex=="Male"])(72)`, 
 and so on. In fact, we can report the proportion of values between any two heights, say $a$ and $b$, by computing $F(b) - F(a)$. This means that if we send this plot above to ET, he will have all the information needed to reconstruct the entire list. Paraphrasing the expression "a picture is worth a thousand words", in this case, a picture is as informative as `r sum(heights$sex=="Male")` numbers. 
 
 A final note: because CDFs can be defined mathematically the word _empirical_ is added to make the distinction when data is used.  We therefore use the term empirical CDF (eCDF). 
@@ -571,11 +572,8 @@ We discuss how to code histograms in Section "other-geometries".
 
 Every continuous distribution has a cumulative distribution function (CDF). The CDF defines the proportion of the data below a given value 𝑎 for all values of 𝑎:
     
-<center>
      
-𝐹(𝑎) = Pr(𝑥 ≤ 𝑎)
-    
-</center>
+$$F(a)=\mbox{Pr}(x \leq a)$$
       
 Any continuous dataset has a CDF, not only normal distributions. For example, the male heights data we used in the previous section has this CDF:
   
@@ -589,7 +587,7 @@ Any continuous dataset has a CDF, not only normal distributions. For example, th
   
 This plot of the CDF for male heights has height values "a" on the x-axis and the proportion of students with heights of that value or lower on the y-axis.
 
-As defined above, this plot of the CDF for male heights has height values 𝑎 on the x-axis and the proportion of students with heights of that value or lower (𝐹(𝑎)) on the y-axis.
+As defined above, this plot of the CDF for male heights has height values $a$ 𝑎 on the x-axis and the proportion of students with heights of that value or lower $F(a)$ on the y-axis.
 
 The CDF is essential for calculating probabilities related to continuous data. In a continuous dataset, the probability of a specific exact value is not informative because most entries are unique. For example, in the student heights data, only one individual reported a height of 68.8976377952726 inches, but many students rounded similar heights to 69 inches. If we computed exact value probabilities, we would find that being exactly 69 inches is much more likely than being a non-integer exact height, which does not match our understanding that height is continuous. We can instead use the CDF to obtain a useful summary, such as the probability that a student is between 68.5 and 69.5 inches. 
 
@@ -607,21 +605,14 @@ plot(a, cdf_values)
 
 The CDF defines that proportion of data below a cutoff 𝑎. To define the proportion of values above 𝑎, we compute:
    
-<center>
-    
-1 − 𝐹(𝑎)
-
-</center>
+$$1-F(a)$$
     
 To define the proportion of values between 𝑎 and 𝑏, we compute:
 
-<center>
-      
-𝐹(𝑏) − 𝐹(𝑎)
 
-</center>
-    
-Note that the CDF can help compute probabilities. The probability of observing a randomly chosen value between 𝑎 and 𝑏 is equal to the proportion of values between 𝑎 and 𝑏, which we compute with the CDF.
+$$F(b)-F(a)$$
+  
+Note that the CDF can help compute probabilities. The probability of observing a randomly chosen value between $a$ and $b$ is equal to the proportion of values between $a$ and $b$, which we compute with the CDF.
 
 ### 1.2.5 Smooth Density Plots
 
@@ -776,7 +767,7 @@ heights %>%
 
 </center>
 
-With the right argument, `ggplot` automatically shades the intersecting region with a different color. We will show examples of __ggplot2__ code for densities in Section \@ref(gapminder) as well as Section \@ref(other-geometries).
+With the right argument, `ggplot` automatically shades the intersecting region with a different color. We will show examples of __ggplot2__ code for densities in the Book [(Section - 9  Data visualization in practice) ](https://rafalab.github.io/dsbook/gapminder.html#gapminder) as well as [(Section - 8.16 ggplot2 geometries) ](https://rafalab.github.io/dsbook/distributions.html#other-geometries).
 
 ---
 
@@ -851,7 +842,7 @@ index <- heights$sex == "Male"
 x <- heights$height[index]
 ```
 
-The pre-built functions `mean` and `sd` (note that for reasons explained in Section \@ref(data-driven-model), `sd` divides by `length(x)-1` rather than `length(x)`) can be used here:
+The pre-built functions `mean` and `sd` (note that for reasons explained in the textbook [(Section - 16.2 Data-driven models) ](https://rafalab.github.io/dsbook/models.html#data-driven-model), `sd` divides by `length(x)-1` rather than `length(x)`) can be used here:
 ```{r}
 m <- mean(x)
 s <- sd(x)
@@ -888,8 +879,8 @@ The normal distribution does appear to be quite a good approximation here. We no
 - The normal distribution:
     - Is centered around one value, the *mean*
     - Is symmetric around the mean
-    - Is defined completely by its mean (𝜇) and standard deviation ( 𝜎 )
-    - Always has the same proportion of observations within a given distance of the mean (for example, 95% within 2 𝜎)
+    - Is defined completely by its mean ($\mu$) and standard deviation ($\sigma$)
+    - Always has the same proportion of observations within a given distance of the mean (for example, 95% within 2 $\sigma$)
 - The standard deviation is the average distance between a value and the mean value.
 - Calculate the mean using the `mean()` function.
 - Calculate the standard deviation using the `sd()` function or manually. 
@@ -904,19 +895,19 @@ The normal distribution does appear to be quite a good approximation here. We no
 
 ### Standard units
 
-For data that are approximately normal, *standard units* describe the number of standard deviations an observation is from the mean. Standard units are denoted by the variable 𝑧 and are also known as *z-scores*.
+For data that are approximately normal, *standard units* describe the number of standard deviations an observation is from the mean. Standard units are denoted by the variable $z$ and are also known as *z-scores*.
 
-For any value 𝑥 from a normal distribution with mean 𝜇 and standard deviation 𝜎, the value in standard units is:
+For any value $x$ from a normal distribution with mean $\mu$ and standard deviation $\sigma$, the value in standard units is:
 
 $$𝑧= \frac{x-𝜇}{𝜎}$$
-Standard units are useful for many reasons. Note that the formula for the normal distribution is simplified by substituting 𝑧 in the exponent:
+Standard units are useful for many reasons. Note that the formula for the normal distribution is simplified by substituting $z$ in the exponent:
 
 
 $$\mbox{Pr}(a < x < b) = \int_a^b \frac{1}{\sqrt{2\pi𝜎}} e^{-\frac{1}{2}z^2} \, dx$$
 
-When 𝑧 = 0, the normal distribution is at a maximum, the mean 𝜇. The function is defined to be symmetric around 𝑧 = 0.
+When $z=0$, the normal distribution is at a maximum, the mean $\mu$. The function is defined to be symmetric around $z=0$.
 
-The normal distribution of z-scores is called the *standard normal distribution* and is defined by 𝜇 = 0 and 𝜎 = 1.
+The normal distribution of z-scores is called the *standard normal distribution* and is defined by $\mu=0$ and $\sigma=1$.
 
 Z-scores are useful to quickly evaluate whether an observation is average or extreme. Z-scores near 0 are average. Z-scores above 2 or below -2 are significantly above or below the mean, and z-scores above 3 or below -3 are extremely rare. 
 
@@ -935,52 +926,6 @@ You can compute the proportion of observations that are within 2 standard deviat
 ```{r, eval = FALSE}
 mean(abs(z) < 2)
 ```
-
-### The 68-95-99.7 Rule
-
-The normal distribution is associated with the 68-95-99.7 rule. This rule describes the probability of observing events within a certain number of standard deviations of the mean. 
-
-<center>
-   
-<figure>
-<img src="./images/pic4.png" alt="R Studio" style="width:500px">
-</figure> 
-  
-</center>
-
-The probability distribution function for the normal distribution is defined such that:
-
-- About 68% of observations will be within one standard deviation of the mean (𝜇±𝜎). In standard units, this is equivalent to a z-score of ∣𝑧∣≤1.
-
-<center>
-   
-<figure>
-<img src="./images/pic5.png" alt="R Studio" style="width:500px">
-</figure> 
-  
-</center>
-
-- About 95% of observations will be within two standard deviations of the mean (𝜇±2𝜎). In standard units, this is equivalent to a z-score of ∣𝑧∣≤2.
-
-<center>
-   
-<figure>
-<img src="./images/pic6.png" alt="R Studio" style="width:500px">
-</figure> 
-  
-</center>
-
-- About 99.7% of observations will be within three standard deviations of the mean (𝜇±3𝜎). In standard units, this is equivalent to a z-score of ∣𝑧∣≤3.
-
-<center>
-   
-<figure>
-<img src="./images/pic7.png" alt="R Studio" style="width:500px">
-</figure> 
-  
-</center>
-
-- We will learn how to compute these exact probabilities in a later section, as well as probabilities for other intervals.
 
 ### 1.2.8 The Normal CDF and pnorm
 
@@ -1066,8 +1011,8 @@ In general, we call this situation _discretization_. Although the true height di
 ---
 
 - The normal distribution has a mathematically defined CDF which can be computed in R with the function `pnorm()`.
-- `pnorm(a, avg, s)` gives the value of the cumulative distribution function 𝐹(𝑎) for the normal distribution defined by average `avg` and standard deviation `s`.
-- We say that a random quantity is normally distributed with average avg and standard deviation s if the approximation `pnorm(a, avg, s)` holds for all values of a.
+- `pnorm(a, avg, s)` gives the value of the cumulative distribution function $F(a)$ for the normal distribution defined by average `avg` and standard deviation `s`.
+- We say that a random quantity is normally distributed with average avg and standard deviation s if the approximation `pnorm(a, avg, s)` holds for all values of $a$.
 - If we are willing to use the normal approximation for height, we can estimate the distribution simply from the mean and standard deviation of our values.
 - If we treat the height data as discrete rather than categorical, we see that the data are not very useful because integer values are more common than expected due to rounding. This is called *discretization*.
 - With rounded data, the normal approximation is particularly useful when computing probabilities of intervals of length 1 that include exactly one integer.
@@ -1083,9 +1028,9 @@ Insert assessment here
 
 ### 1.3.1 Definition of quantiles
 
-*Quantiles* are cutoff points that divide a dataset into intervals with set probabilities. The 𝑞th quantile is the value at which 𝑞% of the observations are equal to or less than that value.
+*Quantiles* are cutoff points that divide a dataset into intervals with set probabilities. The $q$ th quantile is the value at which $q$ % of the observations are equal to or less than that value.
 
-#### Using the **quantile** function
+#### **Using the *quantile* function**
 
 Given a dataset data and desired quantile `q`, you can find the `q`th quantile of `data` with:
 
@@ -1227,10 +1172,13 @@ So about 50% are shorter or equal to 69 inches. This implies that if $p=0.50$ th
 
 The idea of a QQ-plot is that if your data is well approximated by normal distribution then the quantiles of your data should be similar to the quantiles of a normal distribution. To construct a QQ-plot, we do the following:
 
-1. Define a vector of $m$ proportions $p_1, p_2, \dots, p_m$.
-2. Define a vector of quantiles $q_1, \dots, q_m$ for your data for the proportions $p_1, \dots, p_m$. We refer to these as the _sample quantiles_. 
-3. Define a vector of theoretical quantiles for the proportions $p_1, \dots, p_m$ for a normal distribution with the same average and standard deviation as the data.
-4. Plot the sample quantiles versus the theoretical quantiles.
+1\. Define a vector of $m$ proportions $p_1, p_2, \dots, p_m$.
+
+2\. Define a vector of quantiles $q_1, \dots, q_m$ for your data for the proportions $p_1, \dots, p_m$. We refer to these as the _sample quantiles_. 
+
+3\. Define a vector of theoretical quantiles for the proportions $p_1, \dots, p_m$ for a normal distribution with the same average and standard deviation as the data.
+
+4\. Plot the sample quantiles versus the theoretical quantiles.
 
 
 Let's construct a QQ-plot using R code. Start by defining the vector of proportions.
@@ -1265,7 +1213,7 @@ theoretical_quantiles <- qnorm(p)
 qplot(theoretical_quantiles, sample_quantiles) + geom_abline()
 ```
 
-The above code is included to help describe QQ-plots. However, in practice it is easier to use the **ggplot2** code described in Section \@ref(other-geometries): 
+The above code is included to help describe QQ-plots. However, in practice it is easier to use the **ggplot2** code described in the Book [(Section - 8.16 ggplot2 geometries) ](https://rafalab.github.io/dsbook/distributions.html#other-geometries): 
 
 ```{r, eval=FALSE}
 heights %>% filter(sex == "Male") %>%
@@ -1290,7 +1238,7 @@ While for the illustration above we used 20 quantiles, the default from the `geo
 - Given a proportion *p*, the quantile *q* is the value such that the proportion of values in the data below *q* is *p*.
 - In a QQ-plot, the sample quantiles in the observed data are compared to the theoretical quantiles expected from the normal distribution. If the data are well-approximated by the normal distribution, then the points on the QQ-plot will fall near the identity line (sample = theoretical).
 - Calculate sample quantiles (observed quantiles) using the `quantile()` function.
-- Calculate theoretical quantiles with the `qnorm()` function. `qnorm()` will calculate quantiles for the standard normal distribution (μ = 0,σ = 1) by default, but it can calculate quantiles for any normal distribution given `mean()` and `sd()` arguments. We will learn more about `qnorm()` in the probability course.
+- Calculate theoretical quantiles with the `qnorm()` function. `qnorm()` will calculate quantiles for the standard normal distribution ($\mu=0$, $\sigma=1$) by default, but it can calculate quantiles for any normal distribution given `mean()` and `sd()` arguments. We will learn more about `qnorm()` in the probability course.
 - Note that we will learn alternate ways to make QQ-plots with less code later in the series.
 
 
@@ -1377,7 +1325,7 @@ with the box defined by the 25% and 75% percentile and the whiskers showing the 
 
 From just this simple plot, we know that the median is about 2.5, that the distribution is not symmetric, and that the range is 0 to 5 for the great majority of states with two exceptions.
 
-We discuss how to make boxplots in Section \@ref(other-geometries).
+We discuss how to make boxplots in the Book [(Section - 8.16 ggplot2 geometries)](https://rafalab.github.io/dsbook/distributions.html#other-geometries).
 
 
 ---
@@ -1393,7 +1341,7 @@ We discuss how to make boxplots in Section \@ref(other-geometries).
 - In a *boxplot*, the box is defined by the 25th and 75th percentiles and the median is a horizontal line through the box. The whiskers show the range excluding outliers, and outliers are plotted separately as individual points.
 - The *interquartile* range is the distance between the 25th and 75th percentiles.
 - Boxplots are particularly useful when comparing multiple distributions.
-- We discuss outliers in a later video.
+- We discuss outliers in a later section.
 
 
 </div>
@@ -1410,7 +1358,7 @@ Insert assessment here
 
 In data analysis we often divide observations into groups based on the values of one or more variables associated with those observations. For example in the next section we divide the height values into groups based on a sex variable: females and males. We call this procedure _stratification_ and refer to the resulting groups as _strata_. 
 
-Stratification is common in data visualization because we are often interested in how the distribution of variables differs across different subgroups. We will see several examples throughout this part of the book. We will revisit the concept of stratification when we learn regression in Chapter \@ref(regression) and in the Machine Learning part of the book.
+Stratification is common in data visualization because we are often interested in how the distribution of variables differs across different subgroups. We will see several examples throughout this part of the book. We will revisit the concept of stratification when we learn regression in the Book [(Section - 17 Regression)](https://rafalab.github.io/dsbook/regression.html#regression) and in the Machine Learning part of the book.
 
 
 
@@ -1862,7 +1810,7 @@ p + geom_point(aes(population/10^6, total), size = 3) +
   geom_text(aes(population/10^6, total, label = abb), nudge_x = 1.5)
 ```
 
-This is preferred as it makes it easier to read the text. In Section \@ref(add-on-packages) we learn a better way of assuring we can see the points and the labels.
+This is preferred as it makes it easier to read the text. In the Book [(Section - 7.11 Add-on packages)](https://rafalab.github.io/dsbook/ggplot2.html#add-on-packages) we learn a better way of assuring we can see the points and the labels.
 
 ---
 
@@ -2222,7 +2170,7 @@ heights %>%
 
 ### QQ-plots 
 
-For qq-plots we use the `geom_qq` geometry. From the help file, we learn that we need to specify the `sample` (we will learn about samples in a later chapter). Here is the qqplot for men heights.
+For qq-plots we use the `geom_qq` geometry. From the help file, we learn that we need to specify the `sample` (we will learn about samples in a later section). Here is the qqplot for men heights.
 
 ```{r ggplot-qq}
 heights %>% filter(sex=="Male") %>%
@@ -2401,7 +2349,7 @@ heights %>%
   summarize(range = quantile(height, c(0, 0.5, 1)))
 ```
 
-we will receive an error: `Error: expecting result of length one, got : 2`. With the function `summarize`, we can only call functions that return a single value. In Section \@ref(do), we will learn how to deal with functions that return more than one value.
+we will receive an error: `Error: expecting result of length one, got : 2`. With the function `summarize`, we can only call functions that return a single value. In the Book [(Section - 4.12 do)](https://rafalab.github.io/dsbook/tidyverse.html#do), we will learn how to deal with functions that return more than one value.
 
 For another example of how we can use the `summarize` function, let's compute the average murder rate for the United States. Remember our data table includes total murders and population size for each state and we have already used __dplyr__ to add a murder rate column:
 
@@ -2696,7 +2644,7 @@ We encourage you to use `r rproj()` to interactively test out your answers and f
 
 ---
 
-In this chapter, we will demonstrate how relatively simple **ggplot2** code can create insightful and aesthetically pleasing plots. As motivation we will create plots that that help us better understand trends in world health and economics. We will implement what we learned in the previous sections and learn how to augment the code to perfect plots. As we go through our case study, we will describe relevant general data visualization principles and learn concepts such as *faceting*, *time series plots*, and *ridge plots*. 
+In this section, we will demonstrate how relatively simple **ggplot2** code can create insightful and aesthetically pleasing plots. As motivation we will create plots that that help us better understand trends in world health and economics. We will implement what we learned in the previous sections and learn how to augment the code to perfect plots. As we go through our case study, we will describe relevant general data visualization principles and learn concepts such as *faceting*, *time series plots*, and *ridge plots*. 
 
 [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling) was the co-founder of the [Gapminder Foundation](http://www.gapminder.org/), an organization dedicated to educating the public by using data to dispel common myths about the so-called developing world. The organization uses data to show how actual trends in health and economics contradict the narratives that emanate from sensationalist media coverage of catastrophes, tragedies, and other unfortunate events. As stated in the Gapminder Foundation's website:
 
@@ -2704,9 +2652,9 @@ In this chapter, we will demonstrate how relatively simple **ggplot2** code can 
 
 Hans Rosling conveyed actual data-based trends in a dramatic way of his own, using effective data visualization. This section is based on two talks that exemplify this approach to education: [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en) and [The Best Stats You've Ever Seen](https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen). Specifically, in this section, we use data to attempt to answer the following two questions:
 
-1. Is it a fair characterization of today's world to say it is divided into western rich nations and the developing world in Africa, Asia, and Latin America? 
+1\. Is it a fair characterization of today's world to say it is divided into western rich nations and the developing world in Africa, Asia, and Latin America? 
 
-2. Has income inequality across countries worsened during the last 40 years? 
+2\. Has income inequality across countries worsened during the last 40 years? 
 
 ---
 
@@ -2725,11 +2673,15 @@ gapminder %>% as_tibble()
 
 As done in the _New Insights on Poverty_ video, we start by testing our knowledge regarding differences in child mortality across different countries. For each of the six pairs of countries below, which country do you think had the highest child mortality rates in 2015? Which pairs do you think are most similar?
 
-1. Sri Lanka or Turkey
-2. Poland or South Korea
-3. Malaysia or Russia
-4. Pakistan or Vietnam
-5. Thailand or South Africa
+1\. Sri Lanka or Turkey
+
+2\. Poland or South Korea
+
+3\. Malaysia or Russia
+
+4\. Pakistan or Vietnam
+
+5\. Thailand or South Africa
 
 When answering these questions without data, the non-European countries are typically picked as having higher child mortality rates: Sri Lanka over Turkey, South Korea over Poland, and Malaysia over Russia. It is also common to assume that countries considered to be part of the developing world: Pakistan, Vietnam, Thailand, and South Africa, have similarly high mortality rates. 
 
@@ -2765,7 +2717,7 @@ if(knitr::is_html_output()){
 }
 ```
 
-We see that the European countries on this list have higher child mortality rates: Poland has a higher rate than South Korea, and Russia has a higher rate than Malaysia. We also see that Pakistan has a much higher rate than Vietnam, and South Africa has a much higher rate than Thailand. It turns out that when Hans Rosling gave this quiz to educated groups of people, the average score was less than 2.5 out of 5, worse than what they would have obtained had they guessed randomly. This implies that more than ignorant, we are misinformed. In this chapter we see how data visualization helps inform us.
+We see that the European countries on this list have higher child mortality rates: Poland has a higher rate than South Korea, and Russia has a higher rate than Malaysia. We also see that Pakistan has a much higher rate than Vietnam, and South Africa has a much higher rate than Thailand. It turns out that when Hans Rosling gave this quiz to educated groups of people, the average score was less than 2.5 out of 5, worse than what they would have obtained had they guessed randomly. This implies that more than ignorant, we are misinformed. In this section we see how data visualization helps inform us.
 
 
 ---
@@ -2800,8 +2752,9 @@ filter(gapminder, year == 1962) %>%
 
 Most points fall into two distinct categories: 
 
-1. Life expectancy around 70 years and 3 or fewer children per family.
-2. Life expectancy lower than 65 years and more than 5 children per family. 
+1\. Life expectancy around 70 years and 3 or fewer children per family.
+
+2\. Life expectancy lower than 65 years and more than 5 children per family. 
 
 To confirm that indeed these countries are from the regions we expect, we can use color to represent continent. 
 
@@ -3257,7 +3210,7 @@ p + geom_density_ridges(jittered_points = TRUE,
 
 ### 4.2.5 Comparing Distributions
 
-#### Example: 1970 versus 2010 income distributions
+#### **Example: 1970 versus 2010 income distributions**
 
 Data exploration clearly shows that in 1970 there was a "west versus the rest" dichotomy. But does this dichotomy persist? Let's use `facet_grid` see how the distributions have changed. To start, we will focus on two groups: the west and the rest. We make four histograms.
 
@@ -3276,7 +3229,7 @@ gapminder %>%
 
 Before we interpret the findings of this plot, we notice that there are more countries represented in the 2010 histograms than in 1970: the total counts are larger. One reason for this is that several countries were founded after 1970. For example, the Soviet Union divided into several countries during the 1990s. Another reason is that data was available for more countries in 2010.  
 
-We remake the plots using only countries with data available for both years. In the data wrangling part of this book, we will learn __tidyverse__ tools that permit us to  write efficient code for this, but here we can use simple code using the `intersect` function:
+We remake the plots using only countries with data available for both years. In the data wrangling part of this course, we will learn __tidyverse__ tools that permit us to  write efficient code for this, but here we can use simple code using the `intersect` function:
 
 ```{r}
 country_list_1 <- gapminder %>% 
@@ -3620,13 +3573,7 @@ Specifically, we see that there is a large amount of variability. We see that co
 - The `breaks` argument allows us to set the location of the axis labels and tick marks.
 - The *logistic* or *logit transformation* is defined as:
 
-<center>
-  
-<figure>
-<img src="./images/pic8.png" alt="R Studio" style="width:150px">
-</figure> 
-
-</center>
+$$f(p) = \log \left( \frac{p}{1-p} \right)$$
 
 - ... or the log of odds. This scale is useful for highlighting differences near 0 or near 1 and converts fold changes into constant increases.
 
@@ -3949,7 +3896,7 @@ gdp_data %>%
 Not surprisingly, __ggplot2__ defaults to using area rather than
 radius. Of course, in this case, we really should not be using area at all since we can use position and length:
 
-```{r barplot-better-than-area, out.width="50%", echo=FALSE}
+```{r barplot-better-than-area, out.width="80%", echo=FALSE}
 gdp_data %>% 
   filter(y == "Area") %>%
   ggplot(aes(Country, GDP)) + 
@@ -4072,7 +4019,7 @@ Insert assessment here
 
 We have focused on displaying single quantities across categories. We now shift our attention to displaying data, with a focus on comparing groups. 
 
-To motivate our first principle, "show the data", we go back to our artificial example of describing heights to ET, an extraterrestrial. This time let's assume ET is interested in the difference in heights between males and females. A commonly seen plot used for comparisons between groups, popularized by software such as Microsoft Excel, is the dynamite plot, which shows the average and standard errors (standard errors are defined in a later chapter, but do not confuse them with the standard deviation of the data). The plot looks like this:
+To motivate our first principle, "show the data", we go back to our artificial example of describing heights to ET, an extraterrestrial. This time let's assume ET is interested in the difference in heights between males and females. A commonly seen plot used for comparisons between groups, popularized by software such as Microsoft Excel, is the dynamite plot, which shows the average and standard errors (standard errors are defined in a later section, but do not confuse them with the standard deviation of the data). The plot looks like this:
 
 ```{r show-data-1, echo=FALSE, fig.height=6}
 data("heights")
@@ -4375,8 +4322,10 @@ There are several resources that can help you select colors, for example this on
 ---
 
 - When two groups are to be compared, it is optimal to place them adjacent in the plot.
+
 - Use color to encode groups to be compared.
-- Consider using a color blind friendly palette like the one in this video.
+
+- Consider using a color blind friendly palette.
 
 
 </div>
@@ -4874,27 +4823,27 @@ Insert assessment here
 
 ---
 
-### Assessment: Titanic Survival
+### Final Assessment Part 1 
 
-Insert assessment here (Titanic Survival Exercises)
-
----
-
-### Assessment: Properties of Stars
-
-Insert assessment here (Properties of Stars Exercises)
+Insert assessment here 
 
 ---
 
-### Assessment Part 1: Climate Change Exercises
+### Final Assessment Part 2 
 
-Insert assessment here (Climate Change Exercises: Questions 1-7)
+Insert assessment here 
 
 ---
 
-### Assessment Part 2: Climate Change Exercises
+### Final Assessment Part 3 
 
-Insert assessment here (Climate Change Exercises: Questions 8-12)
+Insert assessment here 
+
+---
+
+### Final Assessment Part 4 
+
+Insert assessment here 
 
 
 ## Acknowledgement
