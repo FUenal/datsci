@@ -46,9 +46,9 @@ source("./www/datsci_helpers.R")
 
 ### Welcome to *Data Science: Productivity Tools*!
 
-We're excited to have you join us in this course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
+Welcome to the *Data Science: Productivity Tools* (`datsci_05`) module. It is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
 
-This is the **fifth** in a series of courses in the Introduction to Data Science program, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. The courses are designed to be taken in order. 
+This is the **fifth** (`datsci_05`) in a series of courses in the Introduction to Data Science program, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. The courses are designed to be taken in order. 
 
 Although this course has no formal prerequisites, we assume you have taken the preceding 4 courses in the series or have equivalent content knowledge. If you are new to the series, we suggest you begin with *Data Science: `r rproj()` Basics* (datsci_01).
 
@@ -92,7 +92,7 @@ Using a combination of guided introduction lectures and comprehension tests, you
 <div class="infobox">
   <img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_left" >
 
-**Fatih Uenal** is currenlty a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergrad and graduate levels of study. 
+**Fatih Uenal** is currently a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergraduate and graduate levels of study. 
 
 Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
@@ -104,28 +104,30 @@ Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
 #### **Course Objectives**
 
-“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, and machine learning. 
+A typical data analysis project may involve several parts, each including several data files and different scripts with code. Keeping all this organized can be challenging. 
 
-At the end of this course you will be able to:
+Part five of the Introduction to Data Science Series (`datsci_05`), this course explains how to use Unix/Linux as a tool for managing files and directories on your computer and how to keep the file system organized. You will be introduced to the version control systems git, a powerful tool for keeping track of changes in your scripts and reports. We also introduce you to GitHub and demonstrate how you can use this service to keep your work in a repository that facilitates collaborations. 
 
-- To answer research questions in Social Sciences (e.g., Psychology) with data
+Finally, you will learn to write reports in RMarkdown which permits you to incorporate text and code into a document. We'll put it all together using the powerful integrated desktop environment RStudio.
 
-- Understand the basics of research designs in Social Sciences, and how they relate to data-analysis strategies
 
-- Develop an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
+At the end of this course you will have learned:
 
-- To use `r rproj()`, a free and open-source statistics software program.
+-	How to use Unix/Linux to manage your file system
 
-- Develop a basic understanding of frequently used Data Science Techniques.
+-	How to perform version control with git
 
-- Practice your newly acquired skills with interesting, interactive, and fun projects.
+-	How to start a repository on GitHub
+
+- How to leverage the many useful features provided by RStudio
+
 
 **NOTE**: The schedule and procedures described in this syllabus are subject to change depending on specific needs and requirements. You will always be notified of changes on the homepage (see “last update”).
 
 
 #### **Course Structure**
 
-This is the first module in a series of a 8 week-intensive course.  and I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
+This is the fifth module in a series of a 8 week-intensive course. I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
 
 #### **Grading**
 

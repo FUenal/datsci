@@ -46,7 +46,7 @@ source("./www/datsci_helpers.R")
 
 ### Welcome to the `datsci` Data Science Course
 
-We're excited to have you join us in this *Data Science: `r rproj()` Basics* course, which is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
+Welcome to the *Data Science: `r rproj()` Basics* (`datsci_01`) module. It is designed to teach you the basics of analyzing, visualizing, and working with data using `r rproj()`.
 
 This is the first course in the Introduction to Data Science tutorial, a series of courses that prepare you to do data analysis in `r rproj()`, from simple computations to machine learning.
 
@@ -57,7 +57,9 @@ Using a combination of a guided introductions and more independent in-depth expl
 ### In this course, you will:
 
 - Learn to read, extract, and create datasets in `r rproj()`
+
 - Learn to perform a variety of operations on datasets using `r rproj()`
+
 - Learn to write your own functions/sub-routines in `r rproj()`
 
 ### Course overview
@@ -85,7 +87,7 @@ Using a combination of a guided introductions and more independent in-depth expl
 <div class="infobox">
   <img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_left" >
 
-**Fatih Uenal** is currenlty a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergrad and graduate levels of study. 
+**Fatih Uenal** is currently a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergraduate and graduate levels of study. 
 
 Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
@@ -97,28 +99,25 @@ Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
 #### **Course Objectives**
 
-“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, and machine learning. 
+The first in the Introduction to Data Science Series (`datsci_01`), this course will introduce you to the basics of `r rproj()` programming. You can better retain `r rproj()` when you learn it to solve a specific problem, so you'll use a real-world dataset about crime in the United States. You will learn the `r rproj()` skills needed to answer essential questions about differences in crime across the different states. 
 
-At the end of this course you will be able to:
+We'll cover `r rproj()`'s functions and data types, then tackle how to operate on vectors and when to use advanced functions like sorting. You'll learn how to apply general programming features like "if-else," and "for loop" commands, and how to wrangle, analyse and visualize data. 
+Rather than covering every `r rproj()` skill you might need, you'll build a strong foundation to prepare you for the more in-depth courses later in the series, where we cover concepts like probability, inference, regression, and machine learning. We help you develop a skill set that includes `r rproj()` programming, data wrangling with dplyr, data visualization with ggplot2, file organization with UNIX/Linux, version control with git and GitHub, and reproducible document preparation with RStudio. 
 
-- To answer research questions in Social Sciences (e.g., Psychology) with data
+At the end of this course you will have learned:
 
-- Understand the basics of research designs in Social Sciences, and how they relate to data-analysis strategies
+- Basic `r rproj()` syntax
 
-- Develop an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
+- Foundational `r rproj()` programming concepts such as data types, vectors arithmetic, and indexing
 
-- To use `r rproj()`, a free and open-source statistics software program.
-
-- Develop a basic understanding of frequently used Data Science Techniques.
-
-- Practice your newly acquired skills with interesting, interactive, and fun projects.
+- How to perform operations in `r rproj()` including sorting, data wrangling using `dplyr`, and making plots
 
 **NOTE**: The schedule and procedures described in this syllabus are subject to change depending on specific needs and requirements. You will always be notified of changes on the homepage (see “last update”).
 
 
 #### **Course Structure**
 
-This is the first module in a series of a 8 week-intensive course.  and I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
+This is the first module in a series of a 8 week-intensive course. I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks. However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
 
 #### **Grading**
 
@@ -143,15 +142,19 @@ The passing rate is 70%.
 
 #### **Installing R**
 
-If you want to install `r rproj()` to work on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). Note that CRAN makes several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
+To install `r rproj()` on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). CRAN offers several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. **Important Note: For the `datsci` package, you will need to download R Version 4.0.2 or higher.** You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
 
-- [Installing `r rproj()` on Windows](https://github.com/genomicsclass/windows#installing-r)
-- [Installing `r rproj()` on Mac](http://youtu.be/Icawuhf0Yqo)
-- [Installing `r rproj()` on Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/README)
+- [Installing `r rproj()` on Windows](https://www.r-bloggers.com/2013/03/download-and-install-r-in-windows/)
+- [Installing `r rproj()` on Mac](https://www.youtube.com/watch?v=uxuuWXU-7UQ)
+- [Installing `r rproj()` on Ubuntu](https://www.youtube.com/watch?v=Nxl7HDUyw0I)
 
 #### **Installing RStudio**
 
-RStudio is an integrated development environment (IDE). We highly recommend installing and using RStudio to edit and test your code. You can install RStudio through the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) is a great resource.  You need to install `r rproj()` first.
+RStudio is an integrated development environment (IDE). We recommend installing and using RStudio to edit and test your code. Before installing RStudio, you need to install `r rproj()` first. Afterwards, you can download and install RStudio via the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) gives a helpful overview of RStudio. 
+
+- [Installing RStudio on Windows](https://www.youtube.com/watch?v=gx7A7C_wdyE)
+- [Installing RStudio on Mac](https://www.youtube.com/watch?v=EmZqlcKkJMM)
+- [Installing RStudio on Ubuntu](https://www.youtube.com/watch?v=dv_P9BnrZPA&feature=emb_logo)
 
 ---
 

@@ -46,7 +46,7 @@ source("./www/datsci_helpers.R")
 
 ### Welcome to the Data Science: Visualization Course!
 
-We're excited to have you join us in this course, which is designed to teach you data visualization techniques to communicate data-driven findings.
+Welcome to the *Data Science: Data Visualization* (`datsci_02`) module. It is designed to teach you data visualization techniques to communicate data-driven findings.
 
 This is the second in a series of courses in the Introduction to Data Science program. The courses in the program are designed to prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. If you need a refresher of some basic `r rproj()`, check out *Data Science: R Basics*, the first course in this series.
 
@@ -89,7 +89,7 @@ The growing availability of informative datasets and software tools has led to i
 <div class="infobox">
   <img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_left" >
 
-**Fatih Uenal** is currenlty a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergrad and graduate levels of study. 
+**Fatih Uenal** is currently a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergraduate and graduate levels of study. 
 
 Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
@@ -101,28 +101,29 @@ Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
 #### **Course Objectives**
 
-“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing,and machine learning. 
+The is the second course in the Introduction to Data Science (`datsci_02`), this course covers the basics of data visualization and exploratory data analysis. We will use three motivating examples and **ggplot2**, a data visualization package for the statistical programming language `r rproj()`. We will start with simple datasets and then graduate to case studies about world health, economics, and infectious disease trends in the United States. 
 
-At the end of this course you will be able to:
+We'll also be looking at how mistakes, biases, systematic errors, and other unexpected problems often lead to data that should be handled with care. The fact that it can be difficult or impossible to notice a mistake within a dataset makes data visualization particularly important. 
 
-- To answer research questions in Social Sciences (e.g., Psychology) with data
+The growing availability of informative datasets and software tools has led to increased reliance on data visualizations across many areas. Data visualization provides a powerful way to communicate data-driven findings, motivate analyses, and detect flaws. This course will give you the skills you need to leverage data to reveal valuable insights and enhance your analytic skills.
 
-- Understand the basics of research designs in Social Sciences, and how they relate to data-analysis strategies
+At the end of this course you will have learned:
 
-- Develop an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
+-	Data visualization principles
 
-- To use `r rproj()`, a free and open-source statistics software program.
+-	How to communicate data-driven findings
 
-- Develop a basic understanding of frequently used Data Science Techniques.
+-	How to use **ggplot2** to create custom plots
 
-- Practice your newly acquired skills with interesting, interactive, and fun projects.
+-	The weaknesses of several widely used plots and why you should avoid them
+
 
 **NOTE**: The schedule and procedures described in this syllabus are subject to change depending on specific needs and requirements. You will always be notified of changes on the homepage (see “last update”).
 
 
 #### **Course Structure**
 
-This is the first module in a series of a 8 week-intensive course.  and I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
+This is the second module in a series of a 8 week-intensive course. I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
 
 #### **Grading**
 

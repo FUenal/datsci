@@ -46,10 +46,11 @@ source("./www/datsci_helpers.R")
 
 ### Welcome to *Data Science: Probability*!
 
-We're excited to have you join us in this course, which is designed to teach you the basics of probability theory, which is the mathematical foundation of statistical inference.
+Welcome to the *Data Science: Probability* (`datsci_03`) module. It is designed to teach you the basics of probability theory, which is the mathematical foundation of statistical inference.
 
 ### Course Overview
-This is the third in a series of courses in the Introduction to Data Science program. The courses in the program are designed to prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. The courses are designed to be taken in order. A prerequisite for this course is courses 1 and 2 of the series or equivalent knowledge of basic R coding and data visualization. If you need to learn or refresh some basic `r rproj()`, check out *Data Science: `r rproj()` Basics* (datsci_01), the first course in this series.
+
+This is the third (`datsci_03`) in a series of courses in the Introduction to Data Science program. The courses in the program are designed to prepare you to do data analysis in `r rproj()`, from simple computations to machine learning. The courses are designed to be taken in order. A prerequisite for this course is courses 1 and 2 of the series or equivalent knowledge of basic R coding and data visualization. If you need to learn or refresh some basic `r rproj()`, check out *Data Science: `r rproj()` Basics* (datsci_01), the first course in this series.
 
 The textbook for the Data Science course series is [freely available online](https://rafalab.github.io/dsbook/). This course corresponds to the Probability section of textbook, starting [here](https://rafalab.github.io/dsbook/probability.html).
 
@@ -57,7 +58,7 @@ This course assumes you are comfortable with basic math, algebra, and logical op
 
 Using a combination of a guided introduction lectures and more independent in-depth exploration, you will get to practice your new `r rproj()` skills on real-life applications.
 
-Probability theory is the mathematical foundation of statistical inference which is indispensable for analyzing data affected by chance, and thus essential for data scientists. In this course, you will learn important concepts in probability theory. The motivation for this course is the circumstances surrounding the financial crisis of 2007-2008. Part of what caused this financial crisis was that the risk of certain securities sold by financial institutions was underestimated. To begin to understand this very complicated event, we need to understand the basics of probability. We will introduce important concepts such as random variables, independence, Monte Carlo simulations, expected values, standard errors, and the Central Limit Theorem. These statistical concepts are fundamental to conducting statistical tests on data and understanding whether the data you are analyzing are likely occurring due to an experimental method or to chance. Statistical inference, covered in the next course in this program (datsci_04), builds upon probability theory.
+Probability theory is the mathematical foundation of statistical inference which is indispensable for analyzing data affected by chance, and thus essential for data scientists. In this course, you will learn important concepts in probability theory. The motivation for this course is the circumstances surrounding the financial crisis of 2007-2008. Part of what caused this financial crisis was that the risk of certain securities sold by financial institutions was underestimated. To begin to understand this very complicated event, we need to understand the basics of probability. We will introduce important concepts such as random variables, independence, Monte Carlo simulations, expected values, standard errors, and the Central Limit Theorem. These statistical concepts are fundamental to conducting statistical tests on data and understanding whether the data you are analyzing are likely occurring due to an experimental method or to chance. Statistical inference, covered in the next course in this program (`datsci_04`), builds upon probability theory.
 
 ### In this course, you will learn:
 
@@ -92,7 +93,7 @@ Probability theory is the mathematical foundation of statistical inference which
 <div class="infobox">
   <img src="./images/photo2014.jpg" alt="Dr Fatih Uenal." style="width:150px;height:200px;" class = "img_left" >
 
-**Fatih Uenal** is currenlty a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergrad and graduate levels of study. 
+**Fatih Uenal** is currently a Visitng Postdoctoral Researcher at the University of Cambridge, Department of Psychology, where he conducts research on the psychology of anthropocentrism and social and ecological dominance. Prior to his current position, he has worked as a postdoc at [Harvard University](https://scholar.harvard.edu/fatih-uenal/home). Together with [Prof Rafael Irizarry](http://rafalab.github.io/pages/about.html) he programmed this interactive tutorial based on the the textbook [*Introduction to Data Science*](https://rafalab.github.io/dsbook/). This interactive tutorial is developed using the `learnr` package. It has a general social scientists audience in mind and is suited for undergraduate and graduate levels of study. 
 
 Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
@@ -104,28 +105,26 @@ Webpage: https://scholar.harvard.edu/fatih-uenal/home
 
 #### **Course Objectives**
 
-“Data science” is a catch-all term used to describe the practice of working with and analyzing messy data sources to draw meaningful conclusions using techniques developed by computer scientists and computational statisticians. The purpose of this course is to give students who are training as quantitative social scientists a broad introduction to this skillset via the statistical programming language, `r rproj()`. You will learn how to conduct many statistical analyses such as univariate statistics (e.g., correlation, regression) in `r rproj()` that you may have already done in SPSS, Excel, or another such program. Additionally, we will build on this foundation to explore new skillsets uncommon in the social sciences, such as natural language processing, and machine learning. 
+In this course, the third part of Introduction to Data Science (`datsci_03`), you will learn foundational concepts in probability theory. The motivation for this course is the circumstances surrounding the financial crisis of 2007-2008. Part of what caused this financial crisis was that the risk of some securities sold by financial institutions was underestimated. To begin to understand this very complicated event, we need to understand the basics of probability. 
+We will introduce important concepts such as random variables, independence, Monte Carlo simulations, expected values, standard errors, and the Central Limit Theorem. These statistical concepts are fundamental to conducting statistical tests on data and understanding whether the data you are analyzing is likely occurring due to an experimental method or to chance. 
+Probability theory is the mathematical foundation of statistical inference, which is indispensable for analyzing data affected by chance, and thus essential for data scientists.
 
-At the end of this course you will be able to:
 
-- To answer research questions in Social Sciences (e.g., Psychology) with data
+At the end of this course you will have learned:
 
-- Understand the basics of research designs in Social Sciences, and how they relate to data-analysis strategies
+- Important concepts in probability theory including random variables and independence 
 
-- Develop an intuitive, practical, and conceptual understanding of strategies for asking and answering questions with data
+- How to perform a Monte Carlo simulation 
 
-- To use `r rproj()`, a free and open-source statistics software program.
+- The meaning of expected values and standard errors and how to compute them in `r rproj()`
 
-- Develop a basic understanding of frequently used Data Science Techniques.
-
-- Practice your newly acquired skills with interesting, interactive, and fun projects.
 
 **NOTE**: The schedule and procedures described in this syllabus are subject to change depending on specific needs and requirements. You will always be notified of changes on the homepage (see “last update”).
 
 
 #### **Course Structure**
 
-This is the first module in a series of a 8 week-intensive course.  and I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
+This is the third module in a series of a 8 week-intensive course. I suggest that you devote approx 10 hours a week to learning `r rproj()`, or if you are teaching graduate students, I’d recommend adopting the schedule below, which is designed for an intense but doable semester-long course, one module per week.  It is intended to take the average graduate student roughly 10 hours per week to complete all required tasks.However, some number of students will find programming to be more challenging and may take up to 15 hours per week.  Some will breeze through the material in 5.
 
 #### **Grading**
 
@@ -146,15 +145,21 @@ Insert Survey Link here
 
 #### **Installing R**
 
-If you want to install `r rproj()` to work on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). Note that CRAN makes several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
+To install `r rproj()` on your own computer, you can download it freely from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). CRAN offers several versions of `r rproj()` available:  versions for multiple operating systems and releases older than the current one. **Important Note: For the `datsci` package, you will need to download R Version 4.0.2 or higher.** You want to read the CRAN instructions to assure you download the correct version. If you need further help, you can try the following resources:
 
-- [Installing `r rproj()` on Windows](https://github.com/genomicsclass/windows#installing-r)
-- [Installing `r rproj()` on Mac](http://youtu.be/Icawuhf0Yqo)
-- [Installing `r rproj()` on Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/README)
+- [Installing `r rproj()` on Windows](https://www.r-bloggers.com/2013/03/download-and-install-r-in-windows/)
+- [Installing `r rproj()` on Mac](https://www.youtube.com/watch?v=uxuuWXU-7UQ)
+- [Installing `r rproj()` on Ubuntu](https://www.youtube.com/watch?v=Nxl7HDUyw0I)
 
 #### **Installing RStudio**
 
-RStudio is an integrated development environment (IDE). We highly recommend installing and using RStudio to edit and test your code. You can install RStudio through the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) is a great resource.  You need to install `r rproj()` first.
+RStudio is an integrated development environment (IDE). We recommend installing and using RStudio to edit and test your code. Before installing RStudio, you need to install `r rproj()` first. Afterwards, you can download and install RStudio via the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Their [cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) gives a helpful overview of RStudio. 
+
+- [Installing RStudio on Windows](https://www.youtube.com/watch?v=gx7A7C_wdyE)
+- [Installing RStudio on Mac](https://www.youtube.com/watch?v=EmZqlcKkJMM)
+- [Installing RStudio on Ubuntu](https://www.youtube.com/watch?v=dv_P9BnrZPA&feature=emb_logo)
+
+---
 
 ## Introduction to Probability
 
