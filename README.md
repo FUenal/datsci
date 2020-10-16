@@ -3,7 +3,7 @@
 # datsci: Introduction to Data Science with R 
 
 ***
-> **NOTE**: This package is incomplete but under active development. Check back here for updates/new tutorials. 
+> **NOTES**: This package is incomplete but under active development. Check back here for updates/new tutorials. Loading the tutorials on your personal computer for the first time can take a few minutes.
 
 ***
 
@@ -78,6 +78,8 @@ library(datsci)
 A list of tutorials appears in this pane. Scroll through them and click on the <img src="./data-raw/images/start_tutorial.png" width="64"> button to run the tutorial:
 
 <img src="./data-raw/images/run_tutorial_pane_datsci.png" width="900">
+
+**Loading the tutorials on your personal computer for the first time can take a few minutes.**
 
 Alternatively, to run a particular tutorial from the console execute:
 
